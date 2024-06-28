@@ -1,5 +1,6 @@
 import React from 'react'
 import resumeImage from '../resume/Simon_Dao_Resume_2024_page-0001.jpg'
+import Image from 'next/image'
 function page() {
   return (
     <>
@@ -8,7 +9,7 @@ function page() {
       </h1>
 
       <div className='w-full ' style={{ padding: '0% 20% 20% 20%' }}>
-        <img src={resumeImage.src} alt="" className='rounded-lg'/>
+        <Image src={resumeImage.src} alt="" className='rounded-lg'/>
       </div>
     </>
   )

@@ -32,7 +32,7 @@ function Footer() {
       <div className='flex'>
         <div style={{ marginTop: "10%" }} className="text-title m-0 select-none flex flex-col items-start">
           <span style={{ fontSize: "90px" }}>
-            Let's work
+            {"Let's work"}
           </span>
           <span style={{ fontSize: "90px" }}>
             together

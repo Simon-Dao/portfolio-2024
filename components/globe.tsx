@@ -3,6 +3,7 @@ import React, { useRef, useState } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { motion } from 'framer-motion-3d';
+import { DirectionalLight } from 'three';
 
 const RADIUS = 5;
 
@@ -19,7 +20,7 @@ function GlobeScene() {
 }
 
 function GlobeShadow() {
-  const lightRef = useRef(null);
+  const lightRef = useRef<DirectionalLight>(null);
   const secondsPerRot = 4;
 
   useFrame(({ clock }) => {
