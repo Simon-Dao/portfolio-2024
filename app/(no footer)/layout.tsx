@@ -17,13 +17,10 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={openSans.className + "scroll-smooth"}>
+      <body className={openSans.className + "scroll-smooth bg-qt"}>
         <div className="flex flex-col h-screen">
           <Header />
           {children}
-        </div>
-        <div className="flex flex-col h-screen">
-          <Footer />
         </div>
       </body>
     </html>

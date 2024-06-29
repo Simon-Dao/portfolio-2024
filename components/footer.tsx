@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import ArrowSVG from '@/public/Arrow1.svg';
 import FollowButton from './followButton';
+import BubbleButton from './bubbleButton';
 
 function Footer() {
 
@@ -47,13 +48,7 @@ function Footer() {
       </div>
       <div className='w-full py-24 pr-20 flex items-center grow'>
         <div style={{ height: "1px" }} className='w-full bg-sd'></div>
-        <div style={{ right: '40%', width: '200px', height: '200px' }} className="bg-tt absolute rounded-full">
-          <FollowButton className=''>
-            <div style={{ width: '200px', height: '200px' }} className='rounded-full flex justify-center items-center font-bold'>
-              Get in Touch
-            </div>
-          </FollowButton>
-        </div>
+        <BubbleButton />
       </div>
       <div className='w-full flex mb-16'>
         <div>

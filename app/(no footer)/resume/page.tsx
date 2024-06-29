@@ -9,7 +9,7 @@ function page() {
       </h1>
 
       <div className='w-full ' style={{ padding: '0% 20% 20% 20%' }}>
-        <Image src={resumeImage.src} alt="" className='rounded-lg'/>
+        <Image src={resumeImage.src} alt="" className='rounded-lg w-full' width={1500} height={1500}/>
       </div>
     </>
   )

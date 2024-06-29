@@ -36,3 +36,39 @@ body {
     text-wrap: balance;
   }
 }
+
+:root {
+  --pm: #FFFFFF;
+  --sd: #858688;
+  --tt: #A154F2;
+  --qt: #1c1d20;
+}
+
+/* For Webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--qt); /* Background color */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--sd); /* Scrollbar thumb color */
+  border-radius: 6px; /* Rounded corners */
+  border: 3px solid var(--qt); /* Padding around thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--tt); /* Thumb color on hover */
+}
+
+::-webkit-scrollbar-thumb:active {
+  background-color: var(--pm); /* Thumb color on active */
+}
+
+/* For Firefox */
+body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--sd) var(--qt);
+}
