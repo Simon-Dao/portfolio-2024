@@ -2,7 +2,7 @@ import React from 'react'
 
 
 
-function Hoverdot({on}) {
+function Hoverdot() {
   return (
     <div>Hoverdot</div>
   )

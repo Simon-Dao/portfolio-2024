@@ -1,40 +1,29 @@
 import React from 'react'
-import Link from 'next/link'
 import FollowButton from './followButton'
+import TransitionLink from './transitionLink'
 
 function header() {
   return (
     <nav className='flex pt-14 px-16'>
       <div className='grow flex justify-start text-white'>
         <FollowButton className='ml-20 p-2'>
-          <Link href="/">
-            <h1 className='font-bold'>Simon Dao</h1>
-          </Link>
+          <TransitionLink href="/home" label="Simon Dao" />
         </FollowButton>
       </div>
       <div className='grow flex justify-end text-white'>
         <FollowButton className='ml-20 p-2'>
-          <Link href="/projects">
-            <h1 className='font-bold'>Projects</h1>
-          </Link>
+          <TransitionLink href="/projects" label="Projects" />
         </FollowButton >
         <FollowButton className='ml-20 p-2'>
-          <Link href="/resume">
-            <h1 className='font-bold'>Resume</h1>
-          </Link>
+          <TransitionLink href="/resume" label="Resume" />
         </FollowButton>
         <FollowButton className='ml-20 p-2'>
-          <Link href="/about">
-            <h1 className='font-bold'>About</h1>
-          </Link>
+          <TransitionLink href="/about" label="About" />
         </FollowButton>
         <FollowButton className='ml-20 p-2'>
-          <Link href="/contact">
-            <h1 className='font-bold'>Contact</h1>
-          </Link>
+          <TransitionLink href="/contact" label="Contact" />
         </FollowButton>
       </div>
-
     </nav>
   )
 }

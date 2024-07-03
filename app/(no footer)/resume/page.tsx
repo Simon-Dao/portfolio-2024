@@ -1,5 +1,5 @@
 import React from 'react'
-import resumeImage from '../resume/Simon_Dao_Resume_2024_page-0001.jpg'
+import resumeImage from './Simon_Dao_Resume_2024_page-0001.jpg'
 import Image from 'next/image'
 function page() {
   return (

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
-import "../globals.css";
+import "../../styles/globals.css";
 import Footer from '../../components/footer'
 import Header from '../../components/header'
 const openSans = Open_Sans({ subsets: ["latin"] });
@@ -17,8 +17,8 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={openSans.className + "scroll-smooth bg-qt"}>
-        <div className="flex flex-col h-screen">
+      <body className={openSans.className + " bg-qt"}>
+        <div className="flex flex-col">
           <Header />
           {children}
         </div>
