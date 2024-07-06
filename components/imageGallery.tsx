@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 
 const images = [
+  '/avanade.jpg',
   '/me_in_boat.jpg',
   '/internshipevent.jpg',
   '/back.png',
