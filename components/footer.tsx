@@ -2,8 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import ArrowSVG from '@/public/Arrow1.svg';
-import FollowButton from './followButton';
 import BubbleButton from './bubbleButton';
+import Magnetic from './magnetic';
 
 function Footer() {
 
@@ -48,7 +48,7 @@ function Footer() {
       </div>
       <div className='w-full py-24 pr-20 flex items-center grow'>
         <div style={{ height: "1px" }} className='w-full bg-sd'></div>
-        <BubbleButton />
+          <BubbleButton label='Get in Touch' />
       </div>
       <div className='w-full flex mb-16'>
         <div>
@@ -59,13 +59,13 @@ function Footer() {
         <div>
           <div>Socials</div>
           <div className='font-bold color-white flex'>
-            <FollowButton>
-              <a href="">Linkedin</a>
-            </FollowButton>
+            <Magnetic>
+              <a href="https://www.linkedin.com/in/simon-dao/">Linkedin</a>
+            </Magnetic>
             <div className='w-6'></div>
-            <FollowButton>
-              <a href="">Discord</a>
-            </FollowButton>
+            <Magnetic>
+              <a href="https://discord.com/users/277605748995915779">Discord</a>
+            </Magnetic>
           </div>
         </div>
       </div>

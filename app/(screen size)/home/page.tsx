@@ -1,22 +1,60 @@
 'use client'
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import GlobeScene from "@/components/globe";
-import DavidScene
- from '@/components/davidHead';
+import DavidScene from '@/components/davidHead';
+import gsap from 'gsap'
+
 function Home() {
-  const containerRef = useRef(null)  
+  const containerRef = useRef(null)
+  const c1 = useRef<HTMLDivElement>(null)
+  const c2 = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+
+    const t1 = gsap.timeline({ repeat: -1 });
+    const contentWidth = c1.current?.scrollWidth || 0;
+
+    t1.set(c1.current, {
+      translateX: 0
+    })
+      .to(c1.current, {
+        translateX: -contentWidth,
+        ease: 'linear',
+        duration: 10, // Adjust the duration to your liking
+      }).set(c1.current, { translateX: contentWidth });
+
+    const t2 = gsap.timeline({ repeat: -1 });
+    t2.set(c2.current, {
+      translateX: 0
+    })
+      .to(c2.current, {
+        translateX: -contentWidth,
+        ease: 'linear',
+        duration: 10, // Adjust the duration to your liking
+      }).set(c2.current, { translateX: contentWidth });
+  }, []);
 
   return (
-     <div ref={containerRef} className="px-16 h-screen flex items-center">
+    <div ref={containerRef} className="px-16 h-screen flex items-center">
       {/* ...your app */}
       <div style={{ width: '50%' }} className="flex flex-col justify-center items-center h-full">
         <div className="pb-20">
           <h1 className="text-title m-0 select-none">Simon Dao</h1>
-          <h3 className="text-sd m-0 select-none">Developer, Designer, Problem-Solver</h3>
+          <div className='flex overflow-hidden absolute' style={{ maxWidth: '40%' }}>
+            <div ref={c1} className="text-sd m-0 select-none text-6xl text-nowrap flex">
+              <span className='px-3'>Developer</span>
+              <span className='px-3'>Designer</span>
+              <span className='px-3'>Problem-Solver</span>
+            </div>
+            <div ref={c2} className="text-sd m-0 select-none text-6xl text-nowrap flex">
+              <span className='px-3'>Developer</span>
+              <span className='px-3'>Designer</span>
+              <span className='px-3'>Problem-Solver</span>
+            </div>
+          </div>
         </div>
       </div>
       <div className="grow h-full items-center cursor-pointer">
-        {/* <GlobeScene /> */}
         <DavidScene />
       </div>
     </div>

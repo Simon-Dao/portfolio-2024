@@ -30,14 +30,12 @@ function DavidScene() {
     <Canvas camera={{ position: [0, 0, 200], fov: 80, rotation: [-45, 0, 0] }} className="w-full h-full ">
       <Suspense fallback={null}>
         <gridHelper args={[10, 10]} />
-        <ambientLight intensity={0.5} />
-        <GlobeShadow />
-        <pointLight position={[0, 300, -10]} intensity={0.8} color={"#ac31ee"}/>
-        <spotLight position={[15, 10, 5]} angle={0.3} penumbra={1} intensity={1} castShadow />
+        <ambientLight intensity={0.4} />
         <Model />
-        <CameraController />
+        <directionalLight position={[100, 0, 0]} intensity={1} />
+        <directionalLight position={[0, 0, 100]} intensity={1} />
         <EffectComposer>
-          <Bloom luminanceThreshold={0.5} luminanceSmoothing={0.9} height={300} />
+          <Bloom luminanceThreshold={0.1} luminanceSmoothing={0.8} height={300} />
           <ToneMapping
             adaptive={true}
             resolution={256}
@@ -47,6 +45,7 @@ function DavidScene() {
             adaptationRate={1.0}
           />
         </EffectComposer>
+        <CameraController />
       </Suspense>
     </Canvas>
   );
@@ -56,13 +55,13 @@ function GlobeShadow() {
   const lightRef = useRef<DirectionalLight>(null);
   const secondsPerRot = 4;
 
-  useFrame(({ clock }) => {
-    const time = clock.getElapsedTime() / secondsPerRot;
-    if (lightRef.current) {
-      lightRef.current.position.x = RADIUS * Math.sin(time);
-      lightRef.current.position.z = RADIUS * Math.cos(time);
-    }
-  });
+  // useFrame(({ clock }) => {
+  //   const time = clock.getElapsedTime() / secondsPerRot;
+  //   if (lightRef.current) {
+  //     lightRef.current.position.x = RADIUS * Math.sin(time);
+  //     lightRef.current.position.z = RADIUS * Math.cos(time);
+  //   }
+  // });
 
   return (
     <directionalLight

@@ -1,10 +1,10 @@
 'use client'
-import FollowButton from '@/components/followButton'
 import React, { useRef, useState } from 'react'
 import Image from 'next/image'
 import ArrowSVG from '@/public/Arrow1.svg'
 import TextInput from '@/components/textInput'
 import BubbleButton from '@/components/bubbleButton'
+import TransitionLink from '@/components/transitionLink'
 
 function Contact() {
   const containerRef = useRef(null)
@@ -74,7 +74,7 @@ function Contact() {
 
             <div className='w-full py-24 pr flex items-center grow'>
               <div style={{ height: "2px" }} className='w-full bg-pm'></div>
-              <BubbleButton />
+              <BubbleButton label="Send!"/>
             </div>
 
           </section>

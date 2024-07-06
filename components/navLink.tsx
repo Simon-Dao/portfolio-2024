@@ -2,22 +2,19 @@
 import React, { useRef } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
 import { animatePageOut } from '../utils/animation'
-
 interface Props {
+  label: string
   href: string
-  label: string,
-  hoverAnimation: boolean
 }
 
-function TransitionLink({ href, label, hoverAnimation }: Props) {
-
+function NavLink({ label, href }: Props) {
   const router = useRouter()
   const pathname = usePathname()
+  const decorationRef = useRef<any>();
 
   const handleClick = () => {
 
     if (pathname !== href) {
-
       animatePageOut(href, router)
     }
   }
@@ -28,8 +25,9 @@ function TransitionLink({ href, label, hoverAnimation }: Props) {
       >
         {label}
       </div>
+      <div ref={decorationRef} className='mt-1 bg-pm self-center' style={{ height: '2px' }}></div>
     </div>
   )
 }
 
-export default TransitionLink
+export default NavLink

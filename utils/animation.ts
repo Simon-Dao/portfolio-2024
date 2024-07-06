@@ -1,6 +1,5 @@
 import gsap from 'gsap'
 import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime';
-import { MutableRefObject } from 'react';
 
 export const animatePageIn = () => {
   const bannerOne = document.getElementById("banner-1");
@@ -64,19 +63,3 @@ export const animateHelloText = (ref : any) => {
     .to(ref.current, { x: 0, opacity: 1, duration: 0.5, ease: 'expo.inOut' }); // Slide in faster
 };
 
-export const animateLinkHoverEnter = (ref : any) => {
-  if (!ref || !ref.current) return;
-
-  const tl = gsap.timeline();
-
-  tl.set(ref.current, {width: 0})
-  .to(ref.current, {width: '100px', duration: 0.5, ease: 'expo.inOut'})
-}
-export const animateLinkHoverExit = (ref : any) => {
-  if (!ref || !ref.current) return;
-
-  const tl = gsap.timeline();
-
-  tl.set(ref.current, {width: '100px'})
-  .to(ref.current, {width: '0px', duration: 0.5, ease: 'expo.inOut'})
-}
