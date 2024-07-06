@@ -17,7 +17,9 @@ const config: Config = {
         pm: "#FFFFFF",
         sd: "#858688",
         tt: "#A154F2",
-        qt: "#1c1d20"
+        qt: "#1c1d20",
+        pt: "#ff5b66",
+        sdNoSize: "#FFFFFF",
       },
       fontSize: {
         title: "8rem",

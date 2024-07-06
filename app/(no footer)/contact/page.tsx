@@ -11,13 +11,45 @@ import emailjs from '@emailjs/browser';
 function Contact() {
   const containerRef = useRef(null)
   const formRef = useRef<HTMLFormElement>(null)
-  const [nameValue, setNameValue] = useState<string>();
-  const [emailValue, setEmailValue] = useState<string>();
-  const [messageValue, setMessageValue] = useState<string>();
+  const [nameValue, setNameValue] = useState<string>("");
+  const [emailValue, setEmailValue] = useState<string>("");
+  const [messageValue, setMessageValue] = useState<string>("");
+
+  const [nameColor, setNameColor] = useState<string>("text-sdNoSize");
+  const [emailColor, setEmailColor] = useState<string>("text-sdNoSize");
+  const [messageColor, setMessageColor] = useState<string>("text-sdNoSize");
+
+  const handleNameChange = (e : any) => {
+    setNameColor("text-sdNoSize");
+    setNameValue(e.target.value);
+  }
+
+  const handleEmailChange = (e : any) => {
+    setEmailColor("text-sdNoSize");
+    setEmailValue(e.target.value);
+  }
+
+  const handleMessageChange = (e : any) => {
+    setMessageColor("text-sdNoSize");
+    setMessageValue(e.target.value);
+  }
 
   const onSubmit = (e : any) => {
 
     e.preventDefault();
+
+    if(nameValue === "") {
+      setNameColor("text-pt");
+      return;
+    }
+    if(emailValue === "") {
+      setEmailColor("text-pt");
+      return;
+    }
+    if(messageValue === "") {
+      setMessageColor("text-pt");
+      return;
+    }
 
     if(!process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID) return
     if(!process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID) return
@@ -60,35 +92,35 @@ function Contact() {
         <section className='flex pt-20'>
           <form ref={formRef} style={{ width: '65%' }} className='' onSubmit={onSubmit}>
             <section>
-              <div className='border-top py-6 flex ' style={{ height: '150px', borderTop: '1px white solid', borderBottom: '1px white solid' }}>
-                <div className='text-2xl flex items-start pt-1 w-20 ' style={{ color: "#858688" }}>
+              <div className='border-top py-6 flex transition-all' style={{ height: '150px', borderTop: '1px white solid', borderBottom: '1px white solid' }}>
+                <div className={nameColor + ' text-2xl flex items-start pt-1 w-20 transition-all'}>
                   01
                 </div>
-                <div className='flex flex-col w-full'>
-                  <h1 className='font-bold grow mb-1' style={{ fontSize: '30px' }}>{"What's your name?"}</h1>
-                  <input className='bg-transparent text-2xl outline-none' name='user_name' placeholder='John Doe *' value={nameValue}/>
+                <div className='flex flex-col w-full '>
+                  <h1 className={'font-bold grow mb-1 transition-all '+nameColor} style={{ fontSize: '30px' }}>{"What's your name?"}</h1>
+                  <input onChange={handleNameChange} className='bg-transparent text-2xl outline-none' name='user_name' placeholder='John Doe *' value={nameValue}/>
                 </div>
               </div>
             </section>
             <section >
               <div className='border-top py-6 flex ' style={{ height: '150px', borderTop: '1px white solid', borderBottom: '1px white solid' }}>
-                <div className='text-2xl flex items-start pt-1 w-20' style={{ color: "#858688" }}>
+                <div className={'text-2xl flex items-start pt-1 w-20 transition-all '+emailColor}>
                   02
                 </div>
                 <div className='flex flex-col w-full'>
-                  <h1 className='font-bold grow mb-1' style={{ fontSize: '30px' }}>{"What's your email?"}</h1>
-                  <input className='bg-transparent text-2xl outline-none' name='user_email' placeholder='john@doe.com *' value={emailValue} type='email'/>
+                  <h1 className={'font-bold grow mb-1 transition-all '+emailColor} style={{ fontSize: '30px' }}>{"What's your email?"}</h1>
+                  <input onChange={handleEmailChange}  className='bg-transparent text-2xl outline-none' name='user_email' placeholder='john@doe.com *' value={emailValue} type='email'/>
                 </div>
               </div>
             </section>
             <section>
               <div className='border-top py-6 flex' style={{ height: '300px', borderTop: '1px white solid' }}>
-                <div className='text-2xl flex items-start pt-1 w-20 ' style={{ color: "#858688" }}>
+                <div className={'text-2xl flex items-start pt-1 w-20 transition-all '+messageColor}>
                   03
                 </div>
                 <div className='flex flex-col w-full'>
-                  <h1 className='font-bold mb-1' style={{ fontSize: '30px' }}>{"Your message"}</h1>
-                  <input className='bg-transparent  text-2xl outline-none grow' placeholder='Hello Simon... *' type='text' value={messageValue} name='message'/>
+                  <h1 className={'font-bold grow mb-1 transition-all '+messageColor} style={{ fontSize: '30px' }}>{"Your message"}</h1>
+                  <input onChange={handleMessageChange} className='bg-transparent  text-2xl outline-none grow' placeholder='Hello Simon... *' type='text' value={messageValue} name='message'/>
                 </div>
               </div>
             </section>

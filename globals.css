@@ -72,3 +72,7 @@ body {
   scrollbar-width: thin;
   scrollbar-color: var(--sd) var(--qt);
 }
+
+.text-pm {
+  font-size: 0;
+}
