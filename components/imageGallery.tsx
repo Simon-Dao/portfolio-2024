@@ -3,11 +3,13 @@ import React, { useState } from 'react';
 
 const images = [
   '/me_in_boat.jpg',
+  '/internshipevent.jpg',
   '/back.png',
   '/drawing_1.png',
   '/image_2.png',
   '/jeff.png',
   '/rock 1.png',
+  '/mountain.jpg',
   '/mma 1.png',
 ];
 
