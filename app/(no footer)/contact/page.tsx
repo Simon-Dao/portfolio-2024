@@ -68,13 +68,13 @@ function Contact() {
   }
 
   return (
-    <main ref={containerRef}>
+    <main ref={containerRef} className='px-30 lg:px-0'>
       {/* ...your app */}
-      <div className='px-64 pb-40'>
+      <div className='lg:px-64 pb-40'>
 
         <div className='flex'>
-          <div style={{ marginTop: "10%" }} className="text-title m-0 select-none flex flex-col items-start">
-            <span style={{ fontSize: "90px" }}>
+          <div style={{ marginTop: "10%" }} className="text-title m-0 select-none flex flex-col lg:items-start">
+            <span style={{ fontSize: "90px" }} className='bg-tt rounded-2xl p-2'>
               {"Let's work"}
             </span>
             <span style={{ fontSize: "90px" }}>
@@ -89,8 +89,8 @@ function Contact() {
           />
         </div>
 
-        <section className='flex pt-20 flex-col'>
-          <form ref={formRef} style={{ width: '65%' }} className='' onSubmit={onSubmit}>
+        <section className='flex pt-20 flex-col lg:flex-row'>
+          <form ref={formRef} className='lg:w-3/5' onSubmit={onSubmit}>
             <section>
               <div className='border-top py-6 flex transition-all' style={{ height: '150px', borderTop: '1px white solid', borderBottom: '1px white solid' }}>
                 <div className={nameColor + ' text-2xl flex items-start pt-1 w-20 transition-all'}>
@@ -120,17 +120,16 @@ function Contact() {
                 </div>
                 <div className='flex flex-col w-full'>
                   <h1 className={'font-bold grow mb-1 transition-all '+messageColor} style={{ fontSize: '30px' }}>{"Your message"}</h1>
-                  <input onChange={handleMessageChange} className='bg-transparent  text-2xl outline-none grow' placeholder='Hello Simon... *' type='text' value={messageValue} name='message'/>
+                  <textarea onChange={handleMessageChange} className='bg-transparent  text-2xl outline-none grow' placeholder='Hello Simon... *' value={messageValue} name='message'/>
                 </div>
               </div>
             </section>
-
             <div className='w-full py-24 pr flex items-center grow'>
               <div style={{ height: "2px" }} className='w-full bg-pm' />
               <SendButton label="Send!" type='submit'/>
             </div>
-
           </form>
+
           <section className='grow px-20'>
             <div className='mb-3'>
               <div className='text-xl' style={{ color: '#858688' }}>
