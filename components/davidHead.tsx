@@ -21,7 +21,6 @@ const Model = () => {
   });
 
   const { scene } = useGLTF('./david_head.glb')
-  //position={[0, -130, 0]} rotation={[-45,0,0]}
   return <primitive ref={davidRef} object={scene} onClick={console.log} position={[0, -100, 0]} />
 };
 
@@ -33,7 +32,10 @@ function DavidScene() {
         <ambientLight intensity={0.4} />
         <Model />
         <directionalLight position={[100, 0, 0]} intensity={1} />
+        <directionalLight position={[-100, 0, 0]} intensity={0.02} color={[255, 0, 0]} />
         <directionalLight position={[0, 0, 100]} intensity={1} />
+        <directionalLight position={[0, 0, -100]} intensity={0.02} color={[0, 0, 255]} />
+        <directionalLight position={[0, 300, 0]} intensity={0.01} color={[0, 0, 255]} />
         <EffectComposer>
           <Bloom luminanceThreshold={0.1} luminanceSmoothing={0.8} height={300} />
           <ToneMapping

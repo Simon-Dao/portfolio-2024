@@ -1,6 +1,5 @@
 'use client'
 import React, { useEffect, useRef, useState } from 'react'
-import GlobeScene from "@/components/globe";
 import DavidScene from '@/components/davidHead';
 import gsap from 'gsap'
 
@@ -40,13 +39,13 @@ function Home() {
       <div style={{ width: '50%' }} className="flex flex-col justify-center items-center h-full">
         <div className="pb-20">
           <h1 className="text-title m-0 select-none">Simon Dao</h1>
-          <div className='flex overflow-hidden absolute' style={{ maxWidth: '40%' }}>
-            <div ref={c1} className="text-sd m-0 select-none text-6xl text-nowrap flex">
+          <div className='flex overflow-hidden absolute' style={{ maxWidth: '700px' }}>
+            <div ref={c1} className="text-sd m-0 select-none text-8xl text-nowrap flex">
               <span className='px-3'>Developer</span>
               <span className='px-3'>Designer</span>
               <span className='px-3'>Problem-Solver</span>
             </div>
-            <div ref={c2} className="text-sd m-0 select-none text-6xl text-nowrap flex">
+            <div ref={c2} className="text-sd m-0 select-none text-8xl text-nowrap flex">
               <span className='px-3'>Developer</span>
               <span className='px-3'>Designer</span>
               <span className='px-3'>Problem-Solver</span>

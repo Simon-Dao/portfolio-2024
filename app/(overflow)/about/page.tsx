@@ -2,8 +2,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import ArrowSVG from '@/public/Arrow1.svg'
-import TextInput from '@/components/textInput'
-import BubbleButton from '@/components/bubbleButton'
 import ImageGallery from '@/components/imageGallery'
 import { animateHelloText } from '@/utils/animation'
 
@@ -19,8 +17,17 @@ function About() {
     <div className='px-64 pb-64 pt-32'>
       {/* ...your app */}
       <div className='px-24'>
+
         <section className='flex'>
-          <div style={{ marginTop: "" }} className=" text-title m-0 select-none flex flex-col items-start">
+          <Image
+            className='rounded-full justify-self-end mr-10'
+            src="/simon.jpg"
+            width={300}
+            height={300}
+            alt="Picture of the author"
+          />
+          <div style={{ marginTop: "" }} className="self-end text-title m-0 select-none flex flex-col items-start">
+
             <span style={{ fontSize: "90px" }}>
               Get to
             </span>
@@ -28,6 +35,8 @@ function About() {
               know me
             </span>
           </div>
+
+          {/* <div className='grow'></div> */}
           <Image
             className='ml-20 self-end mb-6'
             priority
