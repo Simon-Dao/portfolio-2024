@@ -3,14 +3,37 @@ import React, { useRef, useState } from 'react'
 import Image from 'next/image'
 import ArrowSVG from '@/public/Arrow1.svg'
 import TextInput from '@/components/textInput'
-import BubbleButton from '@/components/bubbleButton'
 import TransitionLink from '@/components/transitionLink'
+import SendButton from '@/components/sendButton'
+import emailjs from '@emailjs/browser';
+
 
 function Contact() {
   const containerRef = useRef(null)
+  const formRef = useRef<HTMLFormElement>(null)
   const [nameValue, setNameValue] = useState<string>();
   const [emailValue, setEmailValue] = useState<string>();
   const [messageValue, setMessageValue] = useState<string>();
+
+  const onSubmit = (e : any) => {
+
+    e.preventDefault();
+
+    if(!process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID) return
+    if(!process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID) return
+    if(!process.env.NEXT_PUBLIC_PUBLIC_KEY) return
+    if(!formRef || !formRef.current) return
+
+    emailjs.sendForm(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID, process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID, formRef.current, process.env.NEXT_PUBLIC_PUBLIC_KEY)
+       .then((result) => {
+         alert('Message Sent Successfully')
+       }, (error) => {
+         console.log(error.text);
+         alert('Something went wrong!')
+       });
+
+    e.target.reset()
+  }
 
   return (
     <main data-scroll-container ref={containerRef}>
@@ -34,18 +57,16 @@ function Contact() {
           />
         </div>
 
-        <div className='flex pt-20'>
-
-          <section style={{ width: '65%' }} className=''>
-
+        <section className='flex pt-20'>
+          <form ref={formRef} style={{ width: '65%' }} className='' onSubmit={onSubmit}>
             <section>
               <div className='border-top py-6 flex ' style={{ height: '150px', borderTop: '1px white solid', borderBottom: '1px white solid' }}>
                 <div className='text-2xl flex items-start pt-1 w-20 ' style={{ color: "#858688" }}>
                   01
                 </div>
                 <div className='flex flex-col w-full'>
-                  <h1 className='font-bold grow' style={{ fontSize: '30px' }}>{"What's your name?"}</h1>
-                  <TextInput placeholder='John Doe *' value={nameValue} setValue={setNameValue} />
+                  <h1 className='font-bold grow mb-1' style={{ fontSize: '30px' }}>{"What's your name?"}</h1>
+                  <input className='bg-transparent text-2xl outline-none' name='user_name' placeholder='John Doe *' value={nameValue}/>
                 </div>
               </div>
             </section>
@@ -55,8 +76,8 @@ function Contact() {
                   02
                 </div>
                 <div className='flex flex-col w-full'>
-                  <h1 className='font-bold grow' style={{ fontSize: '30px' }}>{"What's your email?"}</h1>
-                  <TextInput placeholder='john@doe.com *' value={emailValue} setValue={setEmailValue} />
+                  <h1 className='font-bold grow mb-1' style={{ fontSize: '30px' }}>{"What's your email?"}</h1>
+                  <input className='bg-transparent text-2xl outline-none' name='user_email' placeholder='john@doe.com *' value={emailValue} type='email'/>
                 </div>
               </div>
             </section>
@@ -66,21 +87,21 @@ function Contact() {
                   03
                 </div>
                 <div className='flex flex-col w-full'>
-                  <h1 className='font-bold' style={{ fontSize: '30px' }}>{"Your message"}</h1>
-                  <TextInput placeholder='Hello Simon... *' className='grow' value={messageValue} setValue={setMessageValue} />
+                  <h1 className='font-bold mb-1' style={{ fontSize: '30px' }}>{"Your message"}</h1>
+                  <input className='bg-transparent  text-2xl outline-none grow' placeholder='Hello Simon... *' type='text' value={messageValue} name='message'/>
                 </div>
               </div>
             </section>
 
             <div className='w-full py-24 pr flex items-center grow'>
-              <div style={{ height: "2px" }} className='w-full bg-pm'></div>
-              <BubbleButton label="Send!"/>
+              <div style={{ height: "2px" }} className='w-full bg-pm' />
+              <SendButton label="Send!" type='submit'/>
             </div>
 
-          </section>
+          </form>
           <section className='grow px-20'>
             <div className='mb-3'>
-              <div className='text-xl'>
+              <div className='text-xl' style={{ color: '#858688' }}>
                 Email
               </div>
               <div className='text-2xl'>
@@ -88,23 +109,23 @@ function Contact() {
               </div>
             </div>
             <div className='mb-3'>
-              <div className='text-xl'>
+              <div className='text-xl' style={{ color: '#858688' }}>
                 Linkedin
               </div>
               <div className='text-2xl'>
-                SimonNDao12@gmail.com
+                linkedin.com/in/simon-dao
               </div>
             </div>
             <div className='mb-3'>
-              <div className='text-xl'>
+              <div className='text-xl' style={{ color: '#858688' }}>
                 Discord
               </div>
               <div className='text-2xl'>
-                SimonNDao12@gmail.com
+                monis3685
               </div>
             </div>
           </section>
-        </div>
+        </section>
       </div>
     </main>
   )
