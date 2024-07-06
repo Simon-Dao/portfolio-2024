@@ -68,7 +68,7 @@ function Contact() {
   }
 
   return (
-    <main data-scroll-container ref={containerRef}>
+    <main ref={containerRef}>
       {/* ...your app */}
       <div className='px-64 pb-40'>
 
@@ -89,7 +89,7 @@ function Contact() {
           />
         </div>
 
-        <section className='flex pt-20'>
+        <section className='flex pt-20 flex-col'>
           <form ref={formRef} style={{ width: '65%' }} className='' onSubmit={onSubmit}>
             <section>
               <div className='border-top py-6 flex transition-all' style={{ height: '150px', borderTop: '1px white solid', borderBottom: '1px white solid' }}>

@@ -14,11 +14,11 @@ function About() {
 
   return (
 
-    <div className='px-64 pb-64 pt-32'>
+    <div className='lg:px-64 pb-64 pt-32'>
       {/* ...your app */}
-      <div className='px-24'>
+      <div className='lg:px-24'>
 
-        <section className='flex'>
+        <section className='flex flex-col items-center justify-center lg:flex-row'>
           <Image
             className='rounded-full justify-self-end mr-10'
             src="/simon.jpg"
@@ -26,49 +26,31 @@ function About() {
             height={300}
             alt="Picture of the author"
           />
-          <div style={{ marginTop: "" }} className="self-end text-title m-0 select-none flex flex-col items-start">
+          <div style={{ marginTop: "" }} className="select-none flex flex-col">
 
-            <span style={{ fontSize: "90px" }}>
-              Get to
-            </span>
-            <span style={{ fontSize: "90px" }}>
-              know me
+            <span className='text-4xl xl:text-6xl h-20 mt-10 flex'>
+              About Me
+              <Image
+                className='ml-20 mb-6 self-end'
+                priority
+                src={ArrowSVG}
+                alt=""
+              />
             </span>
           </div>
 
-          {/* <div className='grow'></div> */}
-          <Image
-            className='ml-20 self-end mb-6'
-            priority
-            src={ArrowSVG}
-            alt=""
-          />
-          <div className="relative h-full w-auto">
-            <Image
-              src="/simon.jpg"
-              alt="Description of the image"
-              layout="fill"
-              objectFit="contain"
-            />
-          </div>
+
         </section>
 
         <section className='flex pt-10'>
           <div className='w-screen'>
             <div className='w-full py-24 pr flex items-center grow'>
               <div style={{ height: "2px" }} className='w-full bg-pm'></div>
-              {/* <div style={{ left: '50%' }} className="bg-tt absolute rounded-full w-96 h-96">
-                <Image className='rounded-full w-96 h-96 p-8'
-                  src="/me_in_boat.jpg"
-                  alt="Me in a boat"
-                  layout="fill"
-                />
-              </div> */}
             </div>
           </div>
         </section>
 
-        <article>
+        <article className='mx-30'>
 
           <h1 ref={helloAnimationRef} className='text-7xl mb-6'>Hello</h1>
           <p className='text-3xl'>{"I'm currently an undergrad studying Computer Science. My journey into the world of coding started back in my freshman year of high school, and I’ve been hooked ever since. Over the years, I’ve built a solid toolkit of programming languages and soft skills that I’m pretty proud of."}

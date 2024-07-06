@@ -1,5 +1,5 @@
 'use client';
-import React, { useRef, useState, Suspense } from 'react';
+import React, { useRef, useState, Suspense, useEffect } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
 import { motion } from 'framer-motion-3d';
@@ -14,7 +14,6 @@ const Model = () => {
   const secondsPerRot = 4;
 
   useFrame(({ clock }) => {
-    const time = clock.getElapsedTime() / secondsPerRot;
     if (davidRef.current) {
       davidRef.current.rotation.y += 0.005
     }
@@ -25,61 +24,34 @@ const Model = () => {
 };
 
 function DavidScene() {
-  return (
-    <Canvas camera={{ position: [0, 0, 200], fov: 80, rotation: [-45, 0, 0] }} className="w-full h-full ">
-      <Suspense fallback={null}>
-        <gridHelper args={[10, 10]} />
-        <ambientLight intensity={0.4} />
-        <Model />
-        <directionalLight position={[100, 0, 0]} intensity={1} />
-        <directionalLight position={[-100, 0, 0]} intensity={0.02} color={[255, 0, 0]} />
-        <directionalLight position={[0, 0, 100]} intensity={1} />
-        <directionalLight position={[0, 0, -100]} intensity={0.02} color={[0, 0, 255]} />
-        <directionalLight position={[0, 300, 0]} intensity={0.01} color={[0, 0, 255]} />
-        <EffectComposer>
-          <Bloom luminanceThreshold={0.1} luminanceSmoothing={0.8} height={300} />
-          <ToneMapping
-            adaptive={true}
-            resolution={256}
-            middleGrey={0.6}
-            maxLuminance={16.0}
-            averageLuminance={1.0}
-            adaptationRate={1.0}
-          />
-        </EffectComposer>
-        <CameraController />
-      </Suspense>
-    </Canvas>
-  );
-}
-
-function GlobeShadow() {
-  const lightRef = useRef<DirectionalLight>(null);
-  const secondsPerRot = 4;
-
-  // useFrame(({ clock }) => {
-  //   const time = clock.getElapsedTime() / secondsPerRot;
-  //   if (lightRef.current) {
-  //     lightRef.current.position.x = RADIUS * Math.sin(time);
-  //     lightRef.current.position.z = RADIUS * Math.cos(time);
-  //   }
-  // });
 
   return (
-    <directionalLight
-      ref={lightRef}
-      position={[RADIUS, 1, RADIUS]}
-      intensity={0.5}
-      castShadow
-      shadow-mapSize-width={1024}
-      shadow-mapSize-height={1024}
-      shadow-camera-near={0.5}
-      shadow-camera-far={50}
-      shadow-camera-left={-10}
-      shadow-camera-right={10}
-      shadow-camera-top={10}
-      shadow-camera-bottom={-10}
-    />
+    <div className="grow h-full items-center cursor-pointer">
+      <Canvas camera={{ position: [0, 0, 200], fov: 80, rotation: [-45, 0, 0] }} className="w-full h-full">
+        <Suspense fallback={null}>
+          <gridHelper args={[10, 10]} />
+          <ambientLight intensity={0.4} />
+          <Model />
+          <directionalLight position={[100, 0, 0]} intensity={1} />
+          <directionalLight position={[-100, 0, 0]} intensity={0.02} color={[255, 0, 0]} />
+          <directionalLight position={[0, 0, 100]} intensity={1} />
+          <directionalLight position={[0, 0, -100]} intensity={0.02} color={[0, 0, 255]} />
+          <directionalLight position={[0, 300, 0]} intensity={0.01} color={[0, 0, 255]} />
+          <EffectComposer>
+            <Bloom luminanceThreshold={0.1} luminanceSmoothing={0.8} height={300} />
+            <ToneMapping
+              adaptive={true}
+              resolution={256}
+              middleGrey={0.6}
+              maxLuminance={16.0}
+              averageLuminance={1.0}
+              adaptationRate={1.0}
+            />
+          </EffectComposer>
+          <CameraController />
+        </Suspense>
+      </Canvas>
+    </div>
   );
 }
 

@@ -12,7 +12,7 @@ function Home() {
 
   const handleTitleResize = () => {
     const titleWidth = titleRef.current?.scrollWidth || 0;
-    setCarouselWidth(titleWidth+"px");
+    setCarouselWidth(titleWidth + "px");
   }
 
   useEffect(() => {
@@ -44,12 +44,12 @@ function Home() {
   }, []);
 
   return (
-    <div ref={containerRef} className="px-16 h-screen flex items-center">
+    <div ref={containerRef} className="px-16 h-screen flex flex-col grow lg:flex-row items-center">
       {/* ...your app */}
       <div style={{ width: '50%' }} className="flex flex-col justify-center items-center h-full">
         <div className="pb-20">
           <h1 ref={titleRef} onResize={handleTitleResize} className="text-title m-0 select-none">Simon Dao</h1>
-          <div className='flex overflow-hidden absolute' style={{ width: carouselWidth }}>
+          <div className='overflow-hidden absolute flex' style={{ width: carouselWidth }}>
             <div ref={c1} className="text-sd m-0 select-none text-nowrap flex">
               <span className='px-3 text-5xl '>Developer</span>
               <span className='px-3 text-5xl '>Designer</span>
@@ -63,9 +63,7 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="grow h-full items-center cursor-pointer">
-        <DavidScene />
-      </div>
+      <DavidScene />
     </div>
   )
 }
