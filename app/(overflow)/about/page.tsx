@@ -1,5 +1,4 @@
 'use client'
-import FollowButton from '@/components/followButton'
 import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import ArrowSVG from '@/public/Arrow1.svg'
