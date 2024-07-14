@@ -28,10 +28,10 @@ function Projects() {
             </span>
           </div>
           <Image
-            className='ml-20 self-end mb-12'
-            priority
+            className='ml-20 self-end mb-12 text-pm'
+            priority={false}
             src={ArrowSVG}
-            alt="Follow us on Twitter"
+            alt=""
           />
         </section>
 

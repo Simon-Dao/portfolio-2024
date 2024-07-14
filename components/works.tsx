@@ -188,6 +188,7 @@ function Works({ layoutState }: any) {
                 alt={project.name}
                 layout="fill"
                 objectFit='cover'
+                priority={true}
               />
             </div>
             <div className='h-30 p-10'>
@@ -209,7 +210,8 @@ function Works({ layoutState }: any) {
           className="fixed inset-0 flex items-center justify-center z-40 bg-gray-900 bg-opacity-75"
         >
           <div ref={modalInner} className="bg-qt h-3/4 w-3/4 p-6 rounded-lg shadow-lg flex flex-col px-20" style={{ transform: 'scale(0)' }}>
-            <h1 className='text-6xl text-tt pb-4 mb-20' style={{ borderBottom: "solid white 2px" }}>{selectedProject.name}</h1>
+            <h1 className='text-6xl text-tt pb-4' style={{ borderBottom: "solid white 2px" }}>{selectedProject.name}</h1>
+            <h1 className='text-pt text-xl my-5'>Images may take a few seconds to load</h1>
             <div className="overflow-y-auto flex w-full grow">
               <section className="relative grow">
                 <Image
@@ -218,6 +220,7 @@ function Works({ layoutState }: any) {
                   alt={selectedProject.name}
                   layout="fill"
                   objectFit='contain'
+                  priority={true}
                 />
               </section>
               <section className='pl-16 w-1/2'>
