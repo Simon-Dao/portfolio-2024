@@ -137,7 +137,7 @@ function Works({ layoutState }: any) {
                 {selectedProject.links.length > 0 && <h2 style={{ borderTop: "solid white 2px" }} className='pt-8 pb-5 text-3xl'>Learn More:</h2>}
                 <div className='pb-8'>
                   {selectedProject.links.map((link, index) => (
-                    <a href={link} className='bg-pt rounded-xl p-2 my-5 cursor-pointer'>
+                    <a key={index} href={link} className='bg-pt rounded-xl p-2 my-5 cursor-pointer'>
                       {link}
                     </a>
                   ))}
