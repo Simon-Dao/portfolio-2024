@@ -11,7 +11,7 @@ import GenericButton from '@/components/genericButton'
 import Works from '@/components/works'
 function Projects() {
   const helloAnimationRef = useRef<any>(null)
-  const [layoutMode, setLayoutMode] = useState('list');
+  const [layoutMode, setLayoutMode] = useState('grid');
   useEffect(() => {
     animateHelloText(helloAnimationRef)
   }, [])

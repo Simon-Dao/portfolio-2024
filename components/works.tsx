@@ -34,7 +34,15 @@ function Works({ layoutState }: any) {
       type: 'Robotics'
     },
     {
-      name: 'TODO App',
+      name: 'UWB ACM',
+      stack: 'React, HTML, CSS',
+      links: ['https://uwbacm.org/index.html'],
+      blurb: 'I worked on updating all pages for my club website!',
+      src: '/uwbacmsite.png',
+      type: 'Website'
+    },
+    {
+      name: 'Todo List',
       stack: 'React, Firebase, Express, Node.js',
       links: ['https://github.com/Simon-Dao/full-stack-todo.git'],
       src: '/tododemo.png',
@@ -42,18 +50,20 @@ function Works({ layoutState }: any) {
       type: 'Full Stack Web App'
     },
     {
-      name: 'Pathfinding Algorithms Website',
-      stack: '',
-      links: [],
-      blurb: '',
-      type: 'Web App'
+      name: 'Pathfinding Algorithm Visualizer',
+      stack: 'React, css',
+      links: ['https://github.com/Simon-Dao/pathfinding-visualizer.git'],
+      blurb: 'A web app that visualizes pathfinding algorithms. Users can edit variables such as wall placement, starting location, end location, and go through the algorithm step by step',
+      type: 'Web App Demo',
+      src: '/pathfinderdemo.gif'
     },
     {
       name: 'Notetaking App',
       stack: 'React, MongoDB, Express, Nodejs',
-      links: [],
+      links: ['https://github.com/Simon-Dao/Simple-Notetaking-App.git'],
       blurb: '',
-      type: 'Full Stack Web App'
+      type: 'Full Stack Web App',
+      src: '/notebook.png'
     },
     {
       name: 'Portfolio Website',
