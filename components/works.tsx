@@ -66,10 +66,18 @@ function Works({ layoutState }: any) {
       src: '/notebook.png'
     },
     {
+      name: 'Farm Wars',
+      stack: 'html, css, javascript, c#, Unity, Photon Network',
+      links: ['https://github.com/Simon-Dao/Farm-Wars-Dev.git', 'https://simon-dao.github.io/Farm-Wars-Build/', 'https://docs.google.com/presentation/d/1PZE_H7ffgPpyPTAEib3EH44JQlLeMJCllhSTkeb5sv4/edit#slide=id.g2e1464ce710_0_5'],
+      blurb: 'This game is a project for a game development class. I worked in a team of 4 and was in charge of implementing multiplayer. This game is heavily based off of the board game Catan but we added an extra twist by making everything real time instead of turn based',
+      src: '/farmwarsdemo.png',
+      type: 'Multiplayer Game'
+    },
+    {
       name: 'Portfolio Website',
       stack: 'Nextjs, React, Tailwind, Gsap, Three.js',
       links: ['https://simondao.me'],
-      blurb: 'A website to introduce myself to the world featuring animations, 3d models, and a sleek UI! This is a passion project I made over the summer of 2024 and took a few weeks to complete',
+      blurb: 'A website to introduce myself. It Features animations, 3d models, and a sleek UI! This is a passion project I made over the summer of 2024 and took a few weeks to complete',
       src: '/portfoliowebsitescreenshot.png',
       type: 'Web App'
     },
@@ -233,13 +241,13 @@ function Works({ layoutState }: any) {
                   priority={true}
                 />
               </section>
-              <section className='pl-16 w-1/2'>
+              <section className='pl-16 w-1/2 overflow-x-hidden'>
                 <h2 style={{ borderTop: "solid white 2px" }} className='pt-8 pb-2 text-3xl'>Tech Stack:</h2>
                 <h2 className='pb-8 text-3xl text-sd'> {selectedProject.stack}</h2>
                 <h2 style={{ borderTop: "solid white 2px" }} className='pt-8 text-3xl pb-2 '>Description:</h2>
                 <p className='pb-8 text-3xl text-sd'>{selectedProject.blurb}</p>
                 {selectedProject.links.length > 0 && <h2 style={{ borderTop: "solid white 2px" }} className='pt-8 pb-5 text-3xl'>Learn More:</h2>}
-                <div className='pb-8'>
+                <div className='pb-2 flex flex-wrap'>
                   {selectedProject.links.map((link, index) => (
                     <a key={index} href={link} className='bg-pt rounded-xl p-2 my-5 cursor-pointer'>
                       {link}
