@@ -61,7 +61,7 @@ function Works({ layoutState }: any) {
       name: 'Notetaking App',
       stack: 'React, MongoDB, Express, Nodejs',
       links: ['https://github.com/Simon-Dao/Simple-Notetaking-App.git'],
-      blurb: '',
+      blurb: 'A full stack web application heavily based off Microsoft Onenote',
       type: 'Full Stack Web App',
       src: '/notebook.png'
     },
