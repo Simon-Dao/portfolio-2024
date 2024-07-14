@@ -42,10 +42,10 @@ export const animateHelloText = (ref : any) => {
   if (!ref || !ref.current) return;
 
   const words = [
-    'Hello', 'Hola', 'Bonjour', 'Hallo', 'Ciao', 'Olá', 'Hallo', 'Привет', 
+    'Hello', 'Hola', 'Bonjour', 'Ciao', 'Olá', 'Hallo', 'Привет', 
     '你好', 'こんにちは', '안녕하세요', 'مرحبا', 'שלום', 'नमस्ते', 'হ্যালো', 
-    'Merhaba', 'Γειά σου', 'Hej', 'Hej', 'Hei', 'Hei', 'Cześć', 'Ahoj', 'Helló', 
-    'Salut', 'Xin chào', 'สวัสดี', 'Halo', 'Hai', 'Kamusta', 'Habari', 'Sawubona', 'Hallo', 'హలో'
+    'Merhaba', 'Γειά σου', 'Hej', 'Hei', 'Cześć', 'Ahoj', 
+    'Salut', 'Xin chào', 'สวัสดี', 'Halo', 'Hai', 'Kamusta', 'Habari', 'Sawubona', 'హలో'
   ];
 
   let currentIndex = 0;

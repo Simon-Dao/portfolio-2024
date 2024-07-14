@@ -16,6 +16,8 @@ const images = [
 
 export default function ImageGallery() {
   const [selectedImage, setSelectedImage] = useState<string>("");
+  
+  
 
   return (
     <div className="container mx-auto py-10">
@@ -35,11 +37,10 @@ export default function ImageGallery() {
         ))}
       </div>
       {selectedImage && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75">
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75" onClick={() => setSelectedImage("")}>
           <div className="relative">
             <button
               className="absolute top-0 right-0 m-4 text-white text-2xl font-bold"
-              onClick={() => setSelectedImage("")}
             >
               &times;
             </button>

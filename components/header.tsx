@@ -18,6 +18,13 @@ function header() {
         <Magnetic>
           <div className='sm:ml-20 p-2'>
             <DotAnim>
+              <TransitionLink href="/projects" label="Projects" hoverAnimation={true} />
+            </DotAnim>
+          </div>
+        </Magnetic>
+        <Magnetic>
+          <div className='sm:ml-20 p-2'>
+            <DotAnim>
               <TransitionLink href="/resume" label="Resume" hoverAnimation={true} />
             </DotAnim>
           </div>

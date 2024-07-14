@@ -7,7 +7,6 @@ import TransitionLink from '@/components/transitionLink'
 import SendButton from '@/components/sendButton'
 import emailjs from '@emailjs/browser';
 
-
 function Contact() {
   const containerRef = useRef(null)
   const formRef = useRef<HTMLFormElement>(null)

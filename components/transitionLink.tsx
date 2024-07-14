@@ -17,7 +17,6 @@ function TransitionLink({ href, label, hoverAnimation }: Props) {
   const handleClick = () => {
 
     if (pathname !== href) {
-
       animatePageOut(href, router)
     }
   }
