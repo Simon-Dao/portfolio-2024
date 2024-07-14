@@ -1,7 +1,5 @@
 import React, { ReactNode, MouseEventHandler } from 'react'
-import TransitionLink from './transitionLink'
 import Magnetic from './magnetic'
-import Image from 'next/image'
 
 type Props = {
   children: ReactNode

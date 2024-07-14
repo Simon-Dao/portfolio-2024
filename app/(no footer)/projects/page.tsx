@@ -18,7 +18,7 @@ function Projects() {
 
   return (
 
-    <div className='px-48 pb-64 pt-52'>
+    <div className='px-0 lg:px-48 pb-64 pt-52'>
       {/* ...your app */}
       <div className='px-24'>
         <section className='flex justify-center'>
@@ -35,16 +35,20 @@ function Projects() {
           />
         </section>
 
-        <section className='flex mt-14 pb-5'>
-          <GenericButton className='w-36 mr-3 flex justify-center items-center border-solid border-gray-500 rounded-full cursor-pointer h-20'>
-            <a href="https://github.com/Simon-Dao">Github</a>
-          </GenericButton>
-          <GenericButton className='w-36 mr-3 flex justify-center items-center border-solid border-gray-500 rounded-full cursor-pointer h-20'>
-            <TransitionLink href="/resume" label='Resume' hoverAnimation={true} />
-          </GenericButton>
+        <section className='lg:flex mt-14 pb-5'>
+          <div className='flex'>
+            <GenericButton className='w-36 mr-3 flex justify-center items-center border-solid border-gray-500 rounded-full cursor-pointer h-20'>
+              <a href="https://github.com/Simon-Dao">Github</a>
+            </GenericButton>
+            <GenericButton className='w-36 mr-3 flex justify-center items-center border-solid border-gray-500 rounded-full cursor-pointer h-20'>
+              <TransitionLink href="/resume" label='Resume' hoverAnimation={true} />
+            </GenericButton>
+          </div>
           <div className='grow'></div>
-          <SvgButton setLayoutMode={setLayoutMode} layoutMode={layoutMode} mode='list' size={40} svg={ListSVG} />
-          <SvgButton setLayoutMode={setLayoutMode} layoutMode={layoutMode} mode='grid' size={28} svg={GridSVG} />
+          <div className='flex'>
+            <SvgButton setLayoutMode={setLayoutMode} layoutMode={layoutMode} mode='list' size={40} svg={ListSVG} />
+            <SvgButton setLayoutMode={setLayoutMode} layoutMode={layoutMode} mode='grid' size={28} svg={GridSVG} />
+          </div>
         </section>
         {/* <div style={{borderBottom: "solid white 2px"}}></div> */}
         <Works layoutState={[layoutMode, setLayoutMode]} />

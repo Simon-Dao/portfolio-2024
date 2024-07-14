@@ -1,5 +1,5 @@
-// src/ImageGallery.js
 import React, { useState } from 'react';
+import gsap from 'gsap'
 
 const images = [
   '/avanade.jpg',
@@ -16,8 +16,6 @@ const images = [
 
 export default function ImageGallery() {
   const [selectedImage, setSelectedImage] = useState<string>("");
-  
-  
 
   return (
     <div className="container mx-auto py-10">

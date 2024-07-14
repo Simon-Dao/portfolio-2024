@@ -1,10 +1,8 @@
 'use client';
-import React, { useRef, useState, Suspense, useEffect } from 'react';
+import React, { useRef, Suspense } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
-import { motion } from 'framer-motion-3d';
-import { DirectionalLight } from 'three';
-import { EffectComposer, Bloom, SSAO, ToneMapping } from '@react-three/postprocessing';
+import { EffectComposer, Bloom, ToneMapping } from '@react-three/postprocessing';
 
 const RADIUS = 5;
 

@@ -1,5 +1,5 @@
 "use client"
-import React, { ReactNode, useEffect, useRef } from 'react'
+import React, { ReactNode, useRef } from 'react'
 import gsap from 'gsap'
 
 interface UnderlineAnim {

@@ -1,5 +1,5 @@
 "use client"
-import React, { useRef } from 'react'
+import React from 'react'
 import { usePathname, useRouter } from 'next/navigation'
 import { animatePageOut } from '../utils/animation'
 

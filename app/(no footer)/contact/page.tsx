@@ -2,8 +2,6 @@
 import React, { useRef, useState } from 'react'
 import Image from 'next/image'
 import ArrowSVG from '@/public/Arrow1.svg'
-import TextInput from '@/components/textInput'
-import TransitionLink from '@/components/transitionLink'
 import SendButton from '@/components/sendButton'
 import emailjs from '@emailjs/browser';
 
@@ -73,7 +71,7 @@ function Contact() {
 
         <div className='flex'>
           <div style={{ marginTop: "10%" }} className="text-title m-0 select-none flex flex-col lg:items-start">
-            <span style={{ fontSize: "90px" }} className='bg-tt rounded-2xl p-2'>
+            <span style={{ fontSize: "90px" }} className='bg-tt rounded-lg p-4'>
               {"Let's work"}
             </span>
             <span style={{ fontSize: "90px" }}>
@@ -131,7 +129,7 @@ function Contact() {
 
           <section className='grow px-20'>
             <div className='mb-3'>
-              <div className='text-xl' style={{ color: '#858688' }}>
+              <div className='text-xl select-none' style={{ color: '#858688' }}>
                 Email
               </div>
               <div className='text-2xl'>
@@ -139,7 +137,7 @@ function Contact() {
               </div>
             </div>
             <div className='mb-3'>
-              <div className='text-xl' style={{ color: '#858688' }}>
+              <div className='text-xl select-none' style={{ color: '#858688' }}>
                 Linkedin
               </div>
               <div className='text-2xl'>
@@ -147,7 +145,7 @@ function Contact() {
               </div>
             </div>
             <div className='mb-3'>
-              <div className='text-xl' style={{ color: '#858688' }}>
+              <div className='text-xl select-none' style={{ color: '#858688' }}>
                 Discord
               </div>
               <div className='text-2xl'>

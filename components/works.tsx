@@ -12,7 +12,17 @@ function Works({ layoutState }: any) {
     stack: string;
     src?: string;
     blurb: string;
+    type: string;
   }
+
+  const randomColorPallete = [
+    "#885053",
+    "#FE5F55",
+    "#777DA7",
+    "#94C9A9",
+    "#C6ECAE",
+    "#E1CDB5",
+  ];
 
   const works: ProjectProps[] = [
     {
@@ -20,33 +30,38 @@ function Works({ layoutState }: any) {
       stack: 'C++, ESP32, Arduino, 3d Printing',
       links: [],
       blurb: 'A robot arm that is controlled wirlessly.',
-      src: '/armgif.gif'
+      src: '/armgif.gif',
+      type: 'Robotics'
     },
     {
-      name: 'Fullstack TODO App',
+      name: 'TODO App',
       stack: 'React, Firebase, Express, Node.js',
       links: ['https://github.com/Simon-Dao/full-stack-todo.git'],
       src: '/tododemo.png',
       blurb: 'A todo list application that utilizes an express backend to communicate to firebase.',
+      type: 'Full Stack Web App'
     },
     {
       name: 'Pathfinding Algorithms Website',
       stack: '',
       links: [],
-      blurb: ''
+      blurb: '',
+      type: 'Web App'
     },
     {
       name: 'Notetaking App',
       stack: 'React, MongoDB, Express, Nodejs',
       links: [],
-      blurb: ''
+      blurb: '',
+      type: 'Full Stack Web App'
     },
     {
       name: 'Portfolio Website',
       stack: 'Nextjs, React, Tailwind, Gsap, Three.js',
       links: ['https://simondao.me'],
-        blurb: 'A website to introduce myself to the world featuring animations, 3d models, and a sleek UI! This is a passion project I made over the summer of 2024 and took a few weeks to complete',
-      src: '/portfoliowebsitescreenshot.png'
+      blurb: 'A website to introduce myself to the world featuring animations, 3d models, and a sleek UI! This is a passion project I made over the summer of 2024 and took a few weeks to complete',
+      src: '/portfoliowebsitescreenshot.png',
+      type: 'Web App'
     },
   ];
 
@@ -56,7 +71,7 @@ function Works({ layoutState }: any) {
   const modalOuter = useRef<HTMLDivElement>(null);
   const modalInner = useRef<HTMLDivElement>(null);
 
-  const onMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseEnterList = (e: React.MouseEvent<HTMLDivElement>) => {
     gsap.to(e.currentTarget, {
       gap: '50px',
       opacity: 0.4,
@@ -65,7 +80,7 @@ function Works({ layoutState }: any) {
     });
   };
 
-  const onMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseLeaveList = (e: React.MouseEvent<HTMLDivElement>) => {
     gsap.to(e.currentTarget, {
       gap: '20px',
       opacity: 1,
@@ -74,9 +89,39 @@ function Works({ layoutState }: any) {
     });
   };
 
-  const modalOpen = (project: ProjectProps) => {
+  const handleMouseEnterGrid = (e: React.MouseEvent<HTMLDivElement>) => {
+    gsap.to(e.currentTarget, {
+      opacity: 0.4,
+      scale: 1.05,
+      duration: 0.4,
+    });
+  };
+
+  const handleMouseLeaveGrid = (e: React.MouseEvent<HTMLDivElement>) => {
+    gsap.to(e.currentTarget, {
+      opacity: 1,
+      scale: 1,
+      duration: 0.4,
+    });
+  };
+
+  const openModal = (project: ProjectProps) => {
     setSelectedProject(project);
     setModalVisible(true);
+  };
+
+  const closeModal = () => {
+    gsap.to(modalOuter.current, {
+      opacity: 0.0,
+      duration: 0.5,
+      ease: 'expo.inOut',
+    });
+    gsap.to(modalInner.current, {
+      scale: 0,
+      duration: 0.5,
+      ease: 'expo.inOut',
+      onComplete: () => setModalVisible(false),
+    });
   };
 
   useEffect(() => {
@@ -84,36 +129,82 @@ function Works({ layoutState }: any) {
       gsap.to(modalOuter.current, {
         opacity: 1,
         duration: 0.5,
-        ease: 'expo.out',
+        ease: 'expo.inOut',
       });
       gsap.to(modalInner.current, {
         scale: 1,
         opacity: 1,
         duration: 0.5,
-        ease: 'expo.out',
+        ease: 'expo.inOut',
       });
     }
   }, [modalVisible]);
 
-  const modalClose = () => {
-    gsap.to(modalOuter.current, {
-      opacity: 0.0,
-      duration: 0.5,
-      ease: 'expo.in',
-    });
-    gsap.to(modalInner.current, {
-      scale: 0,
-      duration: 0.5,
-      ease: 'expo.in',
-      onComplete: () => setModalVisible(false),
-    });
-  };
+  useEffect(() => {
+    const listItems = document.querySelectorAll('.list-element');
+    const gridItems = document.querySelectorAll('.grid-element');
+
+    if (layoutMode === 'list') {
+      gsap.fromTo(listItems, { opacity: 0, y: 20 }, { opacity: 1, y: 0, stagger: 0.1, duration: 0.5 });
+    } else {
+      gsap.fromTo(gridItems, { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, stagger: 0.1, duration: 0.5 });
+    }
+  }, [layoutMode]);
+
+  const renderListItems = () => (
+    <div className="flex flex-col divide-y select-none">
+      <GridHeader />
+      {works.map((project, index) => (
+        <div
+          key={index}
+          className={`list-element grid grid-cols-3 py-16 gap-5 cursor-pointer grid-row-${index}`}
+          onClick={() => openModal(project)}
+          onMouseEnter={handleMouseEnterList}
+          onMouseLeave={handleMouseLeaveList}
+        >
+          <div className="text-3xl flex items-center bold">{project.name}</div>
+          <div className="text-2xl flex items-center">{project.stack || <div className='text-pt'>Unavailable</div>}</div>
+          <div className="text-2xl flex items-center">{project.type}</div>
+        </div>
+      ))}
+    </div>
+  );
+
+  const renderGridItems = () => (
+    <div className="container mx-auto py-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        {works.map((project, index) => (
+          <div
+            key={index}
+            className="grid-element relative overflow-hidden rounded-lg shadow-lg cursor-pointer flex flex-col"
+            style={{ backgroundColor: '#1f2024e9' }}
+            onClick={() => openModal(project)}
+            onMouseEnter={handleMouseEnterGrid}
+            onMouseLeave={handleMouseLeaveGrid}
+          >
+            <div className='h-48 relative' style={{ backgroundColor: randomColorPallete[Math.floor(Math.random() * randomColorPallete.length)] }}>
+              <Image
+                src={project.src ? project.src : ImageUnavailableSVG}
+                alt={project.name}
+                layout="fill"
+                objectFit='cover'
+              />
+            </div>
+            <div className='h-30 p-10'>
+              <h1 className='text-2xl'>{project.name}</h1>
+              <h2 className='text-sdNoSize2'>{project.stack || <h2 className='text-pt'>Tech Stack Unavailable</h2>}</h2>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 
   return (
     <div>
       {modalVisible && (
         <div
-          onClick={modalClose}
+          onClick={closeModal}
           ref={modalOuter}
           className="fixed inset-0 flex items-center justify-center z-40 bg-gray-900 bg-opacity-75"
         >
@@ -133,7 +224,7 @@ function Works({ layoutState }: any) {
                 <h2 style={{ borderTop: "solid white 2px" }} className='pt-8 pb-2 text-3xl'>Tech Stack:</h2>
                 <h2 className='pb-8 text-3xl text-sd'> {selectedProject.stack}</h2>
                 <h2 style={{ borderTop: "solid white 2px" }} className='pt-8 text-3xl pb-2 '>Description:</h2>
-                <p className='pb-8 text-3xl  text-sd'>{selectedProject.blurb}</p>
+                <p className='pb-8 text-3xl text-sd'>{selectedProject.blurb}</p>
                 {selectedProject.links.length > 0 && <h2 style={{ borderTop: "solid white 2px" }} className='pt-8 pb-5 text-3xl'>Learn More:</h2>}
                 <div className='pb-8'>
                   {selectedProject.links.map((link, index) => (
@@ -143,32 +234,15 @@ function Works({ layoutState }: any) {
                   ))}
                 </div>
               </section>
-
             </div>
+            <button onClick={closeModal} className="mt-4 px-4 py-2 bg-gray-500 text-white rounded">
+              Close
+            </button>
           </div>
         </div>
       )}
 
-      {layoutMode == 'list' ? (
-        <div className="flex flex-col divide-y select-none">
-          <GridHeader />
-          {works.map((project, index) => (
-            <div
-              key={index}
-              className={'grid grid-cols-3 py-16 gap-5 cursor-pointer ' + "grid-row-" + index}
-              onClick={() => modalOpen(project)}
-              onMouseEnter={onMouseEnter}
-              onMouseLeave={onMouseLeave}
-            >
-              <div className="text-3xl flex items-center bold">{project.name}</div>
-              <div className="text-2xl flex items-center">{project.name}</div>
-              <div className="text-2xl flex items-center">{project.name}</div>
-            </div>
-          ))}
-        </div>
-      ) : (
-        <div>diddy</div>
-      )}
+      {layoutMode == 'list' ? renderListItems() : renderGridItems()}
     </div>
   );
 }

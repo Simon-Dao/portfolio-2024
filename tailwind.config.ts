@@ -20,6 +20,7 @@ const config: Config = {
         qt: "#1c1d20",
         pt: "#ff5b66",
         sdNoSize: "#FFFFFF",
+        sdNoSize2: "#858688",
       },
       fontSize: {
         title: "8rem",

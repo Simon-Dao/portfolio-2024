@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import ArrowSVG from '@/public/Arrow1.svg'
 import ImageGallery from '@/components/imageGallery'
