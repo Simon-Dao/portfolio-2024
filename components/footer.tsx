@@ -40,28 +40,28 @@ function MobileView() {
   }, []);
 
   return (
-    <footer className='sm:hidden pt-10 bg-qt flex flex-col px-10'>
-      <div className='w-full'>
+    <footer className='sm:hidden grow pt-10 bg-qt flex flex-col px-10'>
+      <div className='w-3/4 self-center'>
         <button className="bg-tt h-16 w-full rounded-full cursor-pointer">
-          <TransitionLink hoverAnimation={false} href='/contact' label={"Get in touch"} />
+          <TransitionLink text={'text-sm'} hoverAnimation={false} href='/contact' label={"Get in touch"} />
         </button>
       </div>
       <div style={{ borderTop: "solid 2px white" }} className='my-5'></div>
       <div className='w-full flex-col flex xs:flex-row pb-5'>
         <div>
-          <div className='text-2xl text-sd'>Local Time</div>
-          <div className='font-bold color-white mb-2'>{localTime}</div>
+          <div className='text-xs sm:text-2xl text-sdNoSize2'>Local Time</div>
+          <div className='text-sm sm:text-3xl font-bold color-white mb-2'>{localTime}</div>
         </div>
         <div className='grow'></div>
         <div>
-          <div className='text-2xl text-sd'>Socials</div>
+          <div className='text-xs sm:text-2xl text-sdNoSize2'>Socials</div>
           <div className='font-bold color-white flex'>
             <Magnetic>
-              <a href="https://www.linkedin.com/in/simon-dao/">Linkedin</a>
+              <a className='text-sm sm:text-3xl' href="https://www.linkedin.com/in/simon-dao/">Linkedin</a>
             </Magnetic>
             <div className='w-6'></div>
             <Magnetic>
-              <a href="https://discord.com/users/277605748995915779">Discord</a>
+              <a className='text-sm sm:text-3xl' href="https://discord.com/users/277605748995915779">Discord</a>
             </Magnetic>
           </div>
         </div>
@@ -100,18 +100,18 @@ function NormalView() {
           alt="Follow us on Twitter"
         />
       </div>
-      <div className='w-full py-24 pr-0 xs:pr-20 flex items-center grow'>
+      <div className='w-full py-24 pr-20 flex items-center grow'>
         <div style={{ height: "1px" }} className='w-full bg-sd'></div>
         <BubbleButton label='Get in Touch' />
       </div>
-      <div className='w-full flex pb-16'>
+      <div className='w-full flex b-16'>
         <div>
-          <div className='text-sm text-sdNoSize2 '>Local Time</div>
+          <div>Local Time</div>
           <div className='font-bold color-white'>{localTime}</div>
         </div>
         <div className='grow'></div>
         <div>
-          <div className='text-sm text-sdNoSize2'>Socials</div>
+          <div>Socials</div>
           <div className='font-bold color-white flex'>
             <Magnetic>
               <a href="https://www.linkedin.com/in/simon-dao/">Linkedin</a>
