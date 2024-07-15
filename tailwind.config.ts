@@ -28,6 +28,7 @@ const config: Config = {
         sd: "1.5rem",
       },
       screens: {
+        'xs': '600px',
         'sm': '740px',
         // => @media (min-width: 640px) { ... }
   

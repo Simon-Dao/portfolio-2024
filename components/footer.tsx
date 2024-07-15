@@ -40,14 +40,14 @@ function MobileView() {
   }, []);
 
   return (
-    <footer className='sm:hidden pt-10 h-screen bg-qt flex flex-col px-10'>
+    <footer className='sm:hidden pt-10 bg-qt flex flex-col px-10'>
       <div className='w-full'>
         <button className="bg-tt h-16 w-full rounded-full cursor-pointer">
           <TransitionLink hoverAnimation={false} href='/contact' label={"Get in touch"} />
         </button>
       </div>
       <div style={{ borderTop: "solid 2px white" }} className='my-5'></div>
-      <div className='w-full flex mb-5'>
+      <div className='w-full flex-col flex xs:flex-row pb-5'>
         <div>
           <div className='text-2xl text-sd'>Local Time</div>
           <div className='font-bold color-white mb-2'>{localTime}</div>
@@ -100,18 +100,18 @@ function NormalView() {
           alt="Follow us on Twitter"
         />
       </div>
-      <div className='w-full py-24 pr-20 flex items-center grow'>
+      <div className='w-full py-24 pr-0 xs:pr-20 flex items-center grow'>
         <div style={{ height: "1px" }} className='w-full bg-sd'></div>
         <BubbleButton label='Get in Touch' />
       </div>
-      <div className='w-full flex mb-16'>
+      <div className='w-full flex pb-16'>
         <div>
-          <div>Local Time</div>
+          <div className='text-sm text-sdNoSize2 '>Local Time</div>
           <div className='font-bold color-white'>{localTime}</div>
         </div>
         <div className='grow'></div>
         <div>
-          <div>Socials</div>
+          <div className='text-sm text-sdNoSize2'>Socials</div>
           <div className='font-bold color-white flex'>
             <Magnetic>
               <a href="https://www.linkedin.com/in/simon-dao/">Linkedin</a>
