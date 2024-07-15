@@ -18,11 +18,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={openSans.className}>
-        <div className="flex flex-col lg:h-screen">
+        <div className="flex flex-col sm:h-screen">
           <Header />
           {children}
         </div>
-        <div className="flex flex-col h-screen">
+        <div className="flex flex-col sm:h-screen">
           <Footer />
         </div>
       </body>
