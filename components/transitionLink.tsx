@@ -6,10 +6,11 @@ import { animatePageOut } from '../utils/animation'
 interface Props {
   href: string
   label: string,
-  hoverAnimation: boolean
+  hoverAnimation: boolean,
+  text?: string
 }
 
-function TransitionLink({ href, label, hoverAnimation }: Props) {
+function TransitionLink({ href, label, hoverAnimation, text }: Props) {
 
   const router = useRouter()
   const pathname = usePathname()
@@ -23,7 +24,7 @@ function TransitionLink({ href, label, hoverAnimation }: Props) {
 
   return (
     <div className='flex flex-col cursor-pointer select-none'>
-      <div onClick={handleClick}
+      <div className={text} onClick={handleClick}
       >
         {label}
       </div>

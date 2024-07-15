@@ -19,7 +19,7 @@ function page() {
       </div>
 
       <div className='w-full hidden sm:block' style={{ padding: '0% 20% 5% 20%' }}>
-        <Image src={'/resume.jpg'} alt="" className='rounded-lg w-full' width={1500} height={1500} />
+        <Image src={'/resume.jpg'} alt="" className='rounded-lg w-full' width={1500} height={1500} priority={true} />
       </div>
 
     </div>

@@ -1,8 +1,10 @@
-import React from 'react'
+"use client"
+import React, { useRef, useState } from 'react'
 import TransitionLink from './transitionLink'
 import Magnetic from './magnetic'
 import DotAnim from './dotAnim'
-import NavLink from './navLink'
+import gsap from 'gsap'
+
 function header() {
   return (
     <>
@@ -61,47 +63,78 @@ function NormalView() {
 
 function MobileView() {
 
+  const [open, setOpen] = useState<boolean>(false);
+  const navRef = useRef<HTMLDivElement>(null);
+
   const openNav = () => {
+    gsap.fromTo(navRef.current, {
+      translateX: '100vw',
+      display: 'block',
+    }, {
+      translateX: '0px',
+      duration: 0.3
+    });
 
   }
 
   const closeNav = () => {
-    
+    const tl = gsap.timeline();
+
+    tl.fromTo(navRef.current, {
+      translateX: '0px',
+      display: 'block'
+    }, {
+      translateX: '100vw',
+      duration: 0.3
+    }).to(navRef.current, {
+      display: 'none', 
+    });
+  }
+
+  const toggleNav = () => {
+
+    setOpen(!open);
+
+    if(open) {
+      openNav();
+    } else {
+      closeNav();
+    }
   }
 
   return (
     <div className='sm:hidden'>
 
-      <button className='rounded-full bg-tt w-10 h-10 fixed top-2 right-2'>
+      <button onClick={toggleNav} className='rounded-full z-40 bg-tt w-10 h-10 fixed top-2 right-2'>
         =
       </button>
-      {/* <nav className='z-10 fixed h-screen w-full bg-orange-700'>
+      {open && <nav ref={navRef} className={'flex flex-col z-30 fixed h-screen w-full bg-pt justify-center items-center'}>
           <div className='sm:ml-20 p-2'>
             <DotAnim>
-              <TransitionLink href="/home" label="Home" hoverAnimation={true} />
+              <TransitionLink text='text-3xl' href="/home" label="Home" hoverAnimation={true} />
             </DotAnim>
           </div>
           <div className='sm:ml-20 p-2'>
             <DotAnim>
-              <TransitionLink href="/projects" label="Projects" hoverAnimation={true} />
+              <TransitionLink text='text-3xl'  href="/projects" label="Projects" hoverAnimation={true} />
             </DotAnim>
           </div>
           <div className='sm:ml-20 p-2'>
             <DotAnim>
-              <TransitionLink href="/resume" label="Resume" hoverAnimation={true} />
+              <TransitionLink text='text-3xl'  href="/resume" label="Resume" hoverAnimation={true} />
             </DotAnim>
           </div>
           <div className='sm:ml-20 p-2'>
             <DotAnim>
-              <TransitionLink href="/about" label="About" hoverAnimation={true} />
+              <TransitionLink text='text-3xl'  href="/about" label="About" hoverAnimation={true} />
             </DotAnim>
           </div>
           <div className='sm:ml-20 p-2'>
             <DotAnim>
-              <TransitionLink href="/contact" label="Contact" hoverAnimation={true} />
+              <TransitionLink text='text-3xl'  href="/contact" label="Contact" hoverAnimation={true} />
             </DotAnim>
           </div>
-      </nav> */}
+      </nav>}
     </div>
   )
 }
