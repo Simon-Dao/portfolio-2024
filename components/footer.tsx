@@ -83,7 +83,7 @@ function NormalView() {
   }, []);
 
   return (
-    <footer className="grow hidden md:flex flex-col bg-qt" style={{ padding: "0 15%" }}>
+    <footer className="grow hidden sm:flex flex-col bg-qt" style={{ padding: "0 15%" }}>
       <div className='flex'>
         <div style={{ marginTop: "10%" }} className="text-title m-0 select-none flex flex-col items-start">
           <span style={{ fontSize: "90px" }}>

@@ -56,7 +56,7 @@ function MobileView() {
   }, []);
 
   return (
-    <div className='sm:hidden h-64 flex flex-col justify-start items-center'>
+    <div className='sm:hidden grow h-64 flex flex-col justify-center items-center'>
       <h1 ref={titleRef} onResize={handleTitleResize} className="text-6xl m-0 select-none pt-16">Simon Dao</h1>
       <div className='overflow-x-hidden flex' style={{ width: carouselWidth }}>
         <div ref={c1} className="text-sd m-0 select-none text-nowrap flex">
@@ -76,6 +76,7 @@ function MobileView() {
 
 function NormalView() {
 
+  
   const containerRef = useRef(null)
   const c1 = useRef<HTMLDivElement>(null);
   const c2 = useRef<HTMLDivElement>(null);
@@ -116,13 +117,14 @@ function NormalView() {
 
   }, []);
 
+
   return (
-    <div ref={containerRef} className="px-16 hidden sm:flex flex-col h-screen lg:flex-row items-center">
-      {/* ...your app */}
-      <div style={{ width: '50%' }} className="flex flex-col justify-center items-center h-full">
-        <div className="pb-20">
+    <div ref={containerRef} className="grow hidden sm:flex flex-row justify-center items-center">
+
+      <div className='flex flex-col-reverse md:flex-row h-4/5 w-4/5'>
+        <div className='flex grow flex-col self-center'>
           <h1 ref={titleRef} onResize={handleTitleResize} className="text-title m-0 select-none">Simon Dao</h1>
-          <div className='overflow-hidden absolute flex' style={{ width: carouselWidth }}>
+          <div className='overflow-hidden flex' style={{ width: carouselWidth }}>
             <div ref={c1} className="text-sd m-0 select-none text-nowrap flex">
               <span className='px-3 text-5xl '>Developer</span>
               <span className='px-3 text-5xl '>Designer</span>
@@ -135,8 +137,10 @@ function NormalView() {
             </div>
           </div>
         </div>
+        <div className='grow'>
+          <DavidScene />
+        </div>
       </div>
-      <DavidScene />
     </div>
   )
 }
