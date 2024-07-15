@@ -117,7 +117,7 @@ function NormalView() {
   }, []);
 
   return (
-    <div ref={containerRef} className="px-16 hidden sm:flex flex-col grow lg:flex-row items-center">
+    <div ref={containerRef} className="px-16 hidden sm:flex flex-col h-screen lg:flex-row items-center">
       {/* ...your app */}
       <div style={{ width: '50%' }} className="flex flex-col justify-center items-center h-full">
         <div className="pb-20">
