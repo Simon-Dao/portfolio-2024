@@ -56,27 +56,34 @@ function MobileView() {
   }, []);
 
   return (
-    <div className='sm:hidden grow h-64 flex flex-col justify-center items-center'>
+    <div className='sm:hidden grow flex flex-col justify-center items-center'>
+
       <h1 ref={titleRef} onResize={handleTitleResize} className="text-6xl m-0 select-none pt-16">Simon Dao</h1>
-      <div className='overflow-x-hidden flex' style={{ width: carouselWidth }}>
+      <div className='overflow-x-hidden flex h-20' style={{ width: carouselWidth }}>
+
         <div ref={c1} className="text-lg xs:text-sd m-0 select-none text-nowrap flex">
           <span className='px-3 text-sm xs:text-xl '>Developer</span>
           <span className='px-3 text-sm xs:text-xl '>Designer</span>
           <span className='px-3 text-sm xs:text-xl '>Problem-Solver</span>
         </div>
-        <div ref={c2} className="text-sd m-0 select-none text-nowrap flex">
+        <div ref={c2} className="text-lg xs:text-sd m-0 select-none text-nowrap flex">
           <span className='px-3 text-sm xs:text-xl '>Developer</span>
           <span className='px-3 text-sm xs:text-xl '>Designer</span>
           <span className='px-3 text-sm xs:text-xl '>Problem-Solver</span>
         </div>
       </div>
+
+      <div className='grow'>
+        <DavidScene />
+      </div>
+
     </div>
   )
 }
 
 function NormalView() {
 
-  
+
   const containerRef = useRef(null)
   const c1 = useRef<HTMLDivElement>(null);
   const c2 = useRef<HTMLDivElement>(null);

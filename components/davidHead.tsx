@@ -21,6 +21,7 @@ const Model = () => {
   return <primitive ref={davidRef} object={scene} onClick={console.log} position={[0, -100, 0]} />
 };
 
+
 function DavidScene() {
 
   return (
@@ -46,7 +47,7 @@ function DavidScene() {
               adaptationRate={1.0}
             />
           </EffectComposer>
-          <CameraController />
+          <CameraController/>
         </Suspense>
       </Canvas>
     </div>
@@ -55,7 +56,7 @@ function DavidScene() {
 
 function CameraController() {
 
-  return <OrbitControls enablePan={false} enableZoom={false} />;
+  return <OrbitControls enabled={false} enablePan={false} enableZoom={false} />;
 }
 
 export default DavidScene;

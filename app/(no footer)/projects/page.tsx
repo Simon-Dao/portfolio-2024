@@ -19,11 +19,10 @@ function Projects() {
   return (
 
     <div className='px-0 lg:px-48 pb-64 pt-52'>
-      {/* ...your app */}
       <div className='px-24'>
         <section className='flex justify-center'>
           <div style={{ marginTop: "" }} className=" text-title m-0 select-none flex flex-col items-start">
-            <span style={{ fontSize: "120px" }}>
+            <span className='text-6xl sm:text-8xl'>
               My Work
             </span>
           </div>
@@ -35,8 +34,8 @@ function Projects() {
           />
         </section>
 
-        <section className='lg:flex mt-14 pb-5'>
-          <div className='flex'>
+        <section className='w-full flex mt-14 pb-5'>
+          <div className='flex overflow-hidden'>
             <GenericButton className='w-36 mr-3 flex justify-center items-center border-solid border-gray-500 rounded-full cursor-pointer h-20'>
               <a href="https://github.com/Simon-Dao">Github</a>
             </GenericButton>
@@ -45,12 +44,11 @@ function Projects() {
             </GenericButton>
           </div>
           <div className='grow'></div>
-          <div className='flex'>
+          <div className='hidden sm:flex'>
             <SvgButton setLayoutMode={setLayoutMode} layoutMode={layoutMode} mode='list' size={40} svg={ListSVG} />
             <SvgButton setLayoutMode={setLayoutMode} layoutMode={layoutMode} mode='grid' size={28} svg={GridSVG} />
           </div>
         </section>
-        {/* <div style={{borderBottom: "solid white 2px"}}></div> */}
         <Works layoutState={[layoutMode, setLayoutMode]} />
 
       </div>

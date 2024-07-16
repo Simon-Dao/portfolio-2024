@@ -16,7 +16,7 @@ function About() {
 
     <div className='lg:px-64 pb-64 pt-32'>
       {/* ...your app */}
-      <div className='lg:px-24'>
+      <div className='px-10 lg:px-24'>
 
         <section className='flex flex-col items-center justify-center lg:flex-row'>
           <Image

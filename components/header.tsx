@@ -111,7 +111,7 @@ function MobileView() {
       {open && <nav ref={navRef} className={'flex flex-col z-30 fixed h-screen w-full bg-pt justify-center items-center'}>
           <div className='sm:ml-20 p-2'>
             <DotAnim>
-              <TransitionLink text='text-3xl' href="/home" label="Home" hoverAnimation={true} />
+              <TransitionLink onClick={closeNav} text='text-3xl' href="/home" label="Home" hoverAnimation={true} />
             </DotAnim>
           </div>
           <div className='sm:ml-20 p-2'>
