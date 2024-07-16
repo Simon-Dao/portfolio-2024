@@ -15,14 +15,20 @@ function Works({ layoutState }: any) {
     type: string;
   }
 
-  const randomColorPallete = [
-    "#885053",
-    "#FE5F55",
-    "#777DA7",
-    "#94C9A9",
-    "#C6ECAE",
-    "#E1CDB5",
-  ];
+
+  const colorPalleteTypeMap = new Map<string, string>([
+    ["", '#ffffff'],                // White
+    ["Website", "#FF6F61"],         // Vibrant coral
+    ["Full Stack Web App", "#8461DC"], // Rich purple
+    ["Robotics", "#88B04B"],        // Fresh green
+    ["Multiplayer Game", "#FFA500"], // Orange
+    ["Web App", "#00CED1"],         // Dark turquoise
+    ["Mobile App", "#1E90FF"],      // Dodger blue
+    ["Desktop App", "#FF1493"],     // Deep pink
+    ["API", "#7FFF00"],             // Chartreuse
+    ["Machine Learning", "#FFD700"] // Gold
+  ]);
+
 
   const works: ProjectProps[] = [
     {
@@ -54,7 +60,7 @@ function Works({ layoutState }: any) {
       stack: 'React, css',
       links: ['https://github.com/Simon-Dao/pathfinding-visualizer.git'],
       blurb: 'A web app that visualizes pathfinding algorithms. Users can edit variables such as wall placement, starting location, end location, and go through the algorithm step by step',
-      type: 'Web App Demo',
+      type: 'Web App',
       src: '/pathfinderdemo.gif'
     },
     {
@@ -175,12 +181,12 @@ function Works({ layoutState }: any) {
       {works.map((project, index) => (
         <div
           key={index}
-          className={`list-element grid grid-cols-3 py-16 gap-5 cursor-pointer grid-row-${index}`}
+          className={`list-element grid grid-cols-3 py-16 gap-5 cursor-pointer grid-row-${index} `}
           onClick={() => openModal(project)}
           onMouseEnter={handleMouseEnterList}
           onMouseLeave={handleMouseLeaveList}
         >
-          <div className="text-lg sm:text-3xl flex items-center bold">{project.name}</div>
+          <div className="text-lg sm:text-3xl flex items-center bold ">{project.name}</div>
           <div className="text-sm sm:text-2xl flex items-center">{project.stack || <div className='text-pt'>Unavailable</div>}</div>
           <div className="text-sm sm:text-2xl flex items-center">{project.type}</div>
         </div>
@@ -200,7 +206,7 @@ function Works({ layoutState }: any) {
             onMouseEnter={handleMouseEnterGrid}
             onMouseLeave={handleMouseLeaveGrid}
           >
-            <div className='h-48 relative' style={{ backgroundColor: randomColorPallete[Math.floor(Math.random() * randomColorPallete.length)] }}>
+            <div className='h-48 relative' style={{ backgroundColor: colorPalleteTypeMap.get(project.type) }}>
               <Image
                 src={project.src ? project.src : ImageUnavailableSVG}
                 alt={project.name}
