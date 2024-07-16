@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={openSans.className + " bg-qt"}>
-        <div className="flex flex-col">
+        <div className="flex flex-col text-white">
           <Header />
           {children}
         </div>

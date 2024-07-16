@@ -103,7 +103,7 @@ function MobileView() {
   }
 
   return (
-    <div className='sm:hidden text-white'>
+    <div className='sm:hidden bg-transparent text-white'>
 
       <button onClick={toggleNav} className='rounded-full z-40 bg-tt w-10 h-10 fixed top-2 right-2'>
         =

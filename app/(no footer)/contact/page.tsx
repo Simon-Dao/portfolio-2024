@@ -139,7 +139,7 @@ function Contact() {
 
           <section className='grow sm:px-20'>
             <div className='mb-3'>
-              <div className='text-xl select-none' style={{ color: '#858688' }}>
+              <div className='text-xl text-sdNoSize2 select-none'>
                 Email
               </div>
               <div className='text-2xl'>
@@ -147,7 +147,7 @@ function Contact() {
               </div>
             </div>
             <div className='mb-3'>
-              <div className='text-xl select-none' style={{ color: '#858688' }}>
+              <div className='text-xl text-sdNoSize2  select-none'>
                 Linkedin
               </div>
               <div className='text-2xl'>
@@ -155,7 +155,7 @@ function Contact() {
               </div>
             </div>
             <div className='mb-3'>
-              <div className='text-xl select-none' style={{ color: '#858688' }}>
+              <div className=' text-sdNoSize2 text-xl select-none'>
                 Handshake
               </div>
               <div className='text-2xl'>
@@ -163,7 +163,7 @@ function Contact() {
               </div>
             </div>
             <div className='mb-3'>
-              <div className='text-xl select-none' style={{ color: '#858688' }}>
+              <div className=' text-sdNoSize2 text-xl select-none'>
                 Discord
               </div>
               <div className='text-2xl'>

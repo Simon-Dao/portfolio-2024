@@ -14,7 +14,7 @@ function page() {
           className='text-tt underline-offset-8 underline text-3xl justify-self-start'
           href="https://drive.google.com/file/d/1556EPc436JEts7fVR-p9jlGMXRb-JFZA/view?usp=sharing"
         >
-          ⇉ Resume Link ⇇
+          Resume Link
         </a>
       </div>
 
