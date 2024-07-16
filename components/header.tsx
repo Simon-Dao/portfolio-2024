@@ -116,22 +116,22 @@ function MobileView() {
           </div>
           <div className='sm:ml-20 p-2'>
             <DotAnim>
-              <TransitionLink text='text-3xl'  href="/projects" label="Projects" hoverAnimation={true} />
+              <TransitionLink onClick={closeNav} text='text-3xl'  href="/projects" label="Projects" hoverAnimation={true} />
             </DotAnim>
           </div>
           <div className='sm:ml-20 p-2'>
             <DotAnim>
-              <TransitionLink text='text-3xl'  href="/resume" label="Resume" hoverAnimation={true} />
+              <TransitionLink onClick={closeNav} text='text-3xl'  href="/resume" label="Resume" hoverAnimation={true} />
             </DotAnim>
           </div>
           <div className='sm:ml-20 p-2'>
             <DotAnim>
-              <TransitionLink text='text-3xl'  href="/about" label="About" hoverAnimation={true} />
+              <TransitionLink onClick={closeNav} text='text-3xl'  href="/about" label="About" hoverAnimation={true} />
             </DotAnim>
           </div>
           <div className='sm:ml-20 p-2'>
             <DotAnim>
-              <TransitionLink text='text-3xl'  href="/contact" label="Contact" hoverAnimation={true} />
+              <TransitionLink onClick={closeNav} text='text-3xl'  href="/contact" label="Contact" hoverAnimation={true} />
             </DotAnim>
           </div>
       </nav>}
