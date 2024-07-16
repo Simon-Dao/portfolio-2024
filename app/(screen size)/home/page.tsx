@@ -82,7 +82,7 @@ function MobileView() {
 }
 
 function NormalView() {
-
+  
   return (
     <div className="grow hidden sm:flex flex-row justify-center items-center">
       <div className='flex flex-col-reverse md:flex-row h-4/5 w-4/5'>
