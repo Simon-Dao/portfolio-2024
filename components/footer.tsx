@@ -104,7 +104,7 @@ function NormalView() {
         <div style={{ height: "1px" }} className='w-full bg-sd'></div>
         <BubbleButton label='Get in Touch' />
       </div>
-      <div className='w-full flex b-16'>
+      <div className='w-full flex b-16 pb-10'>
         <div>
           <div>Local Time</div>
           <div className='font-bold color-white'>{localTime}</div>
