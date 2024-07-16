@@ -34,9 +34,7 @@ function Contact() {
 
   const onSubmit = async (e: any) => {
 
-
     e.preventDefault();
-    console.log("submit?")
 
     if (nameValue === "") {
       setNameColor("text-pt");
@@ -50,6 +48,10 @@ function Contact() {
       setMessageColor("text-pt");
       return;
     }
+
+    console.log("SERVICE_ID:", process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID);
+    console.log("TEMPLATE_ID:", process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID);
+    console.log("PUBLIC_KEY:", process.env.NEXT_PUBLIC_PUBLIC_KEY);
 
     if (!process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID) return
     if (!process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID) return
