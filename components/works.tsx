@@ -229,7 +229,7 @@ function Works({ layoutState }: any) {
         >
           <div ref={modalInner} className="bg-qt h-3/4 w-3/4 p-6 rounded-lg shadow-lg flex flex-col px-5 sm:px-20" style={{ transform: 'scale(0)' }}>
             <h1 className='text-lg sm:text-6xl text-tt pb-4' style={{ borderBottom: "solid white 2px" }}>{selectedProject.name}</h1>
-            <h1 className='text-pt text-xl my-5'>Images may take a few seconds to load</h1>
+            <h1 className='hidden sm:block text-pt text-xl my-5'>Images may take a few seconds to load</h1>
             <div className="overflow-y-auto flex flex-col sm:flex-row w-full grow">
               <section className="relative grow">
                 <Image
@@ -241,7 +241,7 @@ function Works({ layoutState }: any) {
                   priority={true}
                 />
               </section>
-              <section className='pl-16 w-1/2 overflow-x-hidden'>
+              <section className='pl-0 sm:pl-16 w-full sm:w-1/2 overflow-x-hidden'>
                 <h2 style={{ borderTop: "solid white 2px" }} className='pt-8 pb-2 text-md sm:text-3xl'>Tech Stack:</h2>
                 <h2 className='pb-8 text-md sm:text-3xl text-sdNoSize2'> {selectedProject.stack}</h2>
                 <h2 style={{ borderTop: "solid white 2px" }} className='pt-8 text-lg sm:text-3xl pb-2 '>Description:</h2>
