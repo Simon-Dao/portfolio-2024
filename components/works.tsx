@@ -180,9 +180,9 @@ function Works({ layoutState }: any) {
           onMouseEnter={handleMouseEnterList}
           onMouseLeave={handleMouseLeaveList}
         >
-          <div className="text-3xl flex items-center bold">{project.name}</div>
-          <div className="text-2xl flex items-center">{project.stack || <div className='text-pt'>Unavailable</div>}</div>
-          <div className="text-2xl flex items-center">{project.type}</div>
+          <div className="text-lg sm:text-3xl flex items-center bold">{project.name}</div>
+          <div className="text-sm sm:text-2xl flex items-center">{project.stack || <div className='text-pt'>Unavailable</div>}</div>
+          <div className="text-sm sm:text-2xl flex items-center">{project.type}</div>
         </div>
       ))}
     </div>
@@ -230,7 +230,7 @@ function Works({ layoutState }: any) {
           <div ref={modalInner} className="bg-qt h-3/4 w-3/4 p-6 rounded-lg shadow-lg flex flex-col px-5 sm:px-20" style={{ transform: 'scale(0)' }}>
             <h1 className='text-6xl text-tt pb-4' style={{ borderBottom: "solid white 2px" }}>{selectedProject.name}</h1>
             <h1 className='text-pt text-xl my-5'>Images may take a few seconds to load</h1>
-            <div className="overflow-y-auto flex w-full grow">
+            <div className="overflow-y-auto flex flex-col sm:flex-row w-full grow">
               <section className="relative grow">
                 <Image
                   src={selectedProject.src ? selectedProject.src : ImageUnavailableSVG}
@@ -242,11 +242,11 @@ function Works({ layoutState }: any) {
                 />
               </section>
               <section className='pl-16 w-1/2 overflow-x-hidden'>
-                <h2 style={{ borderTop: "solid white 2px" }} className='pt-8 pb-2 text-3xl'>Tech Stack:</h2>
-                <h2 className='pb-8 text-3xl text-sd'> {selectedProject.stack}</h2>
-                <h2 style={{ borderTop: "solid white 2px" }} className='pt-8 text-3xl pb-2 '>Description:</h2>
-                <p className='pb-8 text-3xl text-sd'>{selectedProject.blurb}</p>
-                {selectedProject.links.length > 0 && <h2 style={{ borderTop: "solid white 2px" }} className='pt-8 pb-5 text-3xl'>Learn More:</h2>}
+                <h2 style={{ borderTop: "solid white 2px" }} className='pt-8 pb-2 text-lg sm:text-3xl'>Tech Stack:</h2>
+                <h2 className='pb-8 text-lg sm:text-3xl text-sdNoSize2'> {selectedProject.stack}</h2>
+                <h2 style={{ borderTop: "solid white 2px" }} className='pt-8 text-lg sm:text-3xl pb-2 '>Description:</h2>
+                <p className='pb-8 text-3xl text-sdNoSize2'>{selectedProject.blurb}</p>
+                {selectedProject.links.length > 0 && <h2 style={{ borderTop: "solid white 2px" }} className='pt-8 pb-5 text-lg sm:text-3xl'>Learn More:</h2>}
                 <div className='pb-2 flex flex-wrap'>
                   {selectedProject.links.map((link, index) => (
                     <a key={index} href={link} className='bg-pt rounded-xl p-2 my-5 cursor-pointer'>
