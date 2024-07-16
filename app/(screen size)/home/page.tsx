@@ -86,7 +86,7 @@ function NormalView() {
   return (
     <div className="grow hidden sm:flex flex-row justify-center items-center bg-black">
       <div className='flex flex-col-reverse md:flex-row h-4/5 w-4/5'>
-        <div className='flex grow flex-col self-center'>
+        <div className='flex grow flex-col self-center w-1/2 items-center justify-center'>
           <h1 className="text-title text-white m-0 select-none">Simon Dao</h1>
         </div>
         <div className='grow'>

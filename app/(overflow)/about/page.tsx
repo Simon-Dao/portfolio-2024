@@ -39,12 +39,11 @@ function About() {
             </span>
           </div>
 
-
         </section>
 
-        <section className='flex pt-10'>
+        <section className='flex'>
           <div className='w-screen'>
-            <div className='w-full py-24 pr flex items-center grow'>
+            <div className='w-full py-10 pr flex items-center grow'>
               <div style={{ height: "2px" }} className='w-full bg-pm'></div>
             </div>
           </div>
