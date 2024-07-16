@@ -95,7 +95,7 @@ function Contact() {
                 </div>
                 <div className='flex flex-col w-full '>
                   <h1 className={'px-5 font-bold grow mb-1 transition-all text-lg sm:text-3xl ' + nameColor}>{"What's your name?"}</h1>
-                  <input onChange={handleNameChange} className='bg-transparent text-2xl outline-none' name='user_name' placeholder='John Doe *' value={nameValue} />
+                  <input onChange={handleNameChange} className='px-5 bg-transparent text-2xl outline-none' name='user_name' placeholder='John Doe *' value={nameValue} />
                 </div>
               </div>
             </section>
@@ -106,7 +106,7 @@ function Contact() {
                 </div>
                 <div className='flex flex-col w-full'>
                   <h1 className={'px-5 font-bold grow mb-1 transition-all  text-lg sm:text-3xl ' + emailColor}>{"What's your email?"}</h1>
-                  <input onChange={handleEmailChange} className='bg-transparent text-2xl outline-none' name='user_email' placeholder='john@doe.com *' value={emailValue} type='email' />
+                  <input onChange={handleEmailChange} className='px-5 bg-transparent text-2xl outline-none' name='user_email' placeholder='john@doe.com *' value={emailValue} type='email' />
                 </div>
               </div>
             </section>
@@ -117,7 +117,7 @@ function Contact() {
                 </div>
                 <div className='px-5 flex flex-col w-full'>
                   <h1 className={'font-bold grow mb-1 transition-all  text-lg sm:text-3xl ' + messageColor}>{"Your message"}</h1>
-                  <textarea onChange={handleMessageChange} className='bg-transparent  text-2xl outline-none grow' placeholder='Hello Simon... *' value={messageValue} name='message' />
+                  <textarea onChange={handleMessageChange} className='px-5 bg-transparent  text-2xl outline-none grow' placeholder='Hello Simon... *' value={messageValue} name='message' />
                 </div>
               </div>
             </section>
