@@ -25,7 +25,7 @@ const Model = () => {
 function DavidScene() {
 
   return (
-    <div className="grow h-full items-center cursor-pointer">
+    <div className="grow h-full items-center cursor-pointer pointer-events-none">
       <Canvas camera={{ position: [0, 0, 200], fov: 80, rotation: [-45, 0, 0] }} className="w-full h-full">
         <Suspense fallback={null}>
           <gridHelper args={[10, 10]} />
