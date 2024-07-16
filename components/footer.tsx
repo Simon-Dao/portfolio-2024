@@ -40,7 +40,7 @@ function MobileView() {
   }, []);
 
   return (
-    <footer className='sm:hidden grow pt-10 bg-qt flex flex-col px-10'>
+    <footer className='sm:hidden grow pt-10 bg-qt text-white flex flex-col px-10'>
       <div className='w-3/4 self-center'>
         <button className="bg-tt h-16 w-full rounded-full cursor-pointer">
           <TransitionLink text={'text-sm'} hoverAnimation={false} href='/contact' label={"Get in touch"} />
@@ -87,7 +87,7 @@ function NormalView() {
   }, []);
 
   return (
-    <footer className="grow hidden sm:flex flex-col bg-qt" style={{ padding: "0 15%" }}>
+    <footer className="grow hidden sm:flex flex-col bg-qt text-white" style={{ padding: "0 15%" }}>
       <div className='flex'>
         <div style={{ marginTop: "10%" }} className="text-title m-0 select-none flex flex-col items-start">
           <span style={{ fontSize: "90px" }}>

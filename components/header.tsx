@@ -16,8 +16,8 @@ function header() {
 
 function NormalView() {
   return (
-    <nav className='hidden sm:flex pt-14 sm:px-16'>
-      <div className='lg:grow flex justify-start text-white'>
+    <nav className='hidden sm:flex pt-14 sm:px-16 text-white'>
+      <div className='lg:grow flex justify-start'>
         <Magnetic>
           <div className='sm:ml-20 p-2'>
             <DotAnim>
@@ -26,7 +26,7 @@ function NormalView() {
           </div>
         </Magnetic>
       </div>
-      <div className='grow flex justify-end text-white'>
+      <div className='grow flex justify-end'>
         <Magnetic>
           <div className='sm:ml-20 p-2'>
             <DotAnim>
@@ -87,7 +87,7 @@ function MobileView() {
       translateX: '100vw',
       duration: 0.3
     }).to(navRef.current, {
-      display: 'none', 
+      display: 'none',
     });
   }
 
@@ -95,7 +95,7 @@ function MobileView() {
 
     setOpen(!open);
 
-    if(open) {
+    if (open) {
       openNav();
     } else {
       closeNav();
@@ -103,37 +103,37 @@ function MobileView() {
   }
 
   return (
-    <div className='sm:hidden'>
+    <div className='sm:hidden text-white'>
 
       <button onClick={toggleNav} className='rounded-full z-40 bg-tt w-10 h-10 fixed top-2 right-2'>
         =
       </button>
       {open && <nav ref={navRef} className={'flex flex-col z-30 fixed h-screen w-full bg-pt justify-center items-center'}>
-          <div className='sm:ml-20 p-2'>
-            <DotAnim>
-              <TransitionLink onClick={closeNav} text='text-3xl' href="/home" label="Home" hoverAnimation={true} />
-            </DotAnim>
-          </div>
-          <div className='sm:ml-20 p-2'>
-            <DotAnim>
-              <TransitionLink onClick={closeNav} text='text-3xl'  href="/about" label="About" hoverAnimation={true} />
-            </DotAnim>
-          </div>
-          <div className='sm:ml-20 p-2'>
-            <DotAnim>
-              <TransitionLink onClick={closeNav} text='text-3xl'  href="/resume" label="Resume" hoverAnimation={true} />
-            </DotAnim>
-          </div>
-          <div className='sm:ml-20 p-2'>
-            <DotAnim>
-              <TransitionLink onClick={closeNav} text='text-3xl'  href="/projects" label="Projects" hoverAnimation={true} />
-            </DotAnim>
-          </div>
-          <div className='sm:ml-20 p-2'>
-            <DotAnim>
-              <TransitionLink onClick={closeNav} text='text-3xl'  href="/contact" label="Contact" hoverAnimation={true} />
-            </DotAnim>
-          </div>
+        <div className='sm:ml-20 p-2'>
+          <DotAnim>
+            <TransitionLink onClick={closeNav} text='text-3xl' href="/home" label="Home" hoverAnimation={true} />
+          </DotAnim>
+        </div>
+        <div className='sm:ml-20 p-2'>
+          <DotAnim>
+            <TransitionLink onClick={closeNav} text='text-3xl' href="/about" label="About" hoverAnimation={true} />
+          </DotAnim>
+        </div>
+        <div className='sm:ml-20 p-2'>
+          <DotAnim>
+            <TransitionLink onClick={closeNav} text='text-3xl' href="/resume" label="Resume" hoverAnimation={true} />
+          </DotAnim>
+        </div>
+        <div className='sm:ml-20 p-2'>
+          <DotAnim>
+            <TransitionLink onClick={closeNav} text='text-3xl' href="/projects" label="Projects" hoverAnimation={true} />
+          </DotAnim>
+        </div>
+        <div className='sm:ml-20 p-2'>
+          <DotAnim>
+            <TransitionLink onClick={closeNav} text='text-3xl' href="/contact" label="Contact" hoverAnimation={true} />
+          </DotAnim>
+        </div>
       </nav>}
     </div>
   )
