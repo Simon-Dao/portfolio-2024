@@ -94,18 +94,18 @@ function Contact() {
                   01
                 </div>
                 <div className='flex flex-col w-full '>
-                  <h1 className={'font-bold grow mb-1 transition-all ' + nameColor} style={{ fontSize: '30px' }}>{"What's your name?"}</h1>
+                  <h1 className={'font-bold grow mb-1 transition-all text-lg sm:text-3xl ' + nameColor}>{"What's your name?"}</h1>
                   <input onChange={handleNameChange} className='bg-transparent text-2xl outline-none' name='user_name' placeholder='John Doe *' value={nameValue} />
                 </div>
               </div>
             </section>
             <section >
-              <div className='border-top py-6 flex ' style={{ height: '150px', borderTop: '1px white solid', borderBottom: '1px white solid' }}>
+              <div className='border-top py-6 flex text-lg sm:text-3xl' style={{ height: '150px', borderTop: '1px white solid', borderBottom: '1px white solid' }}>
                 <div className={'text-2xl flex items-start pt-1 w-20 transition-all ' + emailColor}>
                   02
                 </div>
                 <div className='flex flex-col w-full'>
-                  <h1 className={'font-bold grow mb-1 transition-all ' + emailColor} style={{ fontSize: '30px' }}>{"What's your email?"}</h1>
+                  <h1 className={'font-bold grow mb-1 transition-all  text-lg sm:text-3xl ' + emailColor}>{"What's your email?"}</h1>
                   <input onChange={handleEmailChange} className='bg-transparent text-2xl outline-none' name='user_email' placeholder='john@doe.com *' value={emailValue} type='email' />
                 </div>
               </div>
@@ -116,7 +116,7 @@ function Contact() {
                   03
                 </div>
                 <div className='flex flex-col w-full'>
-                  <h1 className={'font-bold grow mb-1 transition-all ' + messageColor} style={{ fontSize: '30px' }}>{"Your message"}</h1>
+                  <h1 className={'font-bold grow mb-1 transition-all  text-lg sm:text-3xl ' + messageColor}>{"Your message"}</h1>
                   <textarea onChange={handleMessageChange} className='bg-transparent  text-2xl outline-none grow' placeholder='Hello Simon... *' value={messageValue} name='message' />
                 </div>
               </div>

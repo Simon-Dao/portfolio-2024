@@ -5,7 +5,7 @@ function page() {
   return (
     <div className='w-screen flex flex-col items-center'>
       <div className='flex flex-col items-center w-screen'>
-        <h1 className='pt-20 pb-10 text-6xl sm:text-8xl'>
+        <h1 className='pt-20 pb-10 text-4xl sm:text-8xl'>
           My Resume
         </h1>
       </div>
