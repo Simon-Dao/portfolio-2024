@@ -34,7 +34,7 @@ function Contact() {
 
   const onSubmit = async (e: any) => {
 
-    
+
     e.preventDefault();
     console.log("submit?")
 
@@ -59,7 +59,7 @@ function Contact() {
     try {
       await emailjs.sendForm(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID, process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID, formRef.current, process.env.NEXT_PUBLIC_PUBLIC_KEY)
       alert('Message Sent Successfully')
-    } catch(error : any) {
+    } catch (error: any) {
       console.log(error.text);
       alert('Something went wrong!')
     }
@@ -126,7 +126,7 @@ function Contact() {
 
             <div className='hidden sm:flex w-full py-24 items-center grow'>
               <div style={{ height: "2px" }} className='w-full bg-pm' />
-              <SendButton label="Send!" type='submit'/>
+              <SendButton label="Send!" type='submit' />
             </div>
             <div className='flex sm:hidden w-full py-24 items-center grow'>
               <button className="bg-tt h-16 w-full rounded-full cursor-pointer" type='submit'>
@@ -150,6 +150,14 @@ function Contact() {
               </div>
               <div className='text-2xl'>
                 linkedin.com/in/simon-dao
+              </div>
+            </div>
+            <div className='mb-3'>
+              <div className='text-xl select-none' style={{ color: '#858688' }}>
+                Handshake
+              </div>
+              <div className='text-2xl'>
+                <a className='underline' href="https://uw.joinhandshake.com/profiles/44602458">Handshake Link</a>
               </div>
             </div>
             <div className='mb-3'>

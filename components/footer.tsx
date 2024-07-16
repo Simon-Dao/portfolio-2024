@@ -57,11 +57,15 @@ function MobileView() {
           <div className='text-xs sm:text-2xl text-sdNoSize2'>Socials</div>
           <div className='font-bold color-white flex'>
             <Magnetic>
-              <a className='text-sm sm:text-3xl' href="https://www.linkedin.com/in/simon-dao/">Linkedin</a>
+              <a href="https://www.linkedin.com/in/simon-dao/">Linkedin</a>
             </Magnetic>
             <div className='w-6'></div>
             <Magnetic>
-              <a className='text-sm sm:text-3xl' href="https://discord.com/users/277605748995915779">Discord</a>
+              <a href="https://uw.joinhandshake.com/profiles/44602458">Handshake</a>
+            </Magnetic>
+            <div className='w-6'></div>
+            <Magnetic>
+              <a href="https://discord.com/users/277605748995915779">Discord</a>
             </Magnetic>
           </div>
         </div>
@@ -118,8 +122,13 @@ function NormalView() {
             </Magnetic>
             <div className='w-6'></div>
             <Magnetic>
+              <a href="https://uw.joinhandshake.com/profiles/44602458">Handshake</a>
+            </Magnetic>
+            <div className='w-6'></div>
+            <Magnetic>
               <a href="https://discord.com/users/277605748995915779">Discord</a>
             </Magnetic>
+
           </div>
         </div>
       </div>
