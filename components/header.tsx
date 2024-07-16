@@ -27,10 +27,10 @@ function NormalView() {
         </Magnetic>
       </div>
       <div className='grow flex justify-end'>
-        <Magnetic>
+      <Magnetic>
           <div className='sm:ml-20 p-2'>
             <DotAnim>
-              <TransitionLink href="/projects" label="Projects" hoverAnimation={true} />
+              <TransitionLink href="/about" label="About" hoverAnimation={true} />
             </DotAnim>
           </div>
         </Magnetic>
@@ -44,7 +44,7 @@ function NormalView() {
         <Magnetic>
           <div className='sm:ml-20 p-2'>
             <DotAnim>
-              <TransitionLink href="/about" label="About" hoverAnimation={true} />
+              <TransitionLink href="/projects" label="Projects" hoverAnimation={true} />
             </DotAnim>
           </div>
         </Magnetic>
