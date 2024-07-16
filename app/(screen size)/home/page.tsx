@@ -73,7 +73,7 @@ function MobileView() {
         </div>
       </div>
 
-      <div className='grow'>
+      <div className='grow w-3/5'>
         <DavidScene />
       </div>
 

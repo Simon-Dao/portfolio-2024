@@ -52,9 +52,9 @@ function About() {
         <article className='mx-30'>
 
           <h1 ref={helloAnimationRef} className='text-7xl mb-6'>Hello</h1>
-          <p className='text-3xl'>{"I'm currently an undergrad studying Computer Science. My journey into the world of coding started back in my freshman year of high school, and I’ve been hooked ever since. Over the years, I’ve built a solid toolkit of programming languages and soft skills that I’m pretty proud of."}
+          <p className='text-lg sm:text-3xl'>{"I'm currently an undergrad studying Computer Science. My journey into the world of coding started back in my freshman year of high school, and I’ve been hooked ever since. Over the years, I’ve built a solid toolkit of programming languages and soft skills that I’m pretty proud of."}
           </p>
-          <p className='text-3xl mt-5'>{"I’m a curious soul who loves picking up new skills in my free time. Besides diving into programming projects, you’ll often find me strategizing my next chess move, sketching up some artwork, training in MMA, or reaching new heights in rock climbing. I’m always eager to learn something new!"}
+          <p className='text-lg sm:text-3xl mt-5'>{"Besides diving into programming projects, I like playing chess, sketching, training MMA, and rock climbing. I’m always eager to try something new!"}
           </p>
 
           <h1 className='text-5xl mb-6 mt-28'>Here are some pictures!</h1>
