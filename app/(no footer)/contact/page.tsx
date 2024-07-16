@@ -32,9 +32,11 @@ function Contact() {
     setMessageValue(e.target.value);
   }
 
-  const onSubmit = (e: any) => {
+  const onSubmit = async (e: any) => {
 
+    
     e.preventDefault();
+    console.log("submit?")
 
     if (nameValue === "") {
       setNameColor("text-pt");
@@ -54,13 +56,13 @@ function Contact() {
     if (!process.env.NEXT_PUBLIC_PUBLIC_KEY) return
     if (!formRef || !formRef.current) return
 
-    emailjs.sendForm(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID, process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID, formRef.current, process.env.NEXT_PUBLIC_PUBLIC_KEY)
-      .then((result) => {
-        alert('Message Sent Successfully')
-      }, (error) => {
-        console.log(error.text);
-        alert('Something went wrong!')
-      });
+    try {
+      await emailjs.sendForm(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID, process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID, formRef.current, process.env.NEXT_PUBLIC_PUBLIC_KEY)
+      alert('Message Sent Successfully')
+    } catch(error : any) {
+      console.log(error.text);
+      alert('Something went wrong!')
+    }
 
     e.target.reset()
   }
@@ -124,7 +126,7 @@ function Contact() {
 
             <div className='hidden sm:flex w-full py-24 items-center grow'>
               <div style={{ height: "2px" }} className='w-full bg-pm' />
-              <SendButton label="Send!" type='submit' />
+              <SendButton label="Send!" type='submit'/>
             </div>
             <div className='flex sm:hidden w-full py-24 items-center grow'>
               <button className="bg-tt h-16 w-full rounded-full cursor-pointer" type='submit'>
