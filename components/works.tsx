@@ -241,7 +241,7 @@ function Works({ layoutState }: any) {
                   priority={true}
                 />
               </section>
-              <section className='pl-0 sm:pl-16 w-full sm:w-1/2 overflow-x-hidden'>
+              <section className='pl-0 sm:pl-16 w-full sm:w-1/2 sm:overflow-x-hidden'>
                 <h2 style={{ borderTop: "solid white 2px" }} className='pt-8 pb-2 text-md sm:text-3xl'>Tech Stack:</h2>
                 <h2 className='pb-8 text-md sm:text-3xl text-sdNoSize2'> {selectedProject.stack}</h2>
                 <h2 style={{ borderTop: "solid white 2px" }} className='pt-8 text-lg sm:text-3xl pb-2 '>Description:</h2>
