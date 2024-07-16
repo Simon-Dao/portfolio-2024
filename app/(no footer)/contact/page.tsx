@@ -94,7 +94,7 @@ function Contact() {
                   01
                 </div>
                 <div className='flex flex-col w-full '>
-                  <h1 className={'font-bold grow mb-1 transition-all text-lg sm:text-3xl ' + nameColor}>{"What's your name?"}</h1>
+                  <h1 className={'px-5 font-bold grow mb-1 transition-all text-lg sm:text-3xl ' + nameColor}>{"What's your name?"}</h1>
                   <input onChange={handleNameChange} className='bg-transparent text-2xl outline-none' name='user_name' placeholder='John Doe *' value={nameValue} />
                 </div>
               </div>
@@ -105,7 +105,7 @@ function Contact() {
                   02
                 </div>
                 <div className='flex flex-col w-full'>
-                  <h1 className={'font-bold grow mb-1 transition-all  text-lg sm:text-3xl ' + emailColor}>{"What's your email?"}</h1>
+                  <h1 className={'px-5 font-bold grow mb-1 transition-all  text-lg sm:text-3xl ' + emailColor}>{"What's your email?"}</h1>
                   <input onChange={handleEmailChange} className='bg-transparent text-2xl outline-none' name='user_email' placeholder='john@doe.com *' value={emailValue} type='email' />
                 </div>
               </div>
@@ -115,7 +115,7 @@ function Contact() {
                 <div className={'text-2xl flex items-start pt-1 w-20 transition-all ' + messageColor}>
                   03
                 </div>
-                <div className='flex flex-col w-full'>
+                <div className='px-5 flex flex-col w-full'>
                   <h1 className={'font-bold grow mb-1 transition-all  text-lg sm:text-3xl ' + messageColor}>{"Your message"}</h1>
                   <textarea onChange={handleMessageChange} className='bg-transparent  text-2xl outline-none grow' placeholder='Hello Simon... *' value={messageValue} name='message' />
                 </div>
