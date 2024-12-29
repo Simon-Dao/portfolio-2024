@@ -6,12 +6,16 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  safelist: [
+    'bg-pm', 'text-qt', 'text-title', 'text-sd', // Add any other classes you need to safelist
+    'bg-qt', 'text-pm', 'bg-pt', 'text-pt', 'bg-sd', 'text-sdNoSize', 'text-sdNoSize2'
+  ],
   theme: {
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
-        "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
         pm: "#FFFFFF",
@@ -30,22 +34,14 @@ const config: Config = {
       screens: {
         'xs': '600px',
         'sm': '740px',
-        // => @media (min-width: 640px) { ... }
-  
         'md': '900px',
-        // => @media (min-width: 768px) { ... }
-
         'lg': '1280px',
-        // => @media (min-width: 1024px) { ... }
-  
         'xl': '1480px',
-        // => @media (min-width: 1280px) { ... }
-  
         '2xl': '1536px',
-        // => @media (min-width: 1536px) { ... }
       }
     },
   },
   plugins: [],
 };
+
 export default config;

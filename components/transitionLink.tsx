@@ -7,10 +7,11 @@ interface Props {
   href: string
   label: string,
   hoverAnimation: boolean,
-  text?: string
+  text?: string,
+  onClick?: any
 }
 
-function TransitionLink({ href, label, hoverAnimation, text }: Props) {
+function TransitionLink({ onClick, href, label, hoverAnimation, text }: Props) {
 
   const router = useRouter()
   const pathname = usePathname()
@@ -23,7 +24,7 @@ function TransitionLink({ href, label, hoverAnimation, text }: Props) {
   }
 
   return (
-    <div className='flex flex-col cursor-pointer select-none'>
+    <div onClick={onClick} className='flex flex-col cursor-pointer select-none'>
       <div className={text} onClick={handleClick}
       >
         {label}

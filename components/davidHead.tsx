@@ -21,10 +21,11 @@ const Model = () => {
   return <primitive ref={davidRef} object={scene} onClick={console.log} position={[0, -100, 0]} />
 };
 
+
 function DavidScene() {
 
   return (
-    <div className="grow h-full items-center cursor-pointer">
+    <div className="grow h-full items-center cursor-pointer pointer-events-none">
       <Canvas camera={{ position: [0, 0, 200], fov: 80, rotation: [-45, 0, 0] }} className="w-full h-full">
         <Suspense fallback={null}>
           <gridHelper args={[10, 10]} />
@@ -46,7 +47,7 @@ function DavidScene() {
               adaptationRate={1.0}
             />
           </EffectComposer>
-          <CameraController />
+          <CameraController/>
         </Suspense>
       </Canvas>
     </div>
@@ -55,7 +56,7 @@ function DavidScene() {
 
 function CameraController() {
 
-  return <OrbitControls enablePan={false} enableZoom={false} />;
+  return <OrbitControls enabled={false} enablePan={false} enableZoom={false} />;
 }
 
 export default DavidScene;

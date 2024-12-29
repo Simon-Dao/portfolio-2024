@@ -15,14 +15,20 @@ function Works({ layoutState }: any) {
     type: string;
   }
 
-  const randomColorPallete = [
-    "#885053",
-    "#FE5F55",
-    "#777DA7",
-    "#94C9A9",
-    "#C6ECAE",
-    "#E1CDB5",
-  ];
+
+  const colorPalleteTypeMap = new Map<string, string>([
+    ["", '#ffffff'],                // White
+    ["Website", "#FF6F61"],         // Vibrant coral
+    ["Full Stack Web App", "#8461DC"], // Rich purple
+    ["Robotics", "#88B04B"],        // Fresh green
+    ["Multiplayer Game", "#FFA500"], // Orange
+    ["Web App", "#00CED1"],         // Dark turquoise
+    ["Mobile App", "#1E90FF"],      // Dodger blue
+    ["Desktop App", "#FF1493"],     // Deep pink
+    ["API", "#7FFF00"],             // Chartreuse
+    ["Machine Learning", "#FFD700"] // Gold
+  ]);
+
 
   const works: ProjectProps[] = [
     {
@@ -54,7 +60,7 @@ function Works({ layoutState }: any) {
       stack: 'React, css',
       links: ['https://github.com/Simon-Dao/pathfinding-visualizer.git'],
       blurb: 'A web app that visualizes pathfinding algorithms. Users can edit variables such as wall placement, starting location, end location, and go through the algorithm step by step',
-      type: 'Web App Demo',
+      type: 'Web App',
       src: '/pathfinderdemo.gif'
     },
     {
@@ -175,14 +181,14 @@ function Works({ layoutState }: any) {
       {works.map((project, index) => (
         <div
           key={index}
-          className={`list-element grid grid-cols-3 py-16 gap-5 cursor-pointer grid-row-${index}`}
+          className={`list-element grid grid-cols-3 py-16 gap-5 cursor-pointer grid-row-${index} `}
           onClick={() => openModal(project)}
           onMouseEnter={handleMouseEnterList}
           onMouseLeave={handleMouseLeaveList}
         >
-          <div className="text-3xl flex items-center bold">{project.name}</div>
-          <div className="text-2xl flex items-center">{project.stack || <div className='text-pt'>Unavailable</div>}</div>
-          <div className="text-2xl flex items-center">{project.type}</div>
+          <div className="text-lg sm:text-3xl flex items-center bold ">{project.name}</div>
+          <div className="text-sm sm:text-2xl flex items-center">{project.stack || <div className='text-pt'>Unavailable</div>}</div>
+          <div className="text-sm sm:text-2xl flex items-center">{project.type}</div>
         </div>
       ))}
     </div>
@@ -190,7 +196,7 @@ function Works({ layoutState }: any) {
 
   const renderGridItems = () => (
     <div className="container mx-auto py-10">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {works.map((project, index) => (
           <div
             key={index}
@@ -200,7 +206,7 @@ function Works({ layoutState }: any) {
             onMouseEnter={handleMouseEnterGrid}
             onMouseLeave={handleMouseLeaveGrid}
           >
-            <div className='h-48 relative' style={{ backgroundColor: randomColorPallete[Math.floor(Math.random() * randomColorPallete.length)] }}>
+            <div className='h-48 relative' style={{ backgroundColor: colorPalleteTypeMap.get(project.type) }}>
               <Image
                 src={project.src ? project.src : ImageUnavailableSVG}
                 alt={project.name}
@@ -227,10 +233,10 @@ function Works({ layoutState }: any) {
           ref={modalOuter}
           className="fixed inset-0 flex items-center justify-center z-40 bg-gray-900 bg-opacity-75"
         >
-          <div ref={modalInner} className="bg-qt h-3/4 w-3/4 p-6 rounded-lg shadow-lg flex flex-col px-20" style={{ transform: 'scale(0)' }}>
-            <h1 className='text-6xl text-tt pb-4' style={{ borderBottom: "solid white 2px" }}>{selectedProject.name}</h1>
-            <h1 className='text-pt text-xl my-5'>Images may take a few seconds to load</h1>
-            <div className="overflow-y-auto flex w-full grow">
+          <div ref={modalInner} className="bg-qt h-3/4 w-3/4 p-6 rounded-lg shadow-lg flex flex-col px-5 sm:px-20" style={{ transform: 'scale(0)' }}>
+            <h1 className='text-lg sm:text-6xl text-tt pb-4' style={{ borderBottom: "solid white 2px" }}>{selectedProject.name}</h1>
+            <h1 className='hidden sm:block text-pt text-xl my-5'>Images may take a few seconds to load</h1>
+            <div className="overflow-y-auto flex flex-col sm:flex-row w-full grow">
               <section className="relative grow">
                 <Image
                   src={selectedProject.src ? selectedProject.src : ImageUnavailableSVG}
@@ -241,12 +247,12 @@ function Works({ layoutState }: any) {
                   priority={true}
                 />
               </section>
-              <section className='pl-16 w-1/2 overflow-x-hidden'>
-                <h2 style={{ borderTop: "solid white 2px" }} className='pt-8 pb-2 text-3xl'>Tech Stack:</h2>
-                <h2 className='pb-8 text-3xl text-sd'> {selectedProject.stack}</h2>
-                <h2 style={{ borderTop: "solid white 2px" }} className='pt-8 text-3xl pb-2 '>Description:</h2>
-                <p className='pb-8 text-3xl text-sd'>{selectedProject.blurb}</p>
-                {selectedProject.links.length > 0 && <h2 style={{ borderTop: "solid white 2px" }} className='pt-8 pb-5 text-3xl'>Learn More:</h2>}
+              <section className='pl-0 sm:pl-16 w-full sm:w-1/2 sm:overflow-x-hidden'>
+                <h2 style={{ borderTop: "solid white 2px" }} className='pt-8 pb-2 text-md sm:text-3xl'>Tech Stack:</h2>
+                <h2 className='pb-8 text-md sm:text-3xl text-sdNoSize2'> {selectedProject.stack}</h2>
+                <h2 style={{ borderTop: "solid white 2px" }} className='pt-8 text-lg sm:text-3xl pb-2 '>Description:</h2>
+                <p className='pb-8 text-md sm:text-3xl text-sdNoSize2'>{selectedProject.blurb}</p>
+                {selectedProject.links.length > 0 && <h2 style={{ borderTop: "solid white 2px" }} className='pt-8 pb-5 text-lg sm:text-3xl'>Learn More:</h2>}
                 <div className='pb-2 flex flex-wrap'>
                   {selectedProject.links.map((link, index) => (
                     <a key={index} href={link} className='bg-pt rounded-xl p-2 my-5 cursor-pointer'>
