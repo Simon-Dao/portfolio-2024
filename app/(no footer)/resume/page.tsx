@@ -14,14 +14,14 @@ function page() {
       </div>
       <div className='mb-10 p-10'>
         <GenericButton className='my-3 self-center sm:self-auto sm:my-0 w-36 mr-3 flex justify-center items-center border-solid border-gray-500 rounded-full cursor-pointer h-20'>
-          <a href="https://drive.google.com/file/d/1556EPc436JEts7fVR-p9jlGMXRb-JFZA/view?usp=sharing">
+          <a href="https://drive.google.com/file/d/13JOhnn3clOehxJQIRnf9KjbK0WdAz6Qe/view?usp=drive_link">
             <TransitionLink href="/resume" label='Resume' hoverAnimation={true} />
           </a>
         </GenericButton>
       </div>
 
       <div className='w-full hidden sm:block' style={{ padding: '0% 20% 5% 20%' }}>
-        <Image src={'/resume.jpg'} alt="" className='rounded-lg w-full' width={1500} height={1500} priority={true} />
+        <Image src={'/resume.png'} alt="" className='rounded-lg w-full' width={1500} height={1500} priority={true} />
       </div>
 
     </div>
