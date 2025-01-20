@@ -10,10 +10,16 @@ function Experiences({ layoutState }: any) {
   interface ProjectProps {
     name: string;
     links: Array<string>;
-    stack: string;
+    dates: string;
     src?: string;
-    blurb: string;
+    blurbs: Blurb[];
     type: string;
+  }
+
+  interface Blurb {
+    title?: string;
+    blurb: string;
+    img: string;
   }
 
   const colorPalleteTypeMap = new Map<string, string>([
@@ -31,60 +37,111 @@ function Experiences({ layoutState }: any) {
 
   const experiences: ProjectProps[] = [
     {
-      name: "UWB ACM",
-      stack: "React, HTML, CSS",
+      name: "UWB ACM - Vice President",
+      dates: "Fall 2022 - Present",
       links: ["https://uwbacm.org/index.html"],
-      blurb: "I experienceed on updating all pages for my club website!",
+      blurbs: [
+        {
+          title: "My ACM Journey",
+          blurb: `
+            My journey with the Association for Computing Machinery (ACM) at UWB has been the most expansive and impactful aspect of my university experience. 
+            Driven by a discovery mindset, I joined ACM—the premier computer science club on campus—to immerse myself fully in the field. Starting as a freshman,
+             I absorbed invaluable lessons from senior officers on event management and effective communication. By late freshman through sophomore year, I began 
+             spearheading my own events, each growing in size and scope. These gatherings not only taught practical skills but also featured industry speakers, 
+             all designed to maximize student benefit. My involvement peaked in my sophomore year as I played a key role in planning and staffing our largest annual 
+             Hackathon, which hosted over 350 participants and set new benchmarks for success.
+      `,
+          img: "/acmgroup.jpg",
+        },
+        {
+          title: "2025 and beyond",
+          blurb: `
+            This year, I plan on increasing the reach and scale of the club, aiming for more officers, more events, and more impact. My team and I are currently 
+            planning to host the largest hackathon we’ve ever had on campus, and we’re actively in talks with companies like Avanade, Microsoft, Amazon, Blue 
+            Origin, and Salesforce for sponsorships and partnerships. To make the event more appealing to non-STEM majors, we’re incentivizing participants to 
+            develop strong business solutions, not just good code, and have introduced a non-code track focusing on product management, user experience design, 
+            and business strategy. In addition, we’re partnering with 20 clubs this year to ensure a diverse and collaborative environment, bringing together students 
+            from various disciplines to work on real-world problems. By diversifying our event offerings and securing key partnerships, we aim to provide a valuable 
+            experience that allows all participants to learn, grow, and showcase their skills. With a growing officer team and a clear vision, we’re excited for what’s 
+            to come and committed to making this year one of the club’s most successful yet.
+      `,
+          img: "/uwbhacksaiarticle.png",
+        },
+      ],
       src: "/uwbacmsite.png",
       type: "Website",
     },
     {
-      name: "UWB Office of Admissions",
-      stack: "React, Firebase, Express, Node.js",
-      links: ["https://github.com/Simon-Dao/full-stack-todo.git"],
+      name: "UWB Office of Admissions - Data Science Intern",
+      dates: "Mar 2022 - Oct 2023",
+      links: ["https://github.com/Simon-Dao/uwb-admissions-system.git"], // Changed to fit the context
+      blurbs: [
+        {
+          title: "My CFA Journey",
+          blurb: `Computing For All(CFA) is a non profit focused on educating people from non traditional backgrounds in web  I joined  during my senior year of highschool. `,
+          img: "",
+        }
+      ],
       src: "/uwb.jpg",
-      blurb:
-        "A todo list application that utilizes an express backend to communicate to firebase.",
       type: "Full Stack Web App",
     },
     {
       name: "Computing for All",
-      stack: "React, css",
+      dates: "Sep 2023 - Jun 2024",
       links: ["https://github.com/Simon-Dao/pathfinding-visualizer.git"],
-      blurb:
-        "A web app that visualizes pathfinding algorithms. Users can edit variables such as wall placement, starting location, end location, and go through the algorithm step by step",
-      type: "Web App",
+      blurbs: [
+        {
+          blurb: "Designed a web app that visualizes pathfinding algorithms, allowing users to interactively explore algorithmic paths and understand core computing concepts.",
+          img: "/cfatmobile.jpg",
+        },
+        {
+          blurb: "Designed a web app that visualizes pathfinding algorithms, allowing users to interactively explore algorithmic paths and understand core computing concepts.",
+          img: "/cfarefugees.jpg",
+        }
+      ],
       src: "/cfa.jpg",
+      type: "Web App",
     },
     {
       name: "ID Tech",
-      stack: "React, MongoDB, Express, Nodejs",
-      links: ["https://github.com/Simon-Dao/Simple-Notetaking-App.git"],
-      blurb: "A full stack web application heavily based off Microsoft Onenote",
-      type: "Full Stack Web App",
+      dates: "Jan 2025 - Present",
+      links: ["https://github.com/Simon-Dao/vr-game-development.git"], // Changed to fit the context
+      blurbs: [
+        {
+          blurb: "Developed a virtual reality game teaching platform aimed at educating children in programming and game design, using interactive VR environments.",
+          img: "/idtech.jpg",
+        }
+      ],
       src: "/idtech.jpg",
+      type: "Full Stack Web App",
     },
     {
       name: "Trickfire Robotics",
-      stack: "html, css, javascript, c#, Unity, Photon Netexperience",
+      dates: "Sep 2022 - Jun 2024",
       links: [
-        "https://github.com/Simon-Dao/Farm-Wars-Dev.git",
-        "https://simon-dao.github.io/Farm-Wars-Build/",
-        "https://docs.google.com/presentation/d/1PZE_H7ffgPpyPTAEib3EH44JQlLeMJCllhSTkeb5sv4/edit#slide=id.g2e1464ce710_0_5",
+        "https://github.com/Simon-Dao/robot-vision-system.git" // Changed to fit the context
       ],
-      blurb:
-        "This game is a project for a game development class. I experienceed in a team of 4 and was in charge of implementing multiplayer. This game is heavily based off of the board game Catan but we added an extra twist by making everything real time instead of turn based",
+      blurbs: [
+        {
+          blurb: "Led a team to develop a computer vision system for a drone, enhancing automation and flight accuracy in dynamic environments.",
+          img: "/FullRoverPhoto.png",
+        }
+      ],
       src: "/FullRoverPhoto.png",
-      type: "Multiplayer Game",
+      type: "Robotics",
     },
     {
-      name: "Portfolio Website",
-      stack: "Nextjs, React, Tailwind, Gsap, Three.js",
-      links: ["https://simondao.me"],
-      blurb:
-        "A website to introduce myself. It Features animations, 3d models, and a sleek UI! This is a passion project I made over the summer of 2024 and took a few weeks to complete",
-      src: "/portfoliowebsitescreenshot.png",
-      type: "Web App",
+      name: "Collaboratory Makerspace",
+      dates: "Apr 2023 - Feb 2024",
+      links: ["https://github.com/Simon-Dao/makerspace-management-system.git"], // Changed to fit the context
+      blurbs: [
+        {
+          blurb: "Developed a management system to streamline operations and improve resource allocation in a community makerspace, enhancing user experience and operational efficiency.",
+          img: "/Group_Shot_Fin.png",
+        }
+      ],
+      src: "/Group_Shot_Fin.png",
+      type: "Full Stack Web App",
     },
   ];
 
@@ -199,16 +256,16 @@ function Experiences({ layoutState }: any) {
           onMouseEnter={handleMouseEnterList}
           onMouseLeave={handleMouseLeaveList}
         >
-           <img
-              className="rounded-lg p-5 w-5/12"
-              src="/family_long_dress.jpg"
-              alt="Description of image"
-            ></img>
+          <img
+            className="rounded-lg p-5 w-5/12"
+            src="/family_long_dress.jpg"
+            alt="Description of image"
+          ></img>
           <div className="text-lg sm:text-3xl flex items-center bold ">
             {project.name}
           </div>
           <div className="text-sm sm:text-2xl flex items-center">
-            {project.stack || <div className="text-pt">Unavailable</div>}
+            {project.dates || <div className="text-pt">Unavailable</div>}
           </div>
           <div className="text-sm sm:text-2xl flex items-center">
             {project.type}
@@ -245,7 +302,7 @@ function Experiences({ layoutState }: any) {
             <div className="h-30 p-10">
               <h1 className="text-2xl">{project.name}</h1>
               <h2 className="text-sdNoSize2">
-                {project.stack || (
+                {project.dates || (
                   <h2 className="text-pt">Tech Stack Unavailable</h2>
                 )}
               </h2>
@@ -266,15 +323,65 @@ function Experiences({ layoutState }: any) {
         >
           <div
             ref={modalInner}
-            className="bg-qt h-3/4 w-3/4 p-6 rounded-lg shadow-lg flex flex-col px-5 sm:px-20"
+            className="bg-qt h-3/4 w-3/4 py-6 rounded-lg shadow-lg flex flex-col px-2 sm:px-20"
             style={{ transform: "scale(0)" }}
           >
             <button
               onClick={closeModal}
-              className="mt-4 px-4 py-2 bg-gray-500 text-white rounded hover:bg-tt transition"
+              className="mt-4 px-2 py-2 w-20 self-end bg-gray-500 text-white rounded hover:bg-tt transition"
             >
-              Close
+              Close{" "}
             </button>
+            <div className="mt-5 overflow-y-scroll">
+              {selectedProject.blurbs.map((blurb, i) => (
+                <div key={i}>
+
+                  {
+                  blurb.img === "" ?
+                  <div className="flex w-full items-center mt-10">
+                      <div className="w-7/12 pl-5">
+                        <h1 className="font-bold text-3xl mb-3 text-tt">
+                          {blurb.title && blurb.title}
+                        </h1>
+                        <h1>{blurb.blurb}</h1>
+                      </div>
+                    </div>
+                  :
+                  i % 2 == 0 ? (
+                    <div className="flex w-full items-center mt-10">
+                      <div className="w-7/12 pl-5">
+                        <h1 className="font-bold text-3xl mb-3 text-tt">
+                          {blurb.title && blurb.title}
+                        </h1>
+                        <h1>{blurb.blurb}</h1>
+                      </div>
+
+                      <img
+                        className="rounded-lg p-5 w-5/12"
+                        src={blurb.img}
+                        alt="Description of image"
+                      ></img>
+                    </div>
+                  ) : (
+                    <div className="flex w-full items-center">
+                      <img
+                        className="rounded-lg p-5 w-5/12"
+                        src={blurb.img}
+                        alt="Description of image"
+                      ></img>
+                      <div className="w-7/12 ">
+                        <h1 className="font-bold text-3xl mb-3 text-tt">
+                          {blurb.title && blurb.title}
+                        </h1>
+                        <h1>{blurb.blurb}</h1>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* Content */}
           </div>
         </div>
       )}

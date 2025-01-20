@@ -38,7 +38,7 @@ function Works({ layoutState }: any) {
       stack: 'Nextjs, React, PostGres, AWS, Redis',
       links: ['No Links Available'],
       blurb: 'I am currently in charge of 7+ developers working on a website, checkin system, and participant tracking system for an upcoming hackathon help in April 2025',
-      src: '',
+      src: '/uwbhacks.png',
       type: 'Full Stack Web App'
     },
     {

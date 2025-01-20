@@ -31,7 +31,7 @@ function Projects() {
 
         <section className="w-full flex mt-14 pb-5">
           <div className="flex flex-col sm:flex-row w-full">
-          
+            
           </div>
           <div className="grow"></div>
          
