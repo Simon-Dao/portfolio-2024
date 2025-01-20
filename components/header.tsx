@@ -23,7 +23,7 @@ function NormalView() {
             <DotAnim>
               <TransitionLink
                 href="/home"
-                label="Simon Dao"
+                label="Home"
                 hoverAnimation={true}
               />
             </DotAnim>

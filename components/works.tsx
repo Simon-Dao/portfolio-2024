@@ -17,7 +17,8 @@ function Works({ layoutState }: any) {
 
 
   const colorPalleteTypeMap = new Map<string, string>([
-    ["", '#ffffff'],                // White
+    ["", '#FFFFFF'],                // White
+    ["Internship Project", 'hsl(0, 67.71300448430492%, 56.27450980392157%)'],                // White
     ["Website", "#FF6F61"],         // Vibrant coral
     ["Full Stack Web App", "#8461DC"], // Rich purple
     ["Robotics", "#88B04B"],        // Fresh green
@@ -31,13 +32,22 @@ function Works({ layoutState }: any) {
 
 
   const works: ProjectProps[] = [
+    
     {
-      name: 'Bluetooth Controlled Robot arm',
-      stack: 'C++, ESP32, Arduino, 3d Printing',
-      links: [],
-      blurb: 'A robot arm that is controlled wirlessly.',
-      src: '/armgif.gif',
-      type: 'Robotics'
+      name: 'UWB Hacks 2025 Website',
+      stack: 'Nextjs, React, PostGres, AWS, Redis',
+      links: ['No Links Available'],
+      blurb: 'I am currently in charge of 7+ developers working on a website, checkin system, and participant tracking system for an upcoming hackathon help in April 2025',
+      src: '',
+      type: 'Full Stack Web App'
+    },
+    {
+      name: 'Automated Attendance System',
+      stack: 'Nextjs, React, PostGres, AWS, Redis',
+      links: ['No Links'],
+      blurb: 'Developed a pipeline to get data from Zoom meetins and Canvas LMS into a Microsoft Dynamics database',
+      src: '',
+      type: 'Internship Project'
     },
     {
       name: 'UWB ACM',
@@ -46,6 +56,22 @@ function Works({ layoutState }: any) {
       blurb: 'I worked on updating all pages for my club website!',
       src: '/uwbacmsite.png',
       type: 'Website'
+    },
+    {
+      name: 'PlanPal',
+      stack: 'Nextjs, React, PostGres, AWS, Redis',
+      links: ['https://github.com/Simon-Dao/plan-pal'],
+      blurb: 'Developing a minimal application to manage event scheduling for teams. Similar in format to when2meet.com',
+      src: '/planpal.png',
+      type: 'Web App'
+    },
+    {
+      name: 'Bluetooth Controlled Robot arm',
+      stack: 'C++, ESP32, Arduino, 3d Printing',
+      links: [],
+      blurb: 'A robot arm that is controlled wirlessly.',
+      src: '/armgif.gif',
+      type: 'Robotics'
     },
     {
       name: 'Todo List',
@@ -217,7 +243,8 @@ function Works({ layoutState }: any) {
             </div>
             <div className='h-30 p-10'>
               <h1 className='text-2xl'>{project.name}</h1>
-              <h2 className='text-sdNoSize2'>{project.stack || <h2 className='text-pt'>Tech Stack Unavailable</h2>}</h2>
+              {/* <h2 className='text-sdNoSize2'>{project.stack || <h2 className='text-pt'>Tech Stack Unavailable</h2>}</h2> */}
+              <h3 className='text-sdNoSize2'>{project.type}</h3>
             </div>
           </div>
         ))}
