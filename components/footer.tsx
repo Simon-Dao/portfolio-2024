@@ -91,10 +91,10 @@ function NormalView() {
       <div className='flex'>
         <div style={{ marginTop: "10%" }} className="text-title m-0 select-none flex flex-col items-start">
           <span style={{ fontSize: "90px" }}>
-            {"Let's work"}
+            Get To
           </span>
           <span style={{ fontSize: "90px" }}>
-            together
+            Know Me
           </span>
         </div>
         <Image
@@ -106,32 +106,9 @@ function NormalView() {
       </div>
       <div className='w-full py-24 pr-20 flex items-center grow'>
         <div style={{ height: "1px" }} className='w-full bg-sd'></div>
-        <BubbleButton label='Get in Touch' />
+        <BubbleButton label='My Socials' />
       </div>
-      <div className='w-full flex b-16 pb-10'>
-        <div>
-          <div>Local Time</div>
-          <div className='font-bold color-white'>{localTime}</div>
-        </div>
-        <div className='grow'></div>
-        <div>
-          <div>Socials</div>
-          <div className='font-bold color-white flex'>
-            <Magnetic>
-              <a href="https://www.linkedin.com/in/simon-dao/">Linkedin</a>
-            </Magnetic>
-            <div className='w-6'></div>
-            <Magnetic>
-              <a href="https://uw.joinhandshake.com/profiles/44602458">Handshake</a>
-            </Magnetic>
-            <div className='w-6'></div>
-            <Magnetic>
-              <a href="https://discord.com/users/277605748995915779">Discord</a>
-            </Magnetic>
-
-          </div>
-        </div>
-      </div>
+    
     </footer>
   )
 }
