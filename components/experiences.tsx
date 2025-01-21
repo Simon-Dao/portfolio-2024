@@ -169,8 +169,28 @@ function Experiences({ layoutState }: any) {
       dates: "Mar 2022 - Oct 2023",
       blurbs: [
         {
-          title: "UWB Office of Admissions",
-          blurb: ``,
+          title: "The Office of Admissions",
+          blurb: 
+          `
+            I joined the UWB Office of Admissions because I thought it was a great opportunity to see the inner workings from 
+            the other side.
+
+            Here I was able to make a significant impact by applying my frontend skills to improve the UX of several web portals used
+            by students and staff. My favorite project was adding confetti to the acceptance page, it was a small touch but it mode the
+            experience of getting accepted that much more special.
+          `,
+          img: "",
+          imgLink: "",
+        },
+        {
+          title: "Data Science Intern",
+          blurb: 
+          `
+            The inner workings of the admissions process was fascinating to me, I compiled many reports on incoming student data and
+            was able to see the trends that the data revealed. I feel proud that my work helped the admissions team make more informed
+            decisions and I'm grateful for the opportunity to work with such a great team. Unfortunately, I can't share any of 
+            the reports or images.
+          `,
           img: "",
           imgLink: "",
         },
@@ -183,8 +203,17 @@ function Experiences({ layoutState }: any) {
       dates: "Sep 2022 - Jun 2024",
       blurbs: [
         {
-          blurb:
-            "Led a team to develop a computer vision system for a drone, enhancing automation and flight accuracy in dynamic environments.",
+          title: "My Time at Trickfire Robotics",
+          blurb: `
+           Joining Trickfire Robotics was transformative. As a computer vision lead, 
+           I worked on developing a computer vision system for a drone, 
+            enhancing automation and flight accuracy. This involved integrating 
+            computer vision algorithms for object detection, optimizing real-time data 
+            processing, and conducting field tests to ensure reliability. 
+            I honed my technical skills and learned the value of teamwork, 
+            problem-solving, and perseverance. The knowledge and friendships 
+            I gained have been invaluable to me.
+          `,
           img: "/FullRoverPhoto.png",
           imgLink: "",
         },
@@ -355,7 +384,7 @@ function Experiences({ layoutState }: any) {
                   {/* If there is no image */}
                   {blurb.img === "" ? (
                     <div className="flex w-full items-center mt-10">
-                      <div className="w-7/12 pl-5">
+                      <div className="w-full pl-5">
                         <h1 className="font-bold text-3xl mb-3 text-tt">
                           {blurb.title && blurb.title}
                         </h1>
