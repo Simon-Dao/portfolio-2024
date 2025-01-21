@@ -79,13 +79,16 @@ function About() {
               </h1>
               <p className="text-xl">
                 {`
-                I come from a family of Vietnamese immigrants, whose journey to the United States was marked by hope and resilience 
-                in pursuit of a better life. Growing up in a vibrant, culturally rich community in Seattle, I was raised on stories 
-                of adversity and perseverance that shaped my values and aspirations. This background instilled in me a deep appreciation
-                for the opportunities I have been afforded, particularly in education and personal development. It also fostered a strong 
-                sense of responsibility to give back and uplift others facing similar challenges. This foundational experience influences 
-                my approach to every project and interaction, as I strive to ensure inclusivity and accessibility in the tech community and 
-                beyond, honoring my family's legacy and the broader immigrant experience.
+                I come from a family of Vietnamese immigrants whose journey to the United States was marked by 
+                hope and resilience. Raised on stories of adversity and perseverance, my values and aspirations 
+                were shaped early on. A notable story is my father's escape from poverty in Vietnam to the U.S.,
+                 where he used his informal engineering education to build a successful business. His experiences 
+                 inspired my passion for STEM education. This background instilled in me a deep appreciation for the 
+                 opportunities I've had, especially in education and personal development. It also ingrained a strong
+                  sense of responsibility to give back and uplift others facing similar challenges. This foundational
+                   experience influences my approach to every project and interaction, as I strive to ensure inclusivity
+                    and accessibility in the tech community and beyond, honoring my family's legacy and the broader
+                     immigrant experience.
                 
               `}
               </p>
@@ -115,7 +118,7 @@ function About() {
               <p className="text-xl">
                 {`
                 I grew up in South Seattle, in a historically redlined neighborhood where the educational opportunities were noticeably 
-                inferior to those in wealthier areas. This stark disparity motivated me to close the gap in education, specifically for 
+                inferior to those in wealthier areas. This obvious disparity motivated me to close the gap in education, specifically for 
                 STEM fields. Driven by a deep commitment to educational equity, I aim to enhance access to technology and learning resources, 
                 ensuring that students from underserved backgrounds can overcome systemic barriers and realize their full potential in STEM disciplines.
               `}
@@ -175,16 +178,13 @@ function About() {
               <h1 className="font-bold text-3xl mb-3 text-tt">Beyond Graduation</h1>
               <p className="text-xl">
                 {`
-                Building on this commitment, I have actively sought opportunities to directly impact educational access and equity through my various roles and projects. 
-               As Vice President of the ACM Club at the University of Washington, I led initiatives to organize workshops and events that demystified complex topics in 
-               technology and coding. These events were designed to be accessible and engaging for students regardless of their prior experience, significantly reducing
-              the intimidation factor associated with STEM fields.
-
-              Additionally, during my internship at the UW Office of Admissions, I redesigned web portals that are used by thousands of prospective students. My improvements made 
-              these platforms more intuitive and user-friendly, ensuring that students from all backgrounds could easily access the information needed to navigate their educational
-              pathways. Through these actions, I have been able to provide practical solutions that help level the playing field and offer every student the opportunity to explore 
-              and excel in STEM disciplines.
-                
+                  Beyond graduation, I dream of continue my journey in technology and education. I'll start by working in 
+                  industry for many years to gain experience and knowledge. I'll then use this experience to 
+                  teach the next generation of innovators. I am passionate about creating accessible
+                  learning resources and fostering inclusive communities that empower students from all backgrounds to
+                  explore and excel in STEM fields. My ultimate goal is to establish a nonprofit organization that provides
+                  mentorship, resources, and opportunities to underserved students, ensuring that they have the support and
+                  guidance needed to pursue their passions.
               `}
               </p>
             </div>
@@ -208,10 +208,9 @@ function About() {
                 <p className="text-xl mt-5">
                   {`
                     As children, we are all naturally curious, always asking questions about things that we adults might consider mundane. 
-                    Despite being grown up now, I still ask myself how things work. This enduring curiosity drives me to understand the underlying 
+                    Despite being grown up now, I still ask myself how things work. This curiosity drives me to understand the underlying 
                     mechanics of both simple and complex systems, whether it’s unraveling the code behind a website or dissecting the strategies behind 
-                    effective team leadership. This insatiable curiosity not only propels my academic and professional pursuits but also guides my approach to mentoring,
-                     as I encourage others to ask 'why' and 'how,' sparking their passion for discovery and learning.
+                    effective team leadership.
                   `}
                 </p>
               </div>
@@ -219,9 +218,8 @@ function About() {
                 <h1 className="text-2xl underline">Persistence</h1>
                 <p className="text-xl mt-5">
                   {`
-                    Persistence has been a driving force in my life, especially navigating the complexities of being a first-generation college student from a low-income neighborhood. 
-                    This value has fueled my determination to overcome barriers, whether mastering challenging coursework or leading significant projects like the ACM club hackathon.
-                     My commitment to persistence means not only striving for my own success but also providing support to peers facing their struggles, ensuring we all advance together.
+                    Persistence has been a driving force in my life since childhood. I am not the smartest person in the room, but I make up for that with persistence. 
+                    This value has fueled my determination to overcome barriers, and is a driving factor of my success today.
                   `}
                 </p>
               </div>
@@ -234,9 +232,7 @@ function About() {
                     Respect has been a cornerstone of my journey, deeply rooted in my upbringing in a diverse community where everyone's story was uniquely instructive.
                      As I've matured, my definition of respect has evolved beyond mere politeness to encompass a genuine appreciation for the perspectives and experiences 
                      of others. This principle has guided my interactions both in and out of the classroom, fostering environments where open dialogue and mutual understanding
-                      flourish. In leading the ACM and Spades clubs, I've prioritized creating spaces where everyone feels valued and heard, which has not only enhanced our
-                       collective endeavors but also strengthened my personal commitment to advocacy and inclusion. By embracing respect as a fundamental value, I aim to inspire
-                        a culture of empathy and cooperation, empowering others to contribute their voices to our shared narratives.
+                      flourish.
                   `}
                 </p>
               </div>
@@ -244,11 +240,9 @@ function About() {
                 <h1 className="text-2xl underline">Diversity</h1>
                 <p className="text-xl mt-5">
                   {`
-                    Diversity is not just a concept to me but a reality that enriches every endeavor I undertake. At the University of Washington, 
+                    Diversity is not just a concept to me but a reality that enriches every step I undertake. At the University of Washington, 
                     I have actively sought to foster diversity in thought, culture, and background, particularly in my roles within tech and leadership 
-                    communities. My efforts are aimed at creating inclusive spaces where a multiplicity of ideas can flourish, leading to more innovative 
-                    solutions and a deeper understanding among participants. This commitment to diversity has taught me invaluable lessons about creativity,
-                     collaboration, and the strength that comes from embracing varied perspectives.
+                    communities. 
                   `}
                 </p>
               </div>
