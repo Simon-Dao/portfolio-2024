@@ -9,7 +9,6 @@ import GenericButton from "./genericButton";
 function Experiences({ layoutState }: any) {
   interface ProjectProps {
     name: string;
-    links: Array<string>;
     dates: string;
     src?: string;
     blurbs: Blurb[];
@@ -18,6 +17,7 @@ function Experiences({ layoutState }: any) {
 
   interface Blurb {
     title?: string;
+    imgLink: string;
     blurb: string;
     img: string;
   }
@@ -39,7 +39,6 @@ function Experiences({ layoutState }: any) {
     {
       name: "UWB ACM - Vice President",
       dates: "Fall 2022 - Present",
-      links: ["https://uwbacm.org/index.html"],
       blurbs: [
         {
           title: "My ACM Journey",
@@ -52,6 +51,7 @@ function Experiences({ layoutState }: any) {
              Hackathon, which hosted over 350 participants and set new benchmarks for success.
       `,
           img: "/acmgroup.jpg",
+          imgLink: "",
         },
         {
           title: "2025 and beyond",
@@ -66,82 +66,112 @@ function Experiences({ layoutState }: any) {
             to come and committed to making this year one of the club’s most successful yet.
       `,
           img: "/uwbhacksaiarticle.png",
+          imgLink:
+            "https://www.uwb.edu/news/2024/05/24/success-a-product-of-growth-and-collaboration",
         },
       ],
       src: "/uwbacmsite.png",
       type: "Website",
     },
     {
-      name: "UWB Office of Admissions - Data Science Intern",
-      dates: "Mar 2022 - Oct 2023",
-      links: ["https://github.com/Simon-Dao/uwb-admissions-system.git"], // Changed to fit the context
-      blurbs: [
-        {
-          title: "My CFA Journey",
-          blurb: `Computing For All(CFA) is a non profit focused on educating people from non traditional backgrounds in web  I joined  during my senior year of highschool. `,
-          img: "",
-        }
-      ],
-      src: "/uwb.jpg",
-      type: "Full Stack Web App",
-    },
-    {
-      name: "Computing for All",
+      name: "Computing for All - Data Science Intern",
       dates: "Sep 2023 - Jun 2024",
-      links: ["https://github.com/Simon-Dao/pathfinding-visualizer.git"],
       blurbs: [
         {
-          blurb: "Designed a web app that visualizes pathfinding algorithms, allowing users to interactively explore algorithmic paths and understand core computing concepts.",
+          blurb:
+            "Designed a web app that visualizes pathfinding algorithms, allowing users to interactively explore algorithmic paths and understand core computing concepts.",
           img: "/cfatmobile.jpg",
+          imgLink:
+            "https://www.linkedin.com/posts/mandiravirmani_computingforall-digitalskillsforall-pre-activity-6970484332683558912-prYm/?utm_source=share&utm_medium=member_desktop",
         },
         {
-          blurb: "Designed a web app that visualizes pathfinding algorithms, allowing users to interactively explore algorithmic paths and understand core computing concepts.",
+          blurb:
+            "Designed a web app that visualizes pathfinding algorithms, allowing users to interactively explore algorithmic paths and understand core computing concepts.",
           img: "/cfarefugees.jpg",
-        }
+          imgLink:
+            "https://www.linkedin.com/posts/digitalskillsforall_computingforall-digitalskillsforall-seattlejobsinitiative-activity-6974154304249094145-ozR2?utm_source=share&utm_medium=member_desktop",
+        },
       ],
       src: "/cfa.jpg",
       type: "Web App",
     },
     {
-      name: "ID Tech",
-      dates: "Jan 2025 - Present",
-      links: ["https://github.com/Simon-Dao/vr-game-development.git"], // Changed to fit the context
+      name: "ID Tech - Camp Instructor",
+      dates: "Jun 2023 - Aug 2023",
       blurbs: [
         {
-          blurb: "Developed a virtual reality game teaching platform aimed at educating children in programming and game design, using interactive VR environments.",
+          blurb:
+            `
+            As a camp instructor at iD Tech, I had the opportunity to teach students aged 7-17 the fundamentals of coding and robotics. 
+            This role involved creating engaging lesson plans, providing hands-on guidance, and fostering a collaborative learning environment.
+             I also helped students develop their own projects, which ranged from simple games to complex robotic systems, ensuring they gained 
+             practical experience and confidence in their skills. It was a fulfilling opportunity to contribute to the next generation of computer 
+             scientists and inspire young minds to explore the world of technology.
+            `,
           img: "/idtech.jpg",
-        }
+          imgLink: "",
+        },
+        {
+          blurb: `
+            I learned a lot from the kids. Especially how the kids were very intelligent and would come up 
+            with unconventional solutions that sometimes worked. This experience highlighted the power of taking
+             risks and experimenting. Teaching computer science is also easier than most people realize; 
+             it just requires a good teacher.
+          `,
+          img: "/idtechbc.jpg",
+          imgLink: "",
+        },
       ],
       src: "/idtech.jpg",
       type: "Full Stack Web App",
     },
     {
-      name: "Trickfire Robotics",
-      dates: "Sep 2022 - Jun 2024",
-      links: [
-        "https://github.com/Simon-Dao/robot-vision-system.git" // Changed to fit the context
-      ],
+      name: "Collaboratory Makerspace - Volunteer",
+      dates: "Apr 2023 - Present",
       blurbs: [
         {
-          blurb: "Led a team to develop a computer vision system for a drone, enhancing automation and flight accuracy in dynamic environments.",
-          img: "/FullRoverPhoto.png",
-        }
-      ],
-      src: "/FullRoverPhoto.png",
-      type: "Robotics",
-    },
-    {
-      name: "Collaboratory Makerspace",
-      dates: "Apr 2023 - Feb 2024",
-      links: ["https://github.com/Simon-Dao/makerspace-management-system.git"], // Changed to fit the context
-      blurbs: [
-        {
-          blurb: "Developed a management system to streamline operations and improve resource allocation in a community makerspace, enhancing user experience and operational efficiency.",
+          blurb:
+            "Developed a management system to streamline operations and improve resource allocation in a community makerspace, enhancing user experience and operational efficiency.",
           img: "/Group_Shot_Fin.png",
-        }
+          imgLink: "",
+        },
+        {
+          blurb:
+            "Developed a management system to streamline operations and improve resource allocation in a community makerspace, enhancing user experience and operational efficiency.",
+          img: "/collabmovie.png",
+          imgLink: "",
+        },
       ],
       src: "/Group_Shot_Fin.png",
       type: "Full Stack Web App",
+    },
+    {
+      name: "UWB Office of Admissions - Data Science Intern",
+      dates: "Mar 2022 - Oct 2023",
+      blurbs: [
+        {
+          title: "UWB Office of Admissions",
+          blurb: ``,
+          img: "",
+          imgLink: "",
+        },
+      ],
+      src: "/uwb.jpg",
+      type: "Full Stack Web App",
+    },
+    {
+      name: "Trickfire Robotics",
+      dates: "Sep 2022 - Jun 2024",
+      blurbs: [
+        {
+          blurb:
+            "Led a team to develop a computer vision system for a drone, enhancing automation and flight accuracy in dynamic environments.",
+          img: "/FullRoverPhoto.png",
+          imgLink: "",
+        },
+      ],
+      src: "/FullRoverPhoto.png",
+      type: "Robotics",
     },
   ];
 
@@ -241,40 +271,6 @@ function Experiences({ layoutState }: any) {
     }
   }, [layoutMode]);
 
-  const renderListItems = () => (
-    <div className="flex flex-col divide-y select-none">
-      <div className="grid grid-cols-3 pb-10">
-        <div className="text-gray-300 pt-14">Name</div>
-        <div className="text-gray-300 pt-14">Experience Type</div>
-        <div className="text-gray-300 pt-14">Date</div>
-      </div>
-      {experiences.map((project, index) => (
-        <div
-          key={index}
-          className={`list-element grid grid-cols-3 py-16 gap-5 cursor-pointer grid-row-${index} `}
-          onClick={() => openModal(project)}
-          onMouseEnter={handleMouseEnterList}
-          onMouseLeave={handleMouseLeaveList}
-        >
-          <img
-            className="rounded-lg p-5 w-5/12"
-            src="/family_long_dress.jpg"
-            alt="Description of image"
-          ></img>
-          <div className="text-lg sm:text-3xl flex items-center bold ">
-            {project.name}
-          </div>
-          <div className="text-sm sm:text-2xl flex items-center">
-            {project.dates || <div className="text-pt">Unavailable</div>}
-          </div>
-          <div className="text-sm sm:text-2xl flex items-center">
-            {project.type}
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-
   const renderGridItems = () => (
     <div className="container mx-auto py-10">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6">
@@ -297,7 +293,7 @@ function Experiences({ layoutState }: any) {
                 layout="fill"
                 objectFit="cover"
                 priority={true}
-              />
+              ></Image>
             </div>
             <div className="h-30 p-10">
               <h1 className="text-2xl">{project.name}</h1>
@@ -317,7 +313,6 @@ function Experiences({ layoutState }: any) {
     <div>
       {modalVisible && (
         <div
-          onClick={closeModal}
           ref={modalOuter}
           className="fixed inset-0 flex items-center justify-center z-40 bg-gray-900 bg-opacity-75"
         >
@@ -332,13 +327,15 @@ function Experiences({ layoutState }: any) {
             >
               Close{" "}
             </button>
+
+            {/* Modal Content */}
             <div className="mt-5 overflow-y-scroll">
+              {/* Iterating through blurbs */}
               {selectedProject.blurbs.map((blurb, i) => (
                 <div key={i}>
-
-                  {
-                  blurb.img === "" ?
-                  <div className="flex w-full items-center mt-10">
+                  {/* If there is no image */}
+                  {blurb.img === "" ? (
+                    <div className="flex w-full items-center mt-10">
                       <div className="w-7/12 pl-5">
                         <h1 className="font-bold text-3xl mb-3 text-tt">
                           {blurb.title && blurb.title}
@@ -346,8 +343,9 @@ function Experiences({ layoutState }: any) {
                         <h1>{blurb.blurb}</h1>
                       </div>
                     </div>
-                  :
-                  i % 2 == 0 ? (
+                  ) : i % 2 == 0 ? (
+
+                    // If there is an image
                     <div className="flex w-full items-center mt-10">
                       <div className="w-7/12 pl-5">
                         <h1 className="font-bold text-3xl mb-3 text-tt">
@@ -356,25 +354,58 @@ function Experiences({ layoutState }: any) {
                         <h1>{blurb.blurb}</h1>
                       </div>
 
-                      <img
-                        className="rounded-lg p-5 w-5/12"
-                        src={blurb.img}
-                        alt="Description of image"
-                      ></img>
+                      {/* Handle Image Links */}
+                      {blurb.imgLink === "" ? (
+                        <img
+                          className="rounded-lg p-5 w-5/12"
+                          src={blurb.img}
+                          alt="Description of image"
+                        ></img>
+                      ) : (
+                        <a
+                          className="w-5/12 hover:opacity-70 transition-opacity duration-300"
+                          href={blurb.imgLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <img
+                            className="w-full rounded-lg p-5"
+                            src={blurb.img}
+                            alt="Description of image"
+                          ></img>
+                        </a>
+                      )}
                     </div>
                   ) : (
-                    <div className="flex w-full items-center">
-                      <img
-                        className="rounded-lg p-5 w-5/12"
-                        src={blurb.img}
-                        alt="Description of image"
-                      ></img>
-                      <div className="w-7/12 ">
+                    <div className="flex w-full items-center mt-10">
+                      <div className="w-7/12 pl-5">
                         <h1 className="font-bold text-3xl mb-3 text-tt">
                           {blurb.title && blurb.title}
                         </h1>
                         <h1>{blurb.blurb}</h1>
                       </div>
+
+                      {/* Handle Image Links */}
+                      {blurb.imgLink === "" ? (
+                        <img
+                          className="rounded-lg p-5 w-5/12"
+                          src={blurb.img}
+                          alt="Description of image"
+                        ></img>
+                      ) : (
+                        <a
+                          className="w-5/12 hover:opacity-70 transition-opacity duration-300"
+                          href={blurb.imgLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <img
+                            className="w-full rounded-lg p-5"
+                            src={blurb.img}
+                            alt="Description of image"
+                          ></img>
+                        </a>
+                      )}
                     </div>
                   )}
                 </div>
@@ -386,7 +417,7 @@ function Experiences({ layoutState }: any) {
         </div>
       )}
 
-      {layoutMode == "list" ? renderListItems() : renderGridItems()}
+      {renderGridItems()}
     </div>
   );
 }
