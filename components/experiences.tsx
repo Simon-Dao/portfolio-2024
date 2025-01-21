@@ -47,7 +47,7 @@ function Experiences({ layoutState }: any) {
             Driven by a discovery mindset, I joined ACM—the largest computer science club on campus—to immerse myself fully in the field. Starting as a freshman,
              I learned important lessons from senior officers on event management and effective leadership. By late freshman through sophomore year, I began 
              leading my own events, each growing in size and scope. These gatherings not only taught practical skills but also featured industry speakers, 
-             all designed to maximize student benefit. My involvement peaked in my sophomore year as I played a key role in planning and staffing our largest annual 
+             all designed to maximize student benefit. The highlight of my sophomore year was playing a role in planning and staffing our largest annual 
              Hackathon, which hosted over 350 participants and set new benchmarks for success.
       `,
           img: "/acmgroup.jpg",
@@ -93,7 +93,7 @@ function Experiences({ layoutState }: any) {
           blurb:
 `From there, I was able to work on a variety of projects, including overhauling CFA's student database to provide more accurate information
            for sponsors and automating the attendance tracking process for CFA's online classes. I also had the opportunity to work with refugees 
-           from Syria and Afghanistan and teach them basic computer skills. This was a very rewarding experience.`,
+           from Somalia and Afghanistan and teach them basic computer skills. This was a very rewarding experience.`,
           img: "/cfarefugees.jpg",
           imgLink:
             "https://www.linkedin.com/posts/digitalskillsforall_computingforall-digitalskillsforall-seattlejobsinitiative-activity-6974154304249094145-ozR2?utm_source=share&utm_medium=member_desktop",
@@ -174,7 +174,7 @@ function Experiences({ layoutState }: any) {
             the other side.
 
             Here I was able to make a significant impact by applying my frontend skills to improve the UX of several web portals used
-            by students and staff. My favorite project was adding confetti to the acceptance page, it was a small touch but it mode the
+            by students and staff. My favorite project was adding confetti to the acceptance page, it was a small touch but it made the
             experience of getting accepted that much more special.
           `,
           img: "",

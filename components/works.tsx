@@ -43,7 +43,7 @@ function Works({ layoutState }: any) {
     },
     {
       name: 'Automated Attendance System',
-      stack: 'Nextjs, React, PostGres, AWS, Redis',
+      stack: 'Node.js, Python, JavaScript, Microsoft Dynamics, Zoom API, Canvas API',
       links: ['No Links'],
       blurb: 'Developed a pipeline to get data from Zoom meetins and Canvas LMS into a Microsoft Dynamics database',
       src: '',

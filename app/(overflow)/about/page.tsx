@@ -60,7 +60,7 @@ function About() {
             During this short time, I have grown to be an innovator, mentor, and leader. Since my first day at the University of Washington,
             I set my mission to improve myself as much as I can. This journey has been a rough road, but I pulled 
             through and came out a better person. From that fateful first day, I have explored my interest in web development, game development,
-            and machine learning, inspired by my coursework, and have applied it to many impactful projects. One highlight being a digital platform for the upcoming
+            and machine learning through coursework and have applied it to many impactful projects. One highlight being a digital platform for the upcoming
             ACM hackathon, which significantly improved participants' experience by streamlining the registration and event participation tracking process.
               `}
           </p>
