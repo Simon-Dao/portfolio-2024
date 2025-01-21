@@ -116,8 +116,8 @@ function About() {
                 {`
                 I grew up in South Seattle, in a historically redlined neighborhood where the educational opportunities were noticeably 
                 inferior to those in wealthier areas. This obvious disparity motivated me to close the gap in education, specifically for 
-                STEM fields. Driven by a deep commitment to educational equity, I aim to enhance access to technology and learning resources, 
-                ensuring that students from underserved backgrounds can overcome systemic barriers and realize their full potential in STEM disciplines.
+                STEM fields. Driven by a deep commitment to educational equity, I want students from underserved backgrounds
+                can overcome systemic barriers and realize their full potential.
               `}
               </p>
             </div>
@@ -126,7 +126,7 @@ function About() {
           {/* Outside of School */}
           <div className="flex w-full items-center">
             <div className="w-7/12 pl-5">
-              <h1 className="font-bold text-3xl mb-3 text-tt">My Undergrad</h1>
+              <h1 className="font-bold text-3xl mb-3 mt-5 text-tt">My Undergrad</h1>
               <p className="text-xl">
                 {`
                 Building on this commitment, I have actively sought opportunities to directly impact educational access and equity through my various roles and projects. 
@@ -177,9 +177,7 @@ function About() {
                 {`
                   Beyond graduation, I dream of continue my journey in technology and education. I'll start by working in 
                   industry for many years to gain experience and knowledge. I'll then use this experience to 
-                  teach the next generation of innovators. I am passionate about creating accessible
-                  learning resources and fostering inclusive communities that empower students from all backgrounds to
-                  explore and excel in STEM fields. My ultimate goal is to establish a nonprofit organization that provides
+                  teach the next generation of innovators. My ultimate goal is to establish a nonprofit organization that provides
                   mentorship, resources, and opportunities to underserved students, ensuring that they have the support and
                   guidance needed to pursue their passions.
               `}
@@ -227,9 +225,9 @@ function About() {
                 <p className="text-xl mt-5">
                   {`
                     Respect has been a cornerstone of my journey, deeply rooted in my upbringing in a diverse community where everyone's story was uniquely instructive.
-                     As I've matured, my definition of respect has evolved beyond mere politeness to encompass a genuine appreciation for the perspectives and experiences 
-                     of others. This principle has guided my interactions both in and out of the classroom, fostering environments where open dialogue and mutual understanding
-                      flourish.
+                     As I've matured, my definition of respect has evolved beyond mere politeness to an appreciation of the perspectives and experiences 
+                     of others. This principle has guided my interactions both in and out of the classroom, fostering environments where 
+                     open dialogue and mutual understanding flourish.
                   `}
                 </p>
               </div>
@@ -237,9 +235,9 @@ function About() {
                 <h1 className="text-2xl underline">Diversity</h1>
                 <p className="text-xl mt-5">
                   {`
-                    Diversity is not just a concept to me but a reality that enriches every step I undertake. At the University of Washington, 
-                    I have actively sought to foster diversity in thought, culture, and background, particularly in my roles within tech and leadership 
-                    communities. 
+                    Diversity is not just a concept to me but a reality that enhances every step I take. At the University of Washington, 
+                    I have actively sought to engage with individuals from diverse backgrounds, recognizing that their unique perspectives and 
+                    helping me think outside of the box.
                   `}
                 </p>
               </div>

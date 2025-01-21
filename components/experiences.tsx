@@ -44,9 +44,9 @@ function Experiences({ layoutState }: any) {
           title: "My ACM Journey",
           blurb: `
             My journey with the Association for Computing Machinery (ACM) at UWB has been the most expansive and impactful aspect of my university experience. 
-            Driven by a discovery mindset, I joined ACM—the premier computer science club on campus—to immerse myself fully in the field. Starting as a freshman,
-             I absorbed invaluable lessons from senior officers on event management and effective communication. By late freshman through sophomore year, I began 
-             spearheading my own events, each growing in size and scope. These gatherings not only taught practical skills but also featured industry speakers, 
+            Driven by a discovery mindset, I joined ACM—the largest computer science club on campus—to immerse myself fully in the field. Starting as a freshman,
+             I learned important lessons from senior officers on event management and effective leadership. By late freshman through sophomore year, I began 
+             leading my own events, each growing in size and scope. These gatherings not only taught practical skills but also featured industry speakers, 
              all designed to maximize student benefit. My involvement peaked in my sophomore year as I played a key role in planning and staffing our largest annual 
              Hackathon, which hosted over 350 participants and set new benchmarks for success.
       `,
@@ -59,10 +59,8 @@ function Experiences({ layoutState }: any) {
             This year, I plan on increasing the reach and scale of the club, aiming for more officers, more events, and more impact. My team and I are currently 
             planning to host the largest hackathon we’ve ever had on campus, and we’re actively in talks with companies like Avanade, Microsoft, Amazon, Blue 
             Origin, and Salesforce for sponsorships and partnerships. To make the event more appealing to non-STEM majors, we’re incentivizing participants to 
-            develop strong business solutions, not just good code, and have introduced a non-code track focusing on product management, user experience design, 
-            and business strategy. In addition, we’re partnering with 20 clubs this year to ensure a diverse and collaborative environment, bringing together students 
-            from various disciplines to work on real-world problems. By diversifying our event offerings and securing key partnerships, we aim to provide a valuable 
-            experience that allows all participants to learn, grow, and showcase their skills. With a growing officer team and a clear vision, we’re excited for what’s 
+            develop strong business solutions, not just good code. In addition, we’re partnering with more than 10 clubs this year to ensure a diverse and collaborative environment, bringing together students 
+            from various disciplines to work on real-world problems. With a growing officer team and a clear vision, we’re excited for what’s 
             to come and committed to making this year one of the club’s most successful yet.
       `,
           img: "/uwbhacksaiarticle.png",
@@ -81,7 +79,7 @@ function Experiences({ layoutState }: any) {
           title: "\"Computing for All\"",
           blurb:
           `Computing for all is a non-profit organization that aims to provide digital skills training to underrepresented communities.
-           I originally joined the organization to learn technical skills but after a few months, I fell in love with 
+           I originally joined the organization to gain technical skills but after a few months, I fell in love with 
            CFA's mission. I asked if I could take on more responsibilities and was given the opportunity to intern for the organization.
            
            
@@ -105,13 +103,13 @@ function Experiences({ layoutState }: any) {
       type: "Web App",
     },
     {
-      name: "ID Tech - Camp Instructor",
+      name: "ID Tech - Programming Instructor",
       dates: "Jun 2023 - Aug 2023",
       blurbs: [
         {
           blurb:
             `
-            As a camp instructor at iD Tech, I had the opportunity to teach students aged 7-17 the fundamentals of coding and game devopment with 
+            As a camp instructor at ID Tech, I had the opportunity to teach students aged 7-17 the fundamentals of coding and game devopment with 
             virtual reality. 
             This role involved creating engaging lesson plans, providing hands-on guidance, and fostering a collaborative learning environment.
              I also helped students develop their own projects, ensuring they gained 
@@ -123,9 +121,9 @@ function Experiences({ layoutState }: any) {
         },
         {
           blurb: `
-          I learned a lot from the kids, teaching a younger crowd of kids forces me to look at concepts from different perspectives
+          I also learned a ton from this experience. Teaching a younger crowd of kids forces me to look at concepts from different perspectives
           in order to find a way to explain it to them. This outside of the box thinking has helped me in my own projects and has made me a better
-          communicator. But the most important thing I learned from the kids was to never give up your natural curiosity and to always be willing to learn new things.
+          communicator. But the most important thing I learned from the kids was to never give up my natural curiosity and to always be willing to learn new things.
           It's good to poke and prod at things you don't understand, because you never know what you might find.
           `,
           img: "/idtechbc.jpg",
@@ -154,7 +152,7 @@ function Experiences({ layoutState }: any) {
           blurb:
           `
             Through this experience, I've met my closest friends and assisted many people with their projects, 
-            ranging from simple 3D prints to automating a task of handling cow manure on a farm. I've also gained extensive knowledge in 
+            ranging from simple 3D prints to automating the task of handling cow manure on a farm. I've also gained extensive knowledge in 
             3D printing, laser cutting, and various other machines, applying these skills to my own projects.
           `,
           img: "/collabmovie.png",
@@ -199,7 +197,7 @@ function Experiences({ layoutState }: any) {
       type: "Full Stack Web App",
     },
     {
-      name: "Trickfire Robotics",
+      name: "Trickfire Robotics - Computer Vision Lead",
       dates: "Sep 2022 - Jun 2024",
       blurbs: [
         {
@@ -210,9 +208,9 @@ function Experiences({ layoutState }: any) {
             enhancing automation and flight accuracy. This involved integrating 
             computer vision algorithms for object detection, optimizing real-time data 
             processing, and conducting field tests to ensure reliability. 
-            I honed my technical skills and learned the value of teamwork, 
-            problem-solving, and perseverance. The knowledge and friendships 
-            I gained have been invaluable to me.
+            I gained new technical skills and learned the value of teamwork, 
+            and problem-solving. The knowledge and friendships 
+            I gained have been valuable to me.
           `,
           img: "/FullRoverPhoto.png",
           imgLink: "",
