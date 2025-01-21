@@ -58,18 +58,17 @@ function About() {
           <p className="text-xl mt-5">
             {`
             During this short time, I have grown to be an innovator, mentor, and leader. Since my first day at the University of Washington,
-            I set my mission to improve myself as much as I can. This journey has been fraught with hardship and struggles, but I pulled 
-            through and came out a better person. From that fateful day, I have explored my interest in web development, game development,
+            I set my mission to improve myself as much as I can. This journey has been a rough road, but I pulled 
+            through and came out a better person. From that fateful first day, I have explored my interest in web development, game development,
             and machine learning, inspired by my coursework, and have applied it to many impactful projects. One highlight being the hackathon 
-            website for UWB ACM's Website, which significantly improved participants' experience by streamlining the registration and project submission processes.
-
+            website for UWB ACM's Website, which significantly improved participants' experience by streamlining the registration and event participation tracking process.
+              `}
+          </p>
+          <p className="text-xl mt-5">
+            {`
             My main goal is to make it easier for people to get into technology, especially those who might feel intimidated by the perceived complexity or
             those who think it might not be for them. By demystifying technology and making learning resources more accessible, I aim to open doors for more 
             individuals to discover their potential in the tech world.
-
-            I want to tell you how I got here in the first place. Growing up in a low-income neighborhood in Seattle, the opportunities for learning advanced 
-            technology were limited. My passion for tech was sparked by a community program that introduced me to basic coding. This experience was transformative, 
-            and it fueled my desire to delve deeper into the tech field, ensuring others could have the same transformative experiences through education and community engagement.
               `}
           </p>
           <div className="flex w-full items-center">
@@ -79,17 +78,15 @@ function About() {
               </h1>
               <p className="text-xl">
                 {`
-                I come from a family of Vietnamese immigrants whose journey to the United States was marked by 
-                hope and resilience. Raised on stories of adversity and perseverance, my values and aspirations 
-                were shaped early on. A notable story is my father's escape from poverty in Vietnam to the U.S.,
-                 where he used his informal engineering education to build a successful business. His experiences 
-                 inspired my passion for STEM education. This background instilled in me a deep appreciation for the 
-                 opportunities I've had, especially in education and personal development. It also ingrained a strong
-                  sense of responsibility to give back and uplift others facing similar challenges. This foundational
-                   experience influences my approach to every project and interaction, as I strive to ensure inclusivity
-                    and accessibility in the tech community and beyond, honoring my family's legacy and the broader
-                     immigrant experience.
-                
+                I come from a family of Vietnamese immigrants whose journey to the United States was 
+                marked by hope and resilience. Raised on stories of adversity, my values and aspirations 
+                were shaped early on. One significant experience was my father's spontanious and informal teachings 
+                about engineering concepts, despite his lack 
+                of formal education, he would often explain complex concepts to me in a way that was easy to understand.
+                His enthusiasm for the subject inspired my own passion for STEM. This background instilled in me a deep 
+                appreciation for educational opportunities and a strong sense of responsibility to uplift 
+                others. This experience influences my approach to every project, as I strive to ensure 
+                inclusivity and accessibility in the tech community, honoring my family's legacy.
               `}
               </p>
             </div>
