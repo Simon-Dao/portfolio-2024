@@ -78,15 +78,24 @@ function Experiences({ layoutState }: any) {
       dates: "Sep 2023 - Jun 2024",
       blurbs: [
         {
+          title: "\"Computing for All\"",
           blurb:
-            "Designed a web app that visualizes pathfinding algorithms, allowing users to interactively explore algorithmic paths and understand core computing concepts.",
+          `Computing for all is a non-profit organization that aims to provide digital skills training to underrepresented communities.
+           I originally joined the organization to learn technical skills but after a few months, I fell in love with 
+           CFA's mission. I asked if I could take on more responsibilities and was given the opportunity to intern for the organization.
+           
+           
+           
+          `,
           img: "/cfatmobile.jpg",
           imgLink:
             "https://www.linkedin.com/posts/mandiravirmani_computingforall-digitalskillsforall-pre-activity-6970484332683558912-prYm/?utm_source=share&utm_medium=member_desktop",
         },
         {
           blurb:
-            "Designed a web app that visualizes pathfinding algorithms, allowing users to interactively explore algorithmic paths and understand core computing concepts.",
+`From there, I was able to work on a variety of projects, including overhauling CFA's student database to provide more accurate information
+           for sponsors and automating the attendance tracking process for CFA's online classes. I also had the opportunity to work with refugees 
+           from Syria and Afghanistan and teach them basic computer skills. This was a very rewarding experience.`,
           img: "/cfarefugees.jpg",
           imgLink:
             "https://www.linkedin.com/posts/digitalskillsforall_computingforall-digitalskillsforall-seattlejobsinitiative-activity-6974154304249094145-ozR2?utm_source=share&utm_medium=member_desktop",
@@ -102,9 +111,10 @@ function Experiences({ layoutState }: any) {
         {
           blurb:
             `
-            As a camp instructor at iD Tech, I had the opportunity to teach students aged 7-17 the fundamentals of coding and robotics. 
+            As a camp instructor at iD Tech, I had the opportunity to teach students aged 7-17 the fundamentals of coding and game devopment with 
+            virtual reality. 
             This role involved creating engaging lesson plans, providing hands-on guidance, and fostering a collaborative learning environment.
-             I also helped students develop their own projects, which ranged from simple games to complex robotic systems, ensuring they gained 
+             I also helped students develop their own projects, ensuring they gained 
              practical experience and confidence in their skills. It was a fulfilling opportunity to contribute to the next generation of computer 
              scientists and inspire young minds to explore the world of technology.
             `,
@@ -113,10 +123,10 @@ function Experiences({ layoutState }: any) {
         },
         {
           blurb: `
-            I learned a lot from the kids. Especially how the kids were very intelligent and would come up 
-            with unconventional solutions that sometimes worked. This experience highlighted the power of taking
-             risks and experimenting. Teaching computer science is also easier than most people realize; 
-             it just requires a good teacher.
+          I learned a lot from the kids, teaching a younger crowd of kids forces me to look at concepts from different perspectives
+          in order to find a way to explain it to them. This outside of the box thinking has helped me in my own projects and has made me a better
+          communicator. But the most important thing I learned from the kids was to never give up your natural curiosity and to always be willing to learn new things.
+          It's good to poke and prod at things you don't understand, because you never know what you might find.
           `,
           img: "/idtechbc.jpg",
           imgLink: "",
@@ -127,17 +137,26 @@ function Experiences({ layoutState }: any) {
     },
     {
       name: "Collaboratory Makerspace - Volunteer",
-      dates: "Apr 2023 - Present",
+      dates: "Apr 2023 - Jun 2024",
       blurbs: [
         {
+          title: "My Favorite Space on Campus",
           blurb:
-            "Developed a management system to streamline operations and improve resource allocation in a community makerspace, enhancing user experience and operational efficiency.",
+          `
+            The title is no exaggeration. The Collaboratory Makerspace is a place where I can go to relax, work on projects, 
+            and meet new people. It's a place where I can be creative and learn new things. I started volunteering at the Collaboratory 
+            Makerspace in my freshman year and have been a regular ever since.         
+          `,
           img: "/Group_Shot_Fin.png",
           imgLink: "",
         },
         {
           blurb:
-            "Developed a management system to streamline operations and improve resource allocation in a community makerspace, enhancing user experience and operational efficiency.",
+          `
+            Through this experience, I've met my closest friends and assisted many people with their projects, 
+            ranging from simple 3D prints to automating a task of handling cow manure on a farm. I've also gained extensive knowledge in 
+            3D printing, laser cutting, and various other machines, applying these skills to my own projects.
+          `,
           img: "/collabmovie.png",
           imgLink: "",
         },
