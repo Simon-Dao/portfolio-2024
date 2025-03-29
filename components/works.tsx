@@ -32,7 +32,14 @@ function Works({ layoutState }: any) {
 
 
   const works: ProjectProps[] = [
-    
+    {
+      name: 'Neural Network Library from Scratch',
+      stack: 'Python, Numpy',
+      links: ['https://github.com/Simon-Dao/neural-network-from-scratch.git'],
+      blurb: 'A neural network library that I made from scratch. It is a simple implementation of a neural network with backpropagation and gradient descent. As of now it supports feed-forward and convolutional architectures. I have trained it on the MNIST dataset and it achieved 99% accuracy.',
+      src: '/neuralnetworks.png',
+      type: 'Machine Learning'
+    },
     {
       name: 'UWB Hacks 2025 Website',
       stack: 'Nextjs, React, PostGres, AWS, Redis',
