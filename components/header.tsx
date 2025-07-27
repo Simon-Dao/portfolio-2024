@@ -168,8 +168,8 @@ function MobileView() {
               <TransitionLink
                 onClick={closeNav}
                 text="text-3xl"
-                href="/resume"
-                label="Resume"
+                href="/experiences"
+                label="Experiences"
                 hoverAnimation={true}
               />
             </DotAnim>
