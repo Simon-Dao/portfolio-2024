@@ -20,6 +20,7 @@ function Projects() {
 
     <div className='px-0 lg:px-48 pb-64 pt-52'>
       <div className='px-3 sm:px-24'>
+        
         <section className='flex justify-center'>
           <div style={{ marginTop: "" }} className=" text-title m-0 select-none flex flex-col items-start">
             <span className='text-6xl sm:text-8xl'>
@@ -38,9 +39,6 @@ function Projects() {
           <div className='flex flex-col sm:flex-row w-full'>
             <GenericButton className='my-3 self-center sm:self-auto sm:my-0 w-36 mr-3 flex justify-center items-center border-solid border-gray-500 rounded-full cursor-pointer h-20'>
               <a href="https://github.com/Simon-Dao">Github</a>
-            </GenericButton>
-            <GenericButton className='my-3 self-center sm:self-auto sm:my-0 w-36 mr-3 flex justify-center items-center border-solid border-gray-500 rounded-full cursor-pointer h-20'>
-              <TransitionLink href="/resume" label='Resume' hoverAnimation={true} />
             </GenericButton>
           </div>
           <div className='grow'></div>

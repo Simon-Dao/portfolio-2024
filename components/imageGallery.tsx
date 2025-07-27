@@ -9,9 +9,9 @@ const images = [
   '/drawing_1.png',
   '/image_2.png',
   '/jeff.png',
-  '/rock 1.png',
+  '/rock1.png',
   '/mountain.jpg',
-  '/mma 1.png',
+  '/mma1.png',
 ];
 
 export default function ImageGallery() {
