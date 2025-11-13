@@ -38,28 +38,51 @@ export const animatePageOut = (href: string, router: AppRouterInstance) => {
   })
 }
 
-export const animateHelloText = (ref : any) => {
-  if (!ref || !ref.current) return;
+export const animateHelloText = (ref: any) => {
+  if (!ref?.current) return;
+
+  const [topLine, bottomLine] = ref.current.querySelectorAll("h1");
 
   const words = [
-    'Hello', 'Hola', 'Bonjour', 'Ciao', 'Olá', 'Hallo', 'Привет', 
-    '你好', 'こんにちは', '안녕하세요', 'مرحبا', 'שלום', 'नमस्ते', 'হ্যালো', 
-    'Merhaba', 'Γειά σου', 'Hej', 'Hei', 'Cześć', 'Ahoj', 
-    'Salut', 'Xin chào', 'สวัสดี', 'Halo', 'Hai', 'Kamusta', 'Habari', 'Sawubona', 'హలో'
+    "Hello","Hola","Bonjour","Ciao","Olá","Hallo","Привет",
+    "你好","こんにちは","안녕하세요","مرحبا","שלום","नमस्ते","হ্যালো",
+    "Merhaba","Γειά σου","Hej","Hei","Cześć","Ahoj",
+    "Salut","Xin chào","สวัสดี","Halo","Hai","Kamusta",
+    "Habari","Sawubona","హలో"
   ];
 
-  let currentIndex = 0;
-  const updateText = () => {
-    if (ref.current) {
-      ref.current.textContent = words[currentIndex];
-      // currentIndex = (currentIndex + 1) % words.length;
-      currentIndex = Math.floor(Math.random() * words.length);
-    }
-  };
+  const nextWord = () =>
+    words[Math.floor(Math.random() * words.length)];
 
-  const tl = gsap.timeline({ repeat: -1, repeatDelay: 0.5 }); // Adjust repeatDelay if needed
-  tl.to(ref.current, { x: -100, opacity: 0, duration: 0.5, onComplete: updateText }) // Slide out faster
-    .set(ref.current, { x: 100 })
-    .to(ref.current, { x: 0, opacity: 1, duration: 0.5, ease: 'expo.inOut' }); // Slide in faster
+  // All heights match → safe
+  const h = 60;
+
+  bottomLine.textContent = nextWord();
+
+  const tl = gsap.timeline({ delay:2, repeat: -1 });
+
+  tl.to([topLine, bottomLine], {
+    delay:0.7,
+    y: `-=${h}px`,
+    duration: 0.6,
+  })
+  .set(topLine, {
+    y: `${60}px`,
+    onComplete: () => {
+      topLine.textContent = nextWord();
+    }
+  })
+  .to([topLine, bottomLine], {
+    delay:0.7,
+    y: `-=${h}px`,
+    duration: 0.6,
+  })
+  .set(bottomLine, {
+    y: `0px`,
+    onComplete: () => {
+      bottomLine.textContent = nextWord();
+    }
+  });
 };
+
 

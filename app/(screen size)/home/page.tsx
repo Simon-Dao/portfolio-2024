@@ -101,7 +101,7 @@ function NormalView() {
             </div>
           </Magnetic>
         </div>
-        <div className='grow'>
+        <div className='grow pointer-events-none'>
           <DavidScene />
         </div>
       </div>

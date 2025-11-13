@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import gsap from 'gsap'
 
 const images = [
+  '/hackathononstage.jpg',
+  '/smartcitypresentation.jpg',
   '/avanade.jpg',
   '/me_in_boat.jpg',
   '/internshipevent.jpg',
