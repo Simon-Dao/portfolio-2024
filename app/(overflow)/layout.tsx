@@ -4,7 +4,7 @@ import "../../styles/globals.css";
 import Footer from '../../components/footer'
 import Header from '../../components/header'
 const openSans = Open_Sans({ subsets: ["latin"] });
-import { ReactLenis } from "../../utils/lenis";
+import {ReactLenis} from '../../utils/lenis'
 
 export const metadata: Metadata = {
   title: "Simon Dao",
@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={openSans.className + " scroll-smooth"}>
         <ReactLenis root>
-          <div className="flex flex-col bg-black text-white">
+          <div className="flex flex-col bg-black text-white max-w-[1300px] m-auto">
             <Header />
             {children}
           </div>

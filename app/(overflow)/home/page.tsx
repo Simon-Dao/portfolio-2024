@@ -5,7 +5,6 @@ import Link from 'next/link';
 import DavidScene from '@/components/davidHead';
 import TransitionLink from '@/components/transitionLink';
 import Magnetic from '@/components/magnetic';
-import GenericButton from '@/components/genericButton';
 
 export default function Home() {
   return (
@@ -35,7 +34,7 @@ export default function Home() {
               Computer Science student in Seattle.
             </p>
 
-            <p className="text-md sm:text-lg text-white/70 max-w-lg text-center sm:text-start">
+            <p className="text-md sm:text-lg text-white/70 max-w-lg text-center md:text-start">
               I build webapps, tools, robots, and AI projects using TypeScript, React,
               Python, SQL, and AWS.
             </p>

@@ -29,7 +29,7 @@ function Works({ layoutState }: any) {
         ["Mobile App", "#1E90FF"], // Dodger blue
         ["Desktop App", "#FF1493"], // Deep pink
         ["API", "#7FFF00"], // Chartreuse
-        ["Machine Learning", "#FFD700"], // Gold
+        ["AI/ML", "#FFD700"], // Gold
     ]);
 
     const works: ProjectProps[] = [
@@ -38,8 +38,16 @@ function Works({ layoutState }: any) {
             stack: "Typescript, Nextjs, React, OpenAI API",
             links: ["https://github.com/Simon-Dao/the-lazy-voter.git"],
             blurb: "A website that gives US citizens comprehensive dashboards on the candidates running for office. It also has an integrated chatbot that can answer questions about the candidates and their policies.",
-            src: "",
+            src: "/uspolitics.jpg",
             type: "Web App",
+        },
+        {
+            name: "Reinforcement Learning Agent",
+            stack: "Typescript, Nextjs, React, OpenAI API",
+            links: ["https://colab.research.google.com/drive/19u1aFJNF6BOB2nlGUZNne_LMRmAovDSV?usp=sharing", "https://drive.google.com/file/d/12XIhXGA1KPCkAQWOSabOw-C99FT4TGSZ/view?usp=sharing"],
+            blurb: "A website that gives US citizens comprehensive dashboards on the candidates running for office. It also has an integrated chatbot that can answer questions about the candidates and their policies.",
+            src: "/lunarLander.gif",
+            type: "Machine Learning",
         },
         {
             name: "Neural Network Library from Scratch",
@@ -64,7 +72,7 @@ function Works({ layoutState }: any) {
             stack: "Node.js, Python, JavaScript, Microsoft Dynamics, Zoom API, Canvas API",
             links: ["No Links"],
             blurb: "Developed a pipeline to get data from Zoom meetins and Canvas LMS into a Microsoft Dynamics database",
-            src: "",
+            src: "/computingforalllogo.jpg",
             type: "Internship Project",
         },
         {
