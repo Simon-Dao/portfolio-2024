@@ -19,11 +19,11 @@ const Model = () => {
 
 function DavidScene() {
   return (
-    <div className="grow h-full items-center">
+    <div className="grow h-full items-center ">
       {/* ONLY canvas gets touch-pan-y + pointer-events-none */}
       <Canvas
-        camera={{ position: [0, 0, 200], fov: 80 }}
-        className="w-full h-full touch-pan-y pointer-events-none"
+        camera={{ position: [0, 0, 150], fov: 90 }}
+        className="w-full h-full touch-pan-y"
       >
         <Suspense fallback={null}>
           <ambientLight intensity={0.4} />
@@ -48,7 +48,10 @@ function DavidScene() {
           </EffectComposer>
 
           {/* REMOVE OrbitControls to prevent touch blocking */}
-          {/* <CameraController /> */}
+          {/* <OrbitControls
+             enableZoom={false}
+             enablePan={false}
+          /> */}
         </Suspense>
       </Canvas>
     </div>
