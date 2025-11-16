@@ -46,7 +46,7 @@ function Works({ layoutState }: any) {
             stack: "Typescript, Nextjs, React, OpenAI API",
             links: ["https://colab.research.google.com/drive/19u1aFJNF6BOB2nlGUZNne_LMRmAovDSV?usp=sharing", "https://drive.google.com/file/d/12XIhXGA1KPCkAQWOSabOw-C99FT4TGSZ/view?usp=sharing"],
             blurb: "A website that gives US citizens comprehensive dashboards on the candidates running for office. It also has an integrated chatbot that can answer questions about the candidates and their policies.",
-            src: "/lunarLander.gif",
+            src: "/lunarlander.gif",
             type: "Machine Learning",
         },
         {
