@@ -1,17 +1,15 @@
-'use client';
+"use client";
 
-import React from 'react';
-import Link from 'next/link';
-import DavidScene from '@/components/davidHead';
-import TransitionLink from '@/components/transitionLink';
-import Magnetic from '@/components/magnetic';
+import React from "react";
+import Link from "next/link";
+import DavidScene from "@/components/davidHead";
+import TransitionLink from "@/components/transitionLink";
+import Magnetic from "@/components/magnetic";
 
 export default function Home() {
   return (
     <main className="flex flex-col items-center w-full bg-black text-white">
-
       <article className="w-full max-w-[1200px] px-4">
-
         {/* HERO SECTION */}
         <section
           className="
@@ -23,7 +21,6 @@ export default function Home() {
             gap-10           
           "
         >
-
           {/* LEFT HERO */}
           <div className="flex flex-col gap-4 max-w-xl select-none items-center md:items-start ">
             <h1 className="text-4xl sm:text-5xl font-bold leading-tight text-tt">
@@ -35,8 +32,8 @@ export default function Home() {
             </p>
 
             <p className="text-md sm:text-lg text-white/70 max-w-lg text-center md:text-start">
-              I build webapps, tools, robots, and AI projects using TypeScript, React,
-              Python, SQL, and AWS.
+              I build webapps, tools, robots, and AI projects using TypeScript,
+              React, Python, SQL, and AWS.
             </p>
 
             {/* BUTTONS */}
@@ -67,30 +64,34 @@ export default function Home() {
               <DavidScene />
             </div>
           </div>
-
         </section>
 
         {/* IMPACT METRICS */}
         <section className="w-full py-2 sm:py-10">
-          <div className="
+          <div
+            className="
             grid 
             grid-cols-2 sm:grid-cols-4 
             gap-6 
             text-center
-          ">
+          "
+          >
             <Metric label="600+ Users" sub="reached with my projects" />
             <Metric label="4+ Years" sub="of coding experience" />
             <Metric label="60+ Projects" sub="on GitHub" />
-            <Metric label="7+ Experiences" sub="relevant to software engineering" />
+            <Metric
+              label="7+ Experiences"
+              sub="relevant to software engineering"
+            />
           </div>
         </section>
-
       </article>
 
       {/* PROJECTS */}
       <section className="w-full max-w-[1200px] px-4 py-16">
-
-        <h2 className="text-xl sm:text-3xl font-bold mb-10">Featured Projects</h2>
+        <h2 className="text-xl sm:text-3xl font-bold mb-10">
+          Featured Projects
+        </h2>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           <Magnetic>
@@ -141,9 +142,10 @@ export default function Home() {
       <section className="w-full max-w-[900px] px-4 py-16 text-center flex flex-col items-center">
         <h2 className="text-xl sm:text-3xl font-bold mb-6">About Me</h2>
         <p className="text-sm sm:text-lg text-white/70 leading-relaxed max-w-2xl mx-auto">
-          I’m a Computer Science student based in Seattle who enjoys building software that feels
-          fast and purposeful. I’ve worked across full-stack development, data engineering, and AI.
-          Outside of coding, I’m involved in ACM leadership and robotics clubs.
+          I’m a Computer Science student based in Seattle who enjoys building
+          software that feels fast and purposeful. I’ve worked across full-stack
+          development, data engineering, and AI. Outside of coding, I’m involved
+          in ACM leadership and robotics clubs.
         </p>
 
         <Magnetic>
@@ -157,7 +159,6 @@ export default function Home() {
           </div>
         </Magnetic>
       </section>
-
     </main>
   );
 }
@@ -180,7 +181,7 @@ function ProjectCard({
   desc,
   tech,
   github,
-  live
+  live,
 }: {
   title: string;
   desc: string;
@@ -195,8 +196,14 @@ function ProjectCard({
       <p className="text-white/50 text-sm mb-4">{tech}</p>
 
       <div className="flex gap-4">
-        {live && <Link href={live} className="text-sm underline">Live</Link>}
-        <Link href={github} className="text-sm underline">GitHub</Link>
+        {live && (
+          <Link href={live} className="text-sm underline">
+            Live
+          </Link>
+        )}
+        <Link href={github} className="text-sm underline">
+          GitHub
+        </Link>
       </div>
     </div>
   );

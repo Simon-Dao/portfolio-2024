@@ -6,411 +6,396 @@ import ImageUnavailableSVG from "@/public/image-unavailable.svg";
 import Image from "next/image";
 
 function Works({ layoutState }: any) {
-    interface ProjectProps {
-        name: string;
-        links: Array<string>;
-        stack: string;
-        src?: string;
-        blurb: string;
-        type: string;
+  interface ProjectProps {
+    name: string;
+    links: Array<string>;
+    stack: string;
+    src?: string;
+    blurb: string;
+    type: string;
+  }
+
+  const colorPalleteTypeMap = new Map<string, string>([
+    ["", "#FFFFFF"], // White
+    ["Internship Project", "hsl(0, 67.71300448430492%, 56.27450980392157%)"], // White
+    ["Website", "#FF6F61"], // Vibrant coral
+    ["Full Stack Web App", "#8461DC"], // Rich purple
+    ["Robotics", "#88B04B"], // Fresh green
+    ["Multiplayer Game", "#FFA500"], // Orange
+    ["Web App", "#00CED1"], // Dark turquoise
+    ["Mobile App", "#1E90FF"], // Dodger blue
+    ["Desktop App", "#FF1493"], // Deep pink
+    ["API", "#7FFF00"], // Chartreuse
+    ["AI/ML", "#FFD700"], // Gold
+  ]);
+
+  const works: ProjectProps[] = [
+    {
+      name: "The Lazy Voter",
+      stack: "Typescript, Nextjs, React, OpenAI API",
+      links: ["https://github.com/Simon-Dao/the-lazy-voter.git"],
+      blurb:
+        "A website that gives US citizens comprehensive dashboards on the candidates running for office. It also has an integrated chatbot that can answer questions about the candidates and their policies.",
+      src: "/uspolitics.jpg",
+      type: "Web App",
+    },
+    {
+      name: "Reinforcement Learning Agent",
+      stack: "Pytorch, Python",
+      links: [
+        "https://colab.research.google.com/drive/19u1aFJNF6BOB2nlGUZNne_LMRmAovDSV?usp=sharing",
+        "https://drive.google.com/file/d/12XIhXGA1KPCkAQWOSabOw-C99FT4TGSZ/view?usp=sharing",
+      ],
+      blurb:
+        "A website that gives US citizens comprehensive dashboards on the candidates running for office. It also has an integrated chatbot that can answer questions about the candidates and their policies.",
+      src: "/lunarlander.gif",
+      type: "Machine Learning",
+    },
+    {
+      name: "Neural Network Library from Scratch",
+      stack: "Python, Numpy",
+      links: ["https://github.com/Simon-Dao/neural-network-from-scratch.git"],
+      blurb:
+        "A neural network library that I made from scratch. It is a simple implementation of a neural network with backpropagation and gradient descent. As of now it supports feed-forward and convolutional architectures. I have trained it on the MNIST dataset and it achieved 99% accuracy.",
+      src: "/neuralnetworks.png",
+      type: "Machine Learning",
+    },
+    {
+      name: "UWB Hacks 2025 Website",
+      stack: "Nextjs, React, PostGres, AWS, Redis",
+      links: ["uwbhacks.com"],
+      blurb:
+        "I am currently in charge of 7+ developers working on a website, checkin system, and participant tracking system for an upcoming hackathon help in April 2025",
+      src: "/uwbhacks.png",
+      type: "Full Stack Web App",
+    },
+    {
+      name: "Automated Attendance System",
+      stack:
+        "Node.js, Python, JavaScript, Microsoft Dynamics, Zoom API, Canvas API",
+      links: ["No Links"],
+      blurb:
+        "Developed a pipeline to get data from Zoom meetins and Canvas LMS into a Microsoft Dynamics database",
+      src: "/computingforalllogo.jpg",
+      type: "Internship Project",
+    },
+    {
+      name: "UWB ACM",
+      stack: "React, HTML, CSS",
+      links: ["https://uwbacm.org/index.html"],
+      blurb: "I worked on updating all pages for my club website!",
+      src: "/uwbacmsite.png",
+      type: "Website",
+    },
+    {
+      name: "PlanPal",
+      stack: "Nextjs, React, PostGres, AWS, Redis",
+      links: ["https://github.com/Simon-Dao/plan-pal"],
+      blurb:
+        "Developing a minimal application to manage event scheduling for teams. Similar in format to when2meet.com",
+      src: "/planpal.png",
+      type: "Web App",
+    },
+    {
+      name: "Bluetooth Controlled Robot arm",
+      stack: "C++, ESP32, Arduino, 3d Printing",
+      links: [],
+      blurb: "A robot arm that is controlled wirlessly.",
+      src: "/armgif.gif",
+      type: "Robotics",
+    },
+    {
+      name: "Todo List",
+      stack: "React, Firebase, Express, Node.js",
+      links: ["https://github.com/Simon-Dao/full-stack-todo.git"],
+      src: "/tododemo.png",
+      blurb:
+        "A todo list application that utilizes an express backend to communicate to firebase.",
+      type: "Full Stack Web App",
+    },
+    {
+      name: "Pathfinding Algorithm Visualizer",
+      stack: "React, css",
+      links: ["https://github.com/Simon-Dao/pathfinding-visualizer.git"],
+      blurb:
+        "A web app that visualizes pathfinding algorithms. Users can edit variables such as wall placement, starting location, end location, and go through the algorithm step by step",
+      type: "Web App",
+      src: "/pathfinderdemo.gif",
+    },
+    {
+      name: "Notetaking App",
+      stack: "React, MongoDB, Express, Nodejs",
+      links: ["https://github.com/Simon-Dao/Simple-Notetaking-App.git"],
+      blurb: "A full stack web application heavily based off Microsoft Onenote",
+      type: "Full Stack Web App",
+      src: "/notebook.png",
+    },
+    {
+      name: "Farm Wars",
+      stack: "html, css, javascript, c#, Unity, Photon Network",
+      links: [
+        "https://github.com/Simon-Dao/Farm-Wars-Dev.git",
+        "https://simon-dao.github.io/Farm-Wars-Build/",
+        "https://docs.google.com/presentation/d/1PZE_H7ffgPpyPTAEib3EH44JQlLeMJCllhSTkeb5sv4/edit#slide=id.g2e1464ce710_0_5",
+      ],
+      blurb:
+        "This game is a project for a game development class. I worked in a team of 4 and was in charge of implementing multiplayer. This game is heavily based off of the board game Catan but we added an extra twist by making everything real time instead of turn based",
+      src: "/farmwarsdemo.png",
+      type: "Multiplayer Game",
+    },
+    {
+      name: "Portfolio Website",
+      stack: "Nextjs, React, Tailwind, Gsap, Three.js",
+      links: ["https://simondao.me"],
+      blurb:
+        "A website to introduce myself. It Features animations, 3d models, and a sleek UI! This is a passion project I made over the summer of 2024 and took a few weeks to complete",
+      src: "/portfoliowebsitescreenshot.png",
+      type: "Web App",
+    },
+  ];
+
+  const [selectedProject, setSelectedProject] = useState<ProjectProps>(
+    works[0],
+  );
+  const [layoutMode, setLayoutMode] = layoutState;
+  const [modalVisible, setModalVisible] = useState<Boolean>(false);
+  const modalOuter = useRef<HTMLDivElement>(null);
+  const modalInner = useRef<HTMLDivElement>(null);
+
+  const handleMouseEnterList = (e: React.MouseEvent<HTMLDivElement>) => {
+    gsap.to(e.currentTarget, {
+      gap: "50px",
+      opacity: 0.4,
+      scaleX: 1.01,
+      duration: 0.4,
+    });
+  };
+
+  const handleMouseLeaveList = (e: React.MouseEvent<HTMLDivElement>) => {
+    gsap.to(e.currentTarget, {
+      gap: "20px",
+      opacity: 1,
+      scale: 1,
+      duration: 0.4,
+    });
+  };
+
+  const handleMouseEnterGrid = (e: React.MouseEvent<HTMLDivElement>) => {
+    gsap.to(e.currentTarget, {
+      opacity: 0.4,
+      scale: 1.05,
+      duration: 0.4,
+    });
+  };
+
+  const handleMouseLeaveGrid = (e: React.MouseEvent<HTMLDivElement>) => {
+    gsap.to(e.currentTarget, {
+      opacity: 1,
+      scale: 1,
+      duration: 0.4,
+    });
+  };
+
+  const openModal = (project: ProjectProps) => {
+    setSelectedProject(project);
+    setModalVisible(true);
+  };
+
+  const closeModal = () => {
+    gsap.to(modalOuter.current, {
+      opacity: 0.0,
+      duration: 0.5,
+      ease: "expo.inOut",
+    });
+    gsap.to(modalInner.current, {
+      scale: 0,
+      duration: 0.5,
+      ease: "expo.inOut",
+      onComplete: () => setModalVisible(false),
+    });
+  };
+
+  useEffect(() => {
+    if (modalVisible) {
+      gsap.to(modalOuter.current, {
+        opacity: 1,
+        duration: 0.5,
+        ease: "expo.inOut",
+      });
+      gsap.to(modalInner.current, {
+        scale: 1,
+        opacity: 1,
+        duration: 0.5,
+        ease: "expo.inOut",
+      });
     }
+  }, [modalVisible]);
 
-    const colorPalleteTypeMap = new Map<string, string>([
-        ["", "#FFFFFF"], // White
-        [
-            "Internship Project",
-            "hsl(0, 67.71300448430492%, 56.27450980392157%)",
-        ], // White
-        ["Website", "#FF6F61"], // Vibrant coral
-        ["Full Stack Web App", "#8461DC"], // Rich purple
-        ["Robotics", "#88B04B"], // Fresh green
-        ["Multiplayer Game", "#FFA500"], // Orange
-        ["Web App", "#00CED1"], // Dark turquoise
-        ["Mobile App", "#1E90FF"], // Dodger blue
-        ["Desktop App", "#FF1493"], // Deep pink
-        ["API", "#7FFF00"], // Chartreuse
-        ["AI/ML", "#FFD700"], // Gold
-    ]);
+  useEffect(() => {
+    const listItems = document.querySelectorAll(".list-element");
+    const gridItems = document.querySelectorAll(".grid-element");
 
-    const works: ProjectProps[] = [
-        {
-            name: "The Lazy Voter",
-            stack: "Typescript, Nextjs, React, OpenAI API",
-            links: ["https://github.com/Simon-Dao/the-lazy-voter.git"],
-            blurb: "A website that gives US citizens comprehensive dashboards on the candidates running for office. It also has an integrated chatbot that can answer questions about the candidates and their policies.",
-            src: "/uspolitics.jpg",
-            type: "Web App",
-        },
-        {
-            name: "Reinforcement Learning Agent",
-            stack: "Typescript, Nextjs, React, OpenAI API",
-            links: ["https://colab.research.google.com/drive/19u1aFJNF6BOB2nlGUZNne_LMRmAovDSV?usp=sharing", "https://drive.google.com/file/d/12XIhXGA1KPCkAQWOSabOw-C99FT4TGSZ/view?usp=sharing"],
-            blurb: "A website that gives US citizens comprehensive dashboards on the candidates running for office. It also has an integrated chatbot that can answer questions about the candidates and their policies.",
-            src: "/lunarlander.gif",
-            type: "Machine Learning",
-        },
-        {
-            name: "Neural Network Library from Scratch",
-            stack: "Python, Numpy",
-            links: [
-                "https://github.com/Simon-Dao/neural-network-from-scratch.git",
-            ],
-            blurb: "A neural network library that I made from scratch. It is a simple implementation of a neural network with backpropagation and gradient descent. As of now it supports feed-forward and convolutional architectures. I have trained it on the MNIST dataset and it achieved 99% accuracy.",
-            src: "/neuralnetworks.png",
-            type: "Machine Learning",
-        },
-        {
-            name: "UWB Hacks 2025 Website",
-            stack: "Nextjs, React, PostGres, AWS, Redis",
-            links: ["uwbhacks.com"],
-            blurb: "I am currently in charge of 7+ developers working on a website, checkin system, and participant tracking system for an upcoming hackathon help in April 2025",
-            src: "/uwbhacks.png",
-            type: "Full Stack Web App",
-        },
-        {
-            name: "Automated Attendance System",
-            stack: "Node.js, Python, JavaScript, Microsoft Dynamics, Zoom API, Canvas API",
-            links: ["No Links"],
-            blurb: "Developed a pipeline to get data from Zoom meetins and Canvas LMS into a Microsoft Dynamics database",
-            src: "/computingforalllogo.jpg",
-            type: "Internship Project",
-        },
-        {
-            name: "UWB ACM",
-            stack: "React, HTML, CSS",
-            links: ["https://uwbacm.org/index.html"],
-            blurb: "I worked on updating all pages for my club website!",
-            src: "/uwbacmsite.png",
-            type: "Website",
-        },
-        {
-            name: "PlanPal",
-            stack: "Nextjs, React, PostGres, AWS, Redis",
-            links: ["https://github.com/Simon-Dao/plan-pal"],
-            blurb: "Developing a minimal application to manage event scheduling for teams. Similar in format to when2meet.com",
-            src: "/planpal.png",
-            type: "Web App",
-        },
-        {
-            name: "Bluetooth Controlled Robot arm",
-            stack: "C++, ESP32, Arduino, 3d Printing",
-            links: [],
-            blurb: "A robot arm that is controlled wirlessly.",
-            src: "/armgif.gif",
-            type: "Robotics",
-        },
-        {
-            name: "Todo List",
-            stack: "React, Firebase, Express, Node.js",
-            links: ["https://github.com/Simon-Dao/full-stack-todo.git"],
-            src: "/tododemo.png",
-            blurb: "A todo list application that utilizes an express backend to communicate to firebase.",
-            type: "Full Stack Web App",
-        },
-        {
-            name: "Pathfinding Algorithm Visualizer",
-            stack: "React, css",
-            links: ["https://github.com/Simon-Dao/pathfinding-visualizer.git"],
-            blurb: "A web app that visualizes pathfinding algorithms. Users can edit variables such as wall placement, starting location, end location, and go through the algorithm step by step",
-            type: "Web App",
-            src: "/pathfinderdemo.gif",
-        },
-        {
-            name: "Notetaking App",
-            stack: "React, MongoDB, Express, Nodejs",
-            links: ["https://github.com/Simon-Dao/Simple-Notetaking-App.git"],
-            blurb: "A full stack web application heavily based off Microsoft Onenote",
-            type: "Full Stack Web App",
-            src: "/notebook.png",
-        },
-        {
-            name: "Farm Wars",
-            stack: "html, css, javascript, c#, Unity, Photon Network",
-            links: [
-                "https://github.com/Simon-Dao/Farm-Wars-Dev.git",
-                "https://simon-dao.github.io/Farm-Wars-Build/",
-                "https://docs.google.com/presentation/d/1PZE_H7ffgPpyPTAEib3EH44JQlLeMJCllhSTkeb5sv4/edit#slide=id.g2e1464ce710_0_5",
-            ],
-            blurb: "This game is a project for a game development class. I worked in a team of 4 and was in charge of implementing multiplayer. This game is heavily based off of the board game Catan but we added an extra twist by making everything real time instead of turn based",
-            src: "/farmwarsdemo.png",
-            type: "Multiplayer Game",
-        },
-        {
-            name: "Portfolio Website",
-            stack: "Nextjs, React, Tailwind, Gsap, Three.js",
-            links: ["https://simondao.me"],
-            blurb: "A website to introduce myself. It Features animations, 3d models, and a sleek UI! This is a passion project I made over the summer of 2024 and took a few weeks to complete",
-            src: "/portfoliowebsitescreenshot.png",
-            type: "Web App",
-        },
-    ];
+    if (layoutMode === "list") {
+      gsap.fromTo(
+        listItems,
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, stagger: 0.1, duration: 0.5 },
+      );
+    } else {
+      gsap.fromTo(
+        gridItems,
+        { opacity: 0, scale: 0.8 },
+        { opacity: 1, scale: 1, stagger: 0.1, duration: 0.5 },
+      );
+    }
+  }, [layoutMode]);
 
-    const [selectedProject, setSelectedProject] = useState<ProjectProps>(
-        works[0]
-    );
-    const [layoutMode, setLayoutMode] = layoutState;
-    const [modalVisible, setModalVisible] = useState<Boolean>(false);
-    const modalOuter = useRef<HTMLDivElement>(null);
-    const modalInner = useRef<HTMLDivElement>(null);
-
-    const handleMouseEnterList = (e: React.MouseEvent<HTMLDivElement>) => {
-        gsap.to(e.currentTarget, {
-            gap: "50px",
-            opacity: 0.4,
-            scaleX: 1.01,
-            duration: 0.4,
-        });
-    };
-
-    const handleMouseLeaveList = (e: React.MouseEvent<HTMLDivElement>) => {
-        gsap.to(e.currentTarget, {
-            gap: "20px",
-            opacity: 1,
-            scale: 1,
-            duration: 0.4,
-        });
-    };
-
-    const handleMouseEnterGrid = (e: React.MouseEvent<HTMLDivElement>) => {
-        gsap.to(e.currentTarget, {
-            opacity: 0.4,
-            scale: 1.05,
-            duration: 0.4,
-        });
-    };
-
-    const handleMouseLeaveGrid = (e: React.MouseEvent<HTMLDivElement>) => {
-        gsap.to(e.currentTarget, {
-            opacity: 1,
-            scale: 1,
-            duration: 0.4,
-        });
-    };
-
-    const openModal = (project: ProjectProps) => {
-        setSelectedProject(project);
-        setModalVisible(true);
-    };
-
-    const closeModal = () => {
-        gsap.to(modalOuter.current, {
-            opacity: 0.0,
-            duration: 0.5,
-            ease: "expo.inOut",
-        });
-        gsap.to(modalInner.current, {
-            scale: 0,
-            duration: 0.5,
-            ease: "expo.inOut",
-            onComplete: () => setModalVisible(false),
-        });
-    };
-
-    useEffect(() => {
-        if (modalVisible) {
-            gsap.to(modalOuter.current, {
-                opacity: 1,
-                duration: 0.5,
-                ease: "expo.inOut",
-            });
-            gsap.to(modalInner.current, {
-                scale: 1,
-                opacity: 1,
-                duration: 0.5,
-                ease: "expo.inOut",
-            });
-        }
-    }, [modalVisible]);
-
-    useEffect(() => {
-        const listItems = document.querySelectorAll(".list-element");
-        const gridItems = document.querySelectorAll(".grid-element");
-
-        if (layoutMode === "list") {
-            gsap.fromTo(
-                listItems,
-                { opacity: 0, y: 20 },
-                { opacity: 1, y: 0, stagger: 0.1, duration: 0.5 }
-            );
-        } else {
-            gsap.fromTo(
-                gridItems,
-                { opacity: 0, scale: 0.8 },
-                { opacity: 1, scale: 1, stagger: 0.1, duration: 0.5 }
-            );
-        }
-    }, [layoutMode]);
-
-    const renderListItems = () => (
-        <div className="flex flex-col divide-y select-none">
-            <GridHeader />
-            {works.map((project, index) => (
-                <div
-                    key={index}
-                    className={`list-element grid grid-cols-3 py-16 gap-5 cursor-pointer grid-row-${index} `}
-                    onClick={() => openModal(project)}
-                    onMouseEnter={handleMouseEnterList}
-                    onMouseLeave={handleMouseLeaveList}
-                >
-                    <div className="text-lg sm:text-3xl flex items-center bold ">
-                        {project.name}
-                    </div>
-                    <div className="text-sm sm:text-2xl flex items-center">
-                        {project.stack || (
-                            <div className="text-tt">Unavailable</div>
-                        )}
-                    </div>
-                    <div className="text-sm sm:text-2xl flex items-center">
-                        {project.type}
-                    </div>
-                </div>
-            ))}
+  const renderListItems = () => (
+    <div className="flex flex-col divide-y select-none">
+      <GridHeader />
+      {works.map((project, index) => (
+        <div
+          key={index}
+          className={`list-element grid grid-cols-3 py-16 gap-5 cursor-pointer grid-row-${index} `}
+          onClick={() => openModal(project)}
+          onMouseEnter={handleMouseEnterList}
+          onMouseLeave={handleMouseLeaveList}
+        >
+          <div className="text-lg sm:text-3xl flex items-center bold ">
+            {project.name}
+          </div>
+          <div className="text-sm sm:text-2xl flex items-center">
+            {project.stack || <div className="text-tt">Unavailable</div>}
+          </div>
+          <div className="text-sm sm:text-2xl flex items-center">
+            {project.type}
+          </div>
         </div>
-    );
+      ))}
+    </div>
+  );
 
-    const renderGridItems = () => (
-        <div className="container mx-auto py-10">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                {works.map((project, index) => (
-                    <div
-                        key={index}
-                        className="grid-element relative overflow-hidden rounded-lg shadow-lg cursor-pointer flex flex-col"
-                        style={{ backgroundColor: "#1f2024e9" }}
-                        onClick={() => openModal(project)}
-                        onMouseEnter={handleMouseEnterGrid}
-                        onMouseLeave={handleMouseLeaveGrid}
-                    >
-                        <div
-                            className="h-48 relative"
-                            style={{
-                                backgroundColor: colorPalleteTypeMap.get(
-                                    project.type
-                                ),
-                            }}
-                        >
-                            <Image
-                                src={
-                                    project.src
-                                        ? project.src
-                                        : ImageUnavailableSVG
-                                }
-                                alt={project.name}
-                                layout="fill"
-                                objectFit="cover"
-                                priority={true}
-                            />
-                        </div>
-                        <div className="h-30 p-10">
-                            <h1 className="text-2xl">{project.name}</h1>
-                            {/* <h2 className='text-sdNoSize2'>{project.stack || <h2 className='text-tt'>Tech Stack Unavailable</h2>}</h2> */}
-                            <h3 className="text-sdNoSize2">{project.type}</h3>
-                        </div>
-                    </div>
-                ))}
+  const renderGridItems = () => (
+    <div className="container mx-auto py-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {works.map((project, index) => (
+          <div
+            key={index}
+            className="grid-element relative overflow-hidden rounded-lg shadow-lg cursor-pointer flex flex-col"
+            style={{ backgroundColor: "#1f2024e9" }}
+            onClick={() => openModal(project)}
+            onMouseEnter={handleMouseEnterGrid}
+            onMouseLeave={handleMouseLeaveGrid}
+          >
+            <div
+              className="h-48 relative"
+              style={{
+                backgroundColor: colorPalleteTypeMap.get(project.type),
+              }}
+            >
+              <Image
+                src={project.src ? project.src : ImageUnavailableSVG}
+                alt={project.name}
+                layout="fill"
+                objectFit="cover"
+                priority={true}
+              />
             </div>
-        </div>
-    );
+            <div className="h-30 p-10">
+              <h1 className="text-2xl">{project.name}</h1>
+              {/* <h2 className='text-sdNoSize2'>{project.stack || <h2 className='text-tt'>Tech Stack Unavailable</h2>}</h2> */}
+              <h3 className="text-sdNoSize2">{project.type}</h3>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 
-    return (
-        <div>
-            {modalVisible && (
-                <div
-                    onClick={closeModal}
-                    ref={modalOuter}
-                    className="fixed inset-0 flex items-center justify-center z-40 bg-black bg-opacity-70 backdrop-blur-sm"
-                >
-                    <div
-                        ref={modalInner}
-                        onClick={(e) => e.stopPropagation()}
-                        className="relative bg-gradient-to-br from-[#1f2024] to-[#2c2d33] h-[90vh] w-[90vw] max-w-6xl rounded-2xl shadow-2xl text-white p-8 overflow-hidden"
-                        style={{ transform: "scale(0)" }}
-                    >
-                        {/* Close Button */}
-                        <button
-                            onClick={closeModal}
-                            className="absolute top-4 right-4 text-2xl hover:text-gray-400 transition"
-                            aria-label="Close"
-                        >
-                            &times;
-                        </button>
+  return (
+    <div>
+      {modalVisible && (
+        <div
+          onClick={closeModal}
+          ref={modalOuter}
+          className="fixed inset-0 flex items-center justify-center z-40 bg-black bg-opacity-70 backdrop-blur-sm"
+        >
+          <div
+            ref={modalInner}
+            onClick={(e) => e.stopPropagation()}
+            className="relative bg-gradient-to-br from-[#1f2024] to-[#2c2d33] h-[90vh] w-[90vw] max-w-6xl rounded-2xl shadow-2xl text-white p-8 overflow-hidden"
+            style={{ transform: "scale(0)" }}
+          >
+            {/* Close Button */}
+            <button
+              onClick={closeModal}
+              className="absolute top-4 right-4 text-2xl hover:text-gray-400 transition"
+              aria-label="Close"
+            >
+              &times;
+            </button>
 
-                        {/* Title */}
-                        <h1 className="text-3xl sm:text-5xl font-bold mb-4 border-b border-gray-600 pb-2">
-                            {selectedProject.name}
-                        </h1>
+            {/* Title */}
+            <h1 className="text-3xl sm:text-5xl font-bold mb-4 border-b border-gray-600 pb-2">
+              {selectedProject.name}
+            </h1>
 
-                        <div className="flex flex-col sm:flex-row gap-8 h-full overflow-auto pb-4">
-                            {/* Image Section */}
-                            <div className="sm:w-1/2 w-full relative rounded-xl overflow-hidden">
-                                <Image
-                                    src={
-                                        selectedProject.src ||
-                                        ImageUnavailableSVG
-                                    }
-                                    alt={selectedProject.name}
-                                    layout="responsive"
-                                    width={800}
-                                    height={600}
-                                    objectFit="contain"
-                                    className="rounded-xl"
-                                    priority
-                                />
-                            </div>
+            <div className="flex flex-col sm:flex-row gap-8 h-full overflow-auto pb-4">
+              {/* Image Section */}
+              <div className="sm:w-1/2 w-full relative rounded-xl overflow-hidden">
+                <Image
+                  src={selectedProject.src || ImageUnavailableSVG}
+                  alt={selectedProject.name}
+                  layout="responsive"
+                  width={800}
+                  height={600}
+                  objectFit="contain"
+                  className="rounded-xl"
+                  priority
+                />
+              </div>
 
-                            {/* Info Section */}
-                            <div className="sm:w-1/2 w-full flex flex-col text-lg sm:text-xl pr-1 sm:pr-6">
-                                <div className="mb-6">
-                                    <h2 className="font-semibold text-tt">
-                                        Tech Stack
-                                    </h2>
-                                    <p className="text-sdNoSize2">
-                                        {selectedProject.stack}
-                                    </p>
-                                </div>
-
-                                <div className="mb-6">
-                                    <h2 className="font-semibold text-tt">
-                                        Description
-                                    </h2>
-                                    <p className="text-sdNoSize2">
-                                        {selectedProject.blurb}
-                                    </p>
-                                </div>
-
-                                {selectedProject.links.length > 0 && (
-                                    <div>
-                                        <h2 className="font-semibold text-tt">
-                                            Links
-                                        </h2>
-                                        <div className="flex flex-wrap gap-2 mt-2">
-                                            {selectedProject.links.map(
-                                                (link, index) => (
-                                                    <a
-                                                        key={index}
-                                                        href={link}
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                        className="px-3 bg-tt py-1 bg-primary text-black rounded-full text-sm sm:text-base font-medium hover:opacity-80 transition"
-                                                    >
-                                                        {link.includes("http")
-                                                            ? new URL(link)
-                                                                  .hostname
-                                                            : link}
-                                                    </a>
-                                                )
-                                            )}
-                                        </div>
-                                    </div>
-                                )}
-                            </div>
-                        </div>
-                    </div>
+              {/* Info Section */}
+              <div className="sm:w-1/2 w-full flex flex-col text-lg sm:text-xl pr-1 sm:pr-6">
+                <div className="mb-6">
+                  <h2 className="font-semibold text-tt">Tech Stack</h2>
+                  <p className="text-sdNoSize2">{selectedProject.stack}</p>
                 </div>
-            )}
 
-            {layoutMode == "list" ? renderListItems() : renderGridItems()}
+                <div className="mb-6">
+                  <h2 className="font-semibold text-tt">Description</h2>
+                  <p className="text-sdNoSize2">{selectedProject.blurb}</p>
+                </div>
+
+                {selectedProject.links.length > 0 && (
+                  <div>
+                    <h2 className="font-semibold text-tt">Links</h2>
+                    <div className="flex flex-wrap gap-2 mt-2">
+                      {selectedProject.links.map((link, index) => (
+                        <a
+                          key={index}
+                          href={link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="px-3 bg-tt py-1 bg-primary text-black rounded-full text-sm sm:text-base font-medium hover:opacity-80 transition"
+                        >
+                          {link.includes("http")
+                            ? new URL(link).hostname
+                            : link}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
         </div>
-    );
+      )}
+
+      {layoutMode == "list" ? renderListItems() : renderGridItems()}
+    </div>
+  );
 }
 
 export default Works;

@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
-import gsap from 'gsap'
+import React, { useState } from "react";
+import gsap from "gsap";
 
 const images = [
-  '/hackathononstage.jpg',
-  '/smartcitypresentation.jpg',
-  '/avanade.jpg',
-  '/me_in_boat.jpg',
-  '/internshipevent.jpg',
-  '/back.png',
-  '/drawing_1.png',
-  '/image_2.png',
-  '/jeff.png',
-  '/rock1.png',
-  '/mountain.jpg',
-  '/mma1.png',
+  "/hackathononstage.jpg",
+  "/smartcitypresentation.jpg",
+  "/avanade.jpg",
+  "/me_in_boat.jpg",
+  "/internshipevent.jpg",
+  "/back.png",
+  "/drawing_1.png",
+  "/image_2.png",
+  "/jeff.png",
+  "/rock1.png",
+  "/mountain.jpg",
+  "/mma1.png",
 ];
 
 export default function ImageGallery() {
@@ -37,14 +37,19 @@ export default function ImageGallery() {
         ))}
       </div>
       {selectedImage && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75" onClick={() => setSelectedImage("")}>
+        <div
+          className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75"
+          onClick={() => setSelectedImage("")}
+        >
           <div className="relative">
-            <button
-              className="absolute top-0 right-0 m-4 text-white text-2xl font-bold"
-            >
+            <button className="absolute top-0 right-0 m-4 text-white text-2xl font-bold">
               &times;
             </button>
-            <img src={selectedImage} alt="Selected" className="max-w-full max-h-screen" />
+            <img
+              src={selectedImage}
+              alt="Selected"
+              className="max-w-full max-h-screen"
+            />
           </div>
         </div>
       )}

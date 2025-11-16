@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import "../../styles/globals.css";
-import Header from '../../components/header'
+import Header from "../../components/header";
 import { ReactLenis } from "../../utils/lenis";
 const openSans = Open_Sans({ subsets: ["latin"] });
 
@@ -14,7 +14,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
     <html lang="en">
       <body className={openSans.className + " bg-qt"}>

@@ -5,13 +5,20 @@ import ArrowSVG from "@/public/Arrow1.svg";
 import SendButton from "@/components/sendButton";
 import emailjs from "@emailjs/browser";
 import TransitionLink from "@/components/transitionLink";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCopy } from "@fortawesome/free-solid-svg-icons";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { copiedAnimation } from "@/utils/animation";
 
 function Contact() {
   const containerRef = useRef(null);
+  const copyEmailRef = useRef(null);
+
   const formRef = useRef<HTMLFormElement>(null);
   const [nameValue, setNameValue] = useState<string>("");
   const [emailValue, setEmailValue] = useState<string>("");
   const [messageValue, setMessageValue] = useState<string>("");
+  const [copied, setCopied] = useState(false);
 
   const [nameColor, setNameColor] = useState<string>("text-sdNoSize");
   const [emailColor, setEmailColor] = useState<string>("text-sdNoSize");
@@ -62,7 +69,7 @@ function Contact() {
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
         formRef.current,
-        process.env.NEXT_PUBLIC_PUBLIC_KEY
+        process.env.NEXT_PUBLIC_PUBLIC_KEY,
       );
       alert("Message Sent Successfully");
     } catch (error: any) {
@@ -71,6 +78,13 @@ function Contact() {
     }
 
     e.target.reset();
+  };
+
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText("SimonNDao12@gmail.com");
+    setCopied(true);
+    copiedAnimation(copyEmailRef);
+    setTimeout(() => setCopied(false), 600); // bounce length
   };
 
   return (
@@ -206,7 +220,10 @@ function Contact() {
             </section>
 
             <div className="hidden sm:flex w-full py-24 items-center grow">
-              <div style={{ height: "2px" }} className="w-full bg-pm" />
+              <div
+                style={{ height: "2px" }}
+                className="w-full bg-pm hover:bg-orange-400"
+              />
               <SendButton label="Send!" type="submit" />
             </div>
             <div className="flex sm:hidden w-full py-24 items-center grow">
@@ -228,7 +245,30 @@ function Contact() {
               <div className="text-xl text-sdNoSize2 select-none">
                 Personal Email
               </div>
-              <div className="text-2xl">SimonNDao12@gmail.com</div>
+
+              <div className="flex flex-col h-12 overflow-y-hidden">
+                <div
+                  onClick={handleCopy}
+                  className={`h-12 flex flex-1 items-center rounded px-2 py-1 mt-2 hover:opacity-70 duration-500 cursor-pointer transition-transform bg-[#2d2d34]
+                  `}
+                >
+                  <div className="text-2xl">SimonNDao12@gmail.com</div>
+
+                  <FontAwesomeIcon icon={faCopy}></FontAwesomeIcon>
+                </div>
+
+                <div
+                  ref={copyEmailRef}
+                  className={
+                    " h-12 flex-1 flex items-center justify-center py-2 rounded bg-tt "
+                  }
+                >
+                  Copied{" "}
+                  <>
+                    <FontAwesomeIcon icon={faCheck} />
+                  </>
+                </div>
+              </div>
             </div>
             <div className="mb-3">
               <div className="text-xl text-sdNoSize2  select-none">
@@ -246,10 +286,7 @@ function Contact() {
             <div className="mb-3">
               <div className="text-xl text-sdNoSize2 select-none">GitHub</div>
               <div className="text-2xl">
-                <a
-                  className="underline"
-                  href="https://github.com/Simon-Dao"
-                >
+                <a className="underline" href="https://github.com/Simon-Dao">
                   https://github.com/Simon-Dao
                 </a>
               </div>
