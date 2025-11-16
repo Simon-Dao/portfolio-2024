@@ -23,8 +23,7 @@ function SendButton({ label, onClick, type, style }: Props) {
             style={{ width: "200px", height: "200px" }}
             className="rounded-full flex justify-center items-center font-bold"
           >
-            {/* <TransitionLink hoverAnimation={false} href='/contact' label={label} /> */}
-            asdaad
+            <TransitionLink hoverAnimation={false} href='/contact' label={label} />
           </div>
         </Magnetic>
       </button>

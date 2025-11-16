@@ -4,6 +4,7 @@ import GridHeader from "./gridHeader";
 import gsap from "gsap";
 import ImageUnavailableSVG from "@/public/image-unavailable.svg";
 import Image from "next/image";
+import ListHeader from "./listHeader";
 
 /* -------------------------------------------------------
    EXPERIENCE COMPONENT
@@ -304,7 +305,7 @@ function Exp({ layoutState }: any) {
   ------------------------------------------------------- */
   const renderListItems = () => (
     <div className="flex flex-col divide-y select-none">
-      <GridHeader />
+      <ListHeader />
 
       {experiences.map((project, index) => (
         <div
