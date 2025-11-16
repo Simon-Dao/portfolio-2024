@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import "../../styles/globals.css";
 import Header from '../../components/header'
+import { ReactLenis } from "../../utils/lenis";
 const openSans = Open_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -17,10 +18,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={openSans.className + " bg-qt"}>
-        <div className="flex flex-col text-white">
-          <Header />
-          {children}
-        </div>
+        <ReactLenis root>
+          <div className="flex flex-col max-w-[1500px] m-auto text-white">
+            <Header />
+            {children}
+          </div>
+        </ReactLenis>
       </body>
     </html>
   );
