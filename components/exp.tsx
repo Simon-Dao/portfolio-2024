@@ -4,7 +4,7 @@ import GridHeader from "./gridHeader";
 import gsap from "gsap";
 import ImageUnavailableSVG from "@/public/image-unavailable.svg";
 import Image from "next/image";
-import ListHeader from "./listHeader";
+import ListHeader from "./ListHeader";
 
 /* -------------------------------------------------------
    EXPERIENCE COMPONENT
