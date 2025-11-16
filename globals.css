@@ -27,8 +27,8 @@ body {
       rgb(var(--background-end-rgb))
     )
   */
-    /* rgb(var(--background-start-rgb));  */
-    background-color: rgb(var(--background-end-rgb));
+  /* rgb(var(--background-start-rgb));  */
+  background-color: rgb(var(--background-end-rgb));
 }
 
 @layer utilities {
@@ -38,9 +38,9 @@ body {
 }
 
 :root {
-  --pm: #FFFFFF;
+  --pm: #ffffff;
   --sd: #858688;
-  --tt: #A154F2;
+  --tt: #a154f2;
   --qt: #1c1d20;
 }
 

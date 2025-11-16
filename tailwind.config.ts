@@ -7,8 +7,17 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   safelist: [
-    'bg-pm', 'text-qt', 'text-title', 'text-sd', // Add any other classes you need to safelist
-    'bg-qt', 'text-pm', 'bg-pt', 'text-pt', 'bg-sd', 'text-sdNoSize', 'text-sdNoSize2'
+    "bg-pm",
+    "text-qt",
+    "text-title",
+    "text-sd", // Add any other classes you need to safelist
+    "bg-qt",
+    "text-pm",
+    "bg-pt",
+    "text-pt",
+    "bg-sd",
+    "text-sdNoSize",
+    "text-sdNoSize2",
   ],
   theme: {
     extend: {
@@ -32,13 +41,13 @@ const config: Config = {
         sd: "1.5rem",
       },
       screens: {
-        'xs': '600px',
-        'sm': '740px',
-        'md': '900px',
-        'lg': '1280px',
-        'xl': '1480px',
-        '2xl': '1536px',
-      }
+        xs: "600px",
+        sm: "740px",
+        md: "900px",
+        lg: "1280px",
+        xl: "1480px",
+        "2xl": "1536px",
+      },
     },
   },
   plugins: [],

@@ -1,14 +1,12 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import Image from "next/image";
-import ArrowSVG from "@/public/Arrow1.svg";
 import ListSVG from "@/public/list.svg";
 import GridSVG from "@/public/grid.svg";
-import TransitionLink from "@/components/transitionLink";
 import { animateHelloText } from "@/utils/animation";
 import SvgButton from "@/components/svgButton";
 import GenericButton from "@/components/genericButton";
-import Experiences from "@/components/experiences";
+import Exp from "@/components/exp";
+
 function Projects() {
   const helloAnimationRef = useRef<any>(null);
   const [layoutMode, setLayoutMode] = useState("grid");
@@ -17,7 +15,7 @@ function Projects() {
   }, []);
 
   return (
-    <div className="px-0 lg:px-10 pb-64 pt-52">
+    <div className="px-0 lg:px-48 pb-64 pt-52">
       <div className="px-3 sm:px-24">
         <section className="flex justify-center">
           <div
@@ -26,17 +24,33 @@ function Projects() {
           >
             <span className="text-6xl sm:text-8xl">My Experiences</span>
           </div>
-      
         </section>
 
         <section className="w-full flex mt-14 pb-5">
           <div className="flex flex-col sm:flex-row w-full">
-            
+            <GenericButton className="my-3 self-center sm:self-auto sm:my-0 w-36 mr-3 flex justify-center items-center border-solid border-gray-500 rounded-full cursor-pointer h-20">
+              <a href="https://github.com/Simon-Dao">Github</a>
+            </GenericButton>
           </div>
           <div className="grow"></div>
-         
+          <div className="hidden sm:flex">
+            <SvgButton
+              setLayoutMode={setLayoutMode}
+              layoutMode={layoutMode}
+              mode="list"
+              size={40}
+              svg={ListSVG}
+            />
+            <SvgButton
+              setLayoutMode={setLayoutMode}
+              layoutMode={layoutMode}
+              mode="grid"
+              size={28}
+              svg={GridSVG}
+            />
+          </div>
         </section>
-        <Experiences layoutState={[layoutMode, setLayoutMode]} />
+        <Exp layoutState={[layoutMode, setLayoutMode]} />
       </div>
     </div>
   );

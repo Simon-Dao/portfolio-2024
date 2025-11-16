@@ -31,9 +31,9 @@ body {
 }
 
 :root {
-  --pm: #FFFFFF;
+  --pm: #ffffff;
   --sd: #858688;
-  --tt: #A154F2;
+  --tt: #a154f2;
   --qt: #1c1d20;
 }
 
@@ -78,7 +78,7 @@ body {
   left: 0;
   width: 100%;
   height: 100vh;
-  background: #A154F2;
+  background: #a154f2;
   transform-origin: bottom;
 }
 
@@ -88,6 +88,6 @@ body {
   left: 0;
   width: 100%;
   height: 100vh;
-  background: #A154F2;
+  background: #a154f2;
   transform-origin: top;
 }

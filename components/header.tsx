@@ -21,11 +21,7 @@ function NormalView() {
         <Magnetic>
           <div className="sm:ml-20 p-2">
             <DotAnim>
-              <TransitionLink
-                href="/home"
-                label="Home"
-                hoverAnimation={true}
-              />
+              <TransitionLink href="/home" label="Home" hoverAnimation={true} />
             </DotAnim>
           </div>
         </Magnetic>
@@ -94,7 +90,7 @@ function MobileView() {
       {
         translateX: "0px",
         duration: 0.3,
-      }
+      },
     );
   };
 
@@ -110,7 +106,7 @@ function MobileView() {
       {
         translateX: "100vw",
         duration: 0.3,
-      }
+      },
     ).to(navRef.current, {
       display: "none",
     });

@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import "../../styles/globals.css";
-import Footer from '../../components/footer'
-import Header from '../../components/header'
+import Footer from "../../components/footer";
+import Header from "../../components/header";
 const openSans = Open_Sans({ subsets: ["latin"] });
-import {ReactLenis} from '../../utils/lenis'
+import { ReactLenis } from "../../utils/lenis";
 
 export const metadata: Metadata = {
   title: "Simon Dao",
@@ -15,7 +15,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
     <html lang="en">
       <body className={openSans.className + " scroll-smooth"}>
