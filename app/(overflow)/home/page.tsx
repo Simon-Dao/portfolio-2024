@@ -99,7 +99,7 @@ export default function Home() {
               title="UWB Hacks Platform"
               desc="Full-stack platform for 600+ attendees with real-time tracking, scheduling, and prize management."
               tech="TypeScript • Next.js • PostgreSQL • AWS"
-              github="https://github.com"
+              github="https://github.com/UWB-ACM/uwb-hacks-25.git"
               live="https://uwbhacks.com"
             />
           </Magnetic>
