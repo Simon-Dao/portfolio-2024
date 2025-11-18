@@ -29,7 +29,7 @@ function Projects() {
         <section className="w-full flex mt-14 pb-5">
           <div className="flex flex-col sm:flex-row w-full">
             <GenericButton className="my-3 self-center sm:self-auto sm:my-0 w-36 mr-3 flex justify-center items-center border-solid border-gray-500 rounded-full cursor-pointer h-20">
-              <a href="https://github.com/Simon-Dao">Github</a>
+              <a href="https://drive.google.com/file/d/1wBKov2kSjB7pwShw8DJkrBpjSbyenzsm/view?usp=sharing">Resume</a>
             </GenericButton>
           </div>
           <div className="grow"></div>
