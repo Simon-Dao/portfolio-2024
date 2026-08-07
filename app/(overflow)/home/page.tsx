@@ -109,8 +109,8 @@ export default function Home() {
               title="TheLazyVoter"
               desc="Next.js dashboard for political data with AI-generated candidate summaries."
               tech="Next.js • TypeScript • OpenAI • Web Scraping"
-              github="https://github.com/Simon-Dao/the-lazy-voter"
-              live=""
+              github="https://github.com/Simon-Dao/the-lazy-voter-frontend"
+              live="https://thelazyvoter.org"
             />
           </Magnetic>
 

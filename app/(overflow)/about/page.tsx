@@ -78,8 +78,7 @@ export default function About() {
                         <span className="text-xl font-semibold text-tt">
                             {yearsFromBirth}
                         </span>{" "}
-                        year old computer science student at the {" "}
-                        <span className="text-tt">University of Washington</span>.
+                        recent University of Washington graduate with a focus on making full stack applications.
                     </p>
 
                     {/* PROGRAMMING JOURNEY */}
@@ -94,7 +93,7 @@ export default function About() {
                     </p>
 
                     <p className="text-xl leading-relaxed">
-                        Outside of coding, I’m involved in leadership roles for
+                        Outside of coding, I’ve held  leadership roles for
                         my school’s ACM chapter and robotics clubs, where I help
                         organize hackathons and mentor younger students. I also
                         enjoy hiking, rockclimbing, drawing, MMA, and keeping up with tech news.

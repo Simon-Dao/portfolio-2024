@@ -52,15 +52,15 @@ function Exp({ layoutState }: any) {
       blurbs: [
         {
           title: "My Time in Germany",
-          blurb: `During the summer of 2025, I had the incredible opportunity to work as a Software Engineer Intern at the Smart City Research Lab in Bamberg, Germany.
-          I worked on real-world problems and contributed to infrastructure that supports the local community.`,
+          blurb: `During the summer of 2025, I worked as a Software Engineer Intern at the Smart City Research Lab in Bamberg, Germany. 
+          It was my first time building software meant for an entire city rather than a single team, and the scale of it changed how I think about infrastructure.`,
           img: "/smartcitypresentation.jpg",
           imgLink: "",
         },
         {
           title: "My Project",
-          blurb: `My main project was developing a centralized storage system to collect and standardize sensor data from different teams across the city. 
-          I built pipelines, ran SensorThings API endpoints, and stored everything in a unified architecture.`,
+          blurb: `My main project was building a centralized system to collect and standardize sensor data coming in from different teams across the city. 
+          I built ETL pipelines, stood up SensorThings API endpoints, and brought everything together in one unified backend that researchers could actually query.`,
           img: "",
           imgLink: "",
         },
@@ -75,14 +75,14 @@ function Exp({ layoutState }: any) {
       blurbs: [
         {
           title: "My ACM Journey",
-          blurb: `My journey with ACM has been the most impactful part of my university experience. I learned event planning, leadership, community-building, 
-          and spearheaded campus-wide events including hackathons with 350+ students.`,
+          blurb: `My time with ACM has been the most impactful part of my university experience. I learned event planning and leadership from the ground up, 
+          then helped spearhead campus wide events, including hackathons that drew more than 350 students.`,
           img: "/uwbhacks.jpg",
           imgLink: "",
         },
         {
           title: "2025 and Beyond",
-          blurb: `Our goal this year is to host the largest hackathon yet and expand ACM’s reach across disciplines on campus.`,
+          blurb: `This year, our goal is to host our largest hackathon yet and grow ACM's reach across disciplines on campus, not just within computer science.`,
           img: "/uwbhacksaiarticle.png",
           imgLink:
             "https://www.uwb.edu/news/2024/05/24/success-a-product-of-growth-and-collaboration",
@@ -98,14 +98,15 @@ function Exp({ layoutState }: any) {
       blurbs: [
         {
           title: '"Computing for All"',
-          blurb: `Computing for All is a nonprofit providing digital skills training to underserved groups. I joined to gain technical experience, 
-          but I stayed because I aligned deeply with the mission.`,
+          blurb: `Computing for All is a nonprofit that provides digital skills training to underserved communities. I joined to gain technical experience, 
+          but stayed because I believed in the mission.`,
           img: "/cfatmobile.jpg",
           imgLink:
             "https://www.linkedin.com/posts/mandiravirmani_computingforall-digitalskillsforall-pre-activity-6970484332683558912-prYm/",
         },
         {
-          blurb: `I helped overhaul CFA’s student database, automated attendance systems, and taught computer skills to refugees.`,
+          blurb: `I helped overhaul CFA's student database, automated their attendance system, and taught basic computer skills to refugees. 
+          That last part is still one of the most rewarding things I've done.`,
           img: "/cfarefugees.jpg",
           imgLink:
             "https://www.linkedin.com/posts/digitalskillsforall_computingforall-digitalskillsforall-seattlejobsinitiative-activity-6974154304249094145-ozR2/",
@@ -120,12 +121,12 @@ function Exp({ layoutState }: any) {
       dates: "Jun 2023 - Aug 2023",
       blurbs: [
         {
-          blurb: `I taught students ages 7–17 the fundamentals of coding, VR game development, and creative problem solving.`,
+          blurb: `I taught students ages 7 to 17 the fundamentals of coding, VR game development, and how to work through a problem when the answer isn't obvious.`,
           img: "/idtech.jpg",
           imgLink: "",
         },
         {
-          blurb: `Teaching younger students forced me to rethink concepts and explain them clearly — improving my own understanding.`,
+          blurb: `Teaching younger students forced me to rethink concepts I thought I already understood and explain them clearly, which ended up sharpening my own understanding just as much as theirs.`,
           img: "/idtechbc.jpg",
           imgLink: "",
         },
@@ -140,12 +141,12 @@ function Exp({ layoutState }: any) {
       blurbs: [
         {
           title: "My Favorite Space on Campus",
-          blurb: `The Collaboratory is where I learned 3D printing, laser cutting, and met some of my closest friends.`,
+          blurb: `The Collaboratory is where I learned 3D printing and laser cutting, and where I met some of my closest friends along the way.`,
           img: "/Group_Shot_Fin.png",
           imgLink: "",
         },
         {
-          blurb: `I’ve helped dozens of students with projects — from 3D prints to farm automation prototypes.`,
+          blurb: `I've helped dozens of students with their projects, everything from simple 3D prints to a farm automation prototype for handling manure.`,
           img: "/collabmovie.png",
           imgLink: "",
         },
@@ -160,13 +161,13 @@ function Exp({ layoutState }: any) {
       blurbs: [
         {
           title: "The Office of Admissions",
-          blurb: `I improved the UX of internal student portals and added features including a confetti animation on acceptance pages.`,
+          blurb: `I improved the UX of internal student portals and shipped small but meaningful features, including a confetti animation on the acceptance page.`,
           img: "",
           imgLink: "",
         },
         {
           title: "Data Science Intern",
-          blurb: `I worked heavily with student datasets and reports, which influenced department-level decision making.`,
+          blurb: `I worked closely with student enrollment datasets and built reports that fed directly into department level decisions.`,
           img: "",
           imgLink: "",
         },
@@ -181,7 +182,7 @@ function Exp({ layoutState }: any) {
       blurbs: [
         {
           title: "My Time at Trickfire Robotics",
-          blurb: `I built computer vision systems for drones, integrating object detection and real-time automation.`,
+          blurb: `I built computer vision systems for a competition drone, integrating object detection and real time automation to improve flight accuracy in the field.`,
           img: "/FullRoverPhoto.png",
           imgLink: "",
         },
@@ -385,28 +386,53 @@ function Exp({ layoutState }: any) {
           onClick={(e) => e.stopPropagation()}
           className="relative bg-gradient-to-br from-[#1f2024] to-[#2c2d33] 
                    h-[90vh] w-[90vw] max-w-6xl rounded-2xl shadow-2xl 
-                   text-white p-10 flex flex-col"
+                   text-white flex flex-col overflow-hidden"
           style={{ transform: "scale(0)" }}
         >
           {/* Close */}
           <button
             onClick={closeModal}
-            className="absolute top-4 right-6 text-4xl hover:text-gray-400 transition"
+            aria-label="Close"
+            className="absolute top-5 right-6 w-10 h-10 rounded-full flex items-center justify-center 
+                     text-2xl bg-white/5 hover:bg-white/10 transition-colors z-10"
           >
             &times;
           </button>
 
-          {/* Title */}
-          <h1 className="text-4xl sm:text-6xl font-bold mb-6 border-b border-gray-700 pb-4 shrink-0">
-            {selectedExperience.name}
-          </h1>
+          {/* Header */}
+          <div className="shrink-0 px-10 pt-10 pb-6 border-b border-white/10">
+            <div className="flex items-center gap-3 mb-3">
+              <span
+                className="text-xs font-medium uppercase tracking-wide px-3 py-1 rounded-full"
+                style={{
+                  color: colorPalleteTypeMap.get(selectedExperience.type),
+                  backgroundColor: `${colorPalleteTypeMap.get(selectedExperience.type)}1A`,
+                  border: `1px solid ${colorPalleteTypeMap.get(selectedExperience.type)}55`,
+                }}
+              >
+                {selectedExperience.type}
+              </span>
+              <span className="text-sm opacity-60">
+                {selectedExperience.dates}
+              </span>
+            </div>
+
+            <h1 className="text-3xl sm:text-5xl font-bold leading-tight pr-10">
+              {selectedExperience.name}
+            </h1>
+          </div>
 
           {/* BLURBS SCROLL AREA */}
-          <div className="flex-1 overflow-y-auto pr-3 custom-scroll space-y-12">
+          <div
+            className="flex-1 min-h-0 overflow-y-auto overscroll-contain px-10 py-8 custom-scroll space-y-12"
+            data-lenis-prevent
+            onWheel={(e) => e.stopPropagation()}
+            onTouchMove={(e) => e.stopPropagation()}
+          >
             {selectedExperience.blurbs.map((blurb, i) => (
               <div key={i} className="flex flex-col gap-4">
                 {blurb.title && (
-                  <h2 className="text-3xl sm:text-4xl font-semibold text-tt leading-tight">
+                  <h2 className="text-2xl sm:text-3xl font-semibold leading-tight">
                     {blurb.title}
                   </h2>
                 )}
@@ -423,7 +449,7 @@ function Exp({ layoutState }: any) {
                           href={blurb.imgLink}
                           target="_blank"
                           rel="noreferrer"
-                          className="hover:opacity-80 transition"
+                          className="hover:opacity-80 transition block"
                         >
                           <img
                             src={blurb.img}
@@ -462,6 +488,26 @@ function Exp({ layoutState }: any) {
     <div>
       {renderModal()}
       {layoutMode === "list" ? renderListItems() : renderGridItems()}
+
+      <style jsx>{`
+        .custom-scroll::-webkit-scrollbar {
+          width: 8px;
+        }
+        .custom-scroll::-webkit-scrollbar-track {
+          background: transparent;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb {
+          background-color: rgba(255, 255, 255, 0.15);
+          border-radius: 999px;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb:hover {
+          background-color: rgba(255, 255, 255, 0.3);
+        }
+        .custom-scroll {
+          scrollbar-width: thin;
+          scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+        }
+      `}</style>
     </div>
   );
 }
